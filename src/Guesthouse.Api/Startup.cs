@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 
 namespace Guesthouse.Api
 {
@@ -26,7 +27,8 @@ namespace Guesthouse.Api
         
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                .AddJsonOptions(x => x.SerializerSettings.Formatting = Formatting.Indented);
 
             services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(Configuration
                 .GetConnectionString("GuesthouseDatabase"), b => b.MigrationsAssembly("Guesthouse.Infrastructure")));

@@ -47,30 +47,34 @@ namespace Guesthouse.Infrastructure.Database
                 .WithOne(b => b.Reservation)
                 .HasForeignKey(b => b.Id);
 
-            builder.Entity<Client>()
-                .HasMany<Reservation>(b => b.Reservations)
-                .WithOne(b => b.Client)
-                .HasForeignKey(b => b.Id);
-
             builder.Entity<Invoice>()
                 .HasMany<Reservation>(b => b.Reservations)
                 .WithOne(b => b.Invoice)
                 .HasForeignKey(b => b.Id);
+
+            builder.Entity<Client>()
+                .HasOne<Reservation>(b => b.Reservation)
+                .WithOne(b => b.Client)
+                .HasForeignKey<Client>(b => b.ReservationId);
+
+            builder.Entity<Reservation>()
+                .HasOne<Client>(b => b.Client)
+                .WithOne(b => b.Reservation);
 
             builder.Entity<Invoice>()
                 .HasOne<Client>(b => b.Client)
                 .WithOne(b => b.Invoice)
                 .HasForeignKey<Invoice>(b => b.ClientId);
 
+            builder.Entity<Client>()
+                .HasOne<Invoice>(b => b.Invoice)
+                .WithOne(b => b.Client);
+
             builder.Entity<Invoice>()
                 .HasOne<Employee>(b => b.Employee)
                 .WithOne(b => b.Invoice)
                 .HasForeignKey<Invoice>(b => b.EmployeeId);
 
-            builder.Entity<Client>()
-                .HasOne<Invoice>(b => b.Invoice)
-                .WithOne(b => b.Client);
-            
             builder.Entity<Employee>()
                 .HasOne<Invoice>(b => b.Invoice)
                 .WithOne(b => b.Employee);

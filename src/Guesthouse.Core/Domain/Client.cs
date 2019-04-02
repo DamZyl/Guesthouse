@@ -8,12 +8,12 @@ namespace Guesthouse.Core.Domain
     public class Client : User
     {
         public virtual Invoice Invoice { get; protected set; } 
-        private ISet<Reservation> _reservations = new HashSet<Reservation>();
+        public virtual Reservation Reservation { get; protected set;}
         
         public string PhoneNumber { get; protected set; }
         public string ClientRole { get; protected set; }
-        public PayWay PayType { get; protected set; }
-        public IEnumerable<Reservation> Reservations => _reservations;  
+        public PayWay PayType { get; protected set; } 
+        public Guid? ReservationId { get; protected set;}
 
         protected Client()
         {
