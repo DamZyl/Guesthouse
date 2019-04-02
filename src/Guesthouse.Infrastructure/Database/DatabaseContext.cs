@@ -1,5 +1,6 @@
 using Guesthouse.Core.Domain;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 namespace Guesthouse.Infrastructure.Database
 {
@@ -78,6 +79,10 @@ namespace Guesthouse.Infrastructure.Database
             builder.Entity<Employee>()
                 .HasOne<Invoice>(b => b.Invoice)
                 .WithOne(b => b.Employee);
+
+            builder.Entity<Client>()
+                .Property(p => p.PayType)
+                .HasConversion<string>();
 
             base.OnModelCreating(builder);
         }

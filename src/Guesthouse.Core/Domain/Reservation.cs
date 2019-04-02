@@ -15,6 +15,8 @@ namespace Guesthouse.Core.Domain
         public Guid ClientId { get; protected set; }
         public string ClientName { get; protected set; }
         public decimal Price { get; protected set; }
+        public DateTime StartReservation { get; protected set; }
+        public DateTime EndReservation { get; protected set; }
         public IEnumerable<Room> Rooms => _rooms;
         public IEnumerable<Convenience> Conveniences => _conveniences;
 
@@ -22,12 +24,12 @@ namespace Guesthouse.Core.Domain
         {
         }
 
-        public Reservation(Guid id, string description, Guid clientId, string clientName)
+        public Reservation(Guid id, string description, DateTime startReservation,
+                DateTime EndReservation)
         {
             Id = id;
             SetDescription(description);
-            ClientId = clientId;
-            ClientName = clientName;
+            SetDates(startReservation, EndReservation);
             Price = CalulatePrice(); 
         }
 
@@ -41,7 +43,24 @@ namespace Guesthouse.Core.Domain
             Description = description;
         }
 
-        private decimal CalulatePrice()
+        public void SetDates(DateTime startReservation, DateTime endReservation)
+        {
+            if (startReservation >= endReservation)
+            {
+                throw new Exception();
+            }
+
+            StartReservation = startReservation;
+            EndReservation = endReservation;
+        }
+
+        public void ReservationPlace(Client client) // TODO!!!
+        {
+            ClientId = client.Id;
+            ClientName = client.GetFullName();
+        }
+
+        private decimal CalulatePrice() // TODO!!!
         {
             return 0;
         }

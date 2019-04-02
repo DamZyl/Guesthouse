@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "0216b58e91081e698ca74d987260e527fc5967b0"
+    "signature": "369e73c45fc57b678313a27c1df30fbdadc37b55"
   },
   "compilationOptions": {},
   "targets": {
@@ -11,6 +11,7 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "2.2.3",
           "Microsoft.EntityFrameworkCore.Design": "2.2.3",
+          "Microsoft.EntityFrameworkCore.InMemory": "2.2.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.2.3",
           "Microsoft.EntityFrameworkCore.Tools": "2.2.3",
           "NETStandard.Library": "2.0.3"
@@ -63,6 +64,17 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll": {
+            "assemblyVersion": "2.2.3.0",
+            "fileVersion": "2.2.3.19047"
+          }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.InMemory/2.2.3": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "2.2.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.EntityFrameworkCore.InMemory.dll": {
             "assemblyVersion": "2.2.3.0",
             "fileVersion": "2.2.3.19047"
           }
@@ -660,6 +672,13 @@
       "sha512": "sha512-EdKCRSAlVF0PLXl1vi5ojRh0jRhSDywPYN9+0UpKOBZ53Vpa+8Qyio6p9WMJNqp+LkXS5fRQshHuiljFTVGY/g==",
       "path": "microsoft.entityframeworkcore.design/2.2.3",
       "hashPath": "microsoft.entityframeworkcore.design.2.2.3.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.InMemory/2.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Xeq3iCAOBHWN5r4LwSRFye9Sq07ylupTUoiOZa+rfOkQCgxZNm12kv0bpj/Juf3Kx2THJh7hqSFeeeyEvKDTfQ==",
+      "path": "microsoft.entityframeworkcore.inmemory/2.2.3",
+      "hashPath": "microsoft.entityframeworkcore.inmemory.2.2.3.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Relational/2.2.3": {
       "type": "package",
