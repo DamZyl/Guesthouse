@@ -40,5 +40,10 @@ namespace Guesthouse.Core.Domain
 
             Description = description;
         }
+
+        private decimal CalulatePrice()
+        {
+            return 0;
+        }
     }
 }
