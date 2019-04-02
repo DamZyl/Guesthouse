@@ -19,7 +19,9 @@ namespace Guesthouse.Infrastructure.Repositories
         }
 
         public async Task<Reservation> GetAsync(Guid id)
-            => await _databaseContext.Reservations.SingleOrDefaultAsync(x => x.Id == id);
+            => await _databaseContext.Reservations.Include(p => p.Rooms)
+                    .Include(p => p.Conveniences)
+                    .SingleOrDefaultAsync(x => x.Id == id);
 
         public async Task<IEnumerable<Reservation>> GetAllAsync()
             => await _databaseContext.Reservations.ToListAsync();

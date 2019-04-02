@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Guesthouse.Core.Repositories;
 using Guesthouse.Infrastructure.Database;
+using Guesthouse.Infrastructure.Mappers;
 using Guesthouse.Infrastructure.Repositories;
 using Guesthouse.Infrastructure.Services;
 using Microsoft.AspNetCore.Builder;
@@ -38,6 +39,7 @@ namespace Guesthouse.Api
 
             services.AddScoped<IReservationRepository, ReservationRepository>();
             services.AddScoped<IReservationService, ReservationService>();
+            services.AddSingleton(AutoMapperConfig.Initialize());
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
