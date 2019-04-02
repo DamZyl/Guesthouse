@@ -6,6 +6,7 @@ namespace Guesthouse.Core.Domain
 {
     public class Employee : User
     {
+        public virtual Invoice Invoice { get; protected set; }
         private List<string> _roles = new List<string>()
         {
             Role.Admin, Role.Employee, Role.User
