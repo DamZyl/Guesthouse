@@ -7,6 +7,7 @@ namespace Guesthouse.Core.Domain
         public virtual Reservation Reservation { get; protected set; }
 
         public Guid Id { get; protected set; }
+        public Guid? ReservationId { get; protected set;}
         public string Name { get; protected set; }
         public decimal? Cost { get; protected set; }
 
