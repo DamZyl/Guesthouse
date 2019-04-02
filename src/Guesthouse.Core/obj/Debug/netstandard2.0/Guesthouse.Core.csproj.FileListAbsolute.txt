@@ -1,0 +1,9 @@
+D:\Kody\Guesthouse\src\Guesthouse.Core\bin\Debug\netstandard2.0\Guesthouse.Core.deps.json
+D:\Kody\Guesthouse\src\Guesthouse.Core\bin\Debug\netstandard2.0\Guesthouse.Core.dll
+D:\Kody\Guesthouse\src\Guesthouse.Core\bin\Debug\netstandard2.0\Guesthouse.Core.pdb
+D:\Kody\Guesthouse\src\Guesthouse.Core\obj\Debug\netstandard2.0\Guesthouse.Core.csprojAssemblyReference.cache
+D:\Kody\Guesthouse\src\Guesthouse.Core\obj\Debug\netstandard2.0\Guesthouse.Core.csproj.CoreCompileInputs.cache
+D:\Kody\Guesthouse\src\Guesthouse.Core\obj\Debug\netstandard2.0\Guesthouse.Core.AssemblyInfoInputs.cache
+D:\Kody\Guesthouse\src\Guesthouse.Core\obj\Debug\netstandard2.0\Guesthouse.Core.AssemblyInfo.cs
+D:\Kody\Guesthouse\src\Guesthouse.Core\obj\Debug\netstandard2.0\Guesthouse.Core.dll
+D:\Kody\Guesthouse\src\Guesthouse.Core\obj\Debug\netstandard2.0\Guesthouse.Core.pdb
