@@ -38,11 +38,13 @@ namespace Guesthouse.Api
                 .GetConnectionString("GuesthouseDatabase"), b => b.MigrationsAssembly("Guesthouse.Infrastructure")));
 
             services.AddScoped<IReservationRepository, ReservationRepository>();
+            services.AddScoped<IClientRepository, ClientRepository>();
             services.AddScoped<IReservationService, ReservationService>();
             services.AddSingleton(AutoMapperConfig.Initialize());
+            services.AddTransient<DbInitializer>();
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, DbInitializer initDb)
         {
             if (env.IsDevelopment())
             {
@@ -54,6 +56,7 @@ namespace Guesthouse.Api
             }
 
             app.UseHttpsRedirection();
+            initDb.SeedData().Wait();
             app.UseMvc();
         }
     }

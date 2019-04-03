@@ -10,3 +10,15 @@ D:\Kody\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesth
 D:\Kody\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.csproj.CopyComplete
 D:\Kody\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.dll
 D:\Kody\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.pdb
+F:\Guesthouse\src\Guesthouse.Infrastructure\bin\Debug\netstandard2.0\Guesthouse.Infrastructure.deps.json
+F:\Guesthouse\src\Guesthouse.Infrastructure\bin\Debug\netstandard2.0\Guesthouse.Infrastructure.dll
+F:\Guesthouse\src\Guesthouse.Infrastructure\bin\Debug\netstandard2.0\Guesthouse.Infrastructure.pdb
+F:\Guesthouse\src\Guesthouse.Infrastructure\bin\Debug\netstandard2.0\Guesthouse.Core.dll
+F:\Guesthouse\src\Guesthouse.Infrastructure\bin\Debug\netstandard2.0\Guesthouse.Core.pdb
+F:\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.csprojAssemblyReference.cache
+F:\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.csproj.CoreCompileInputs.cache
+F:\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.AssemblyInfoInputs.cache
+F:\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.AssemblyInfo.cs
+F:\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.csproj.CopyComplete
+F:\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.dll
+F:\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.pdb

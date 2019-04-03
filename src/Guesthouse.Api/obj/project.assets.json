@@ -12161,11 +12161,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Kody\\Guesthouse\\src\\Guesthouse.Api\\Guesthouse.Api.csproj",
+      "projectUniqueName": "F:\\Guesthouse\\src\\Guesthouse.Api\\Guesthouse.Api.csproj",
       "projectName": "Guesthouse.Api",
-      "projectPath": "D:\\Kody\\Guesthouse\\src\\Guesthouse.Api\\Guesthouse.Api.csproj",
+      "projectPath": "F:\\Guesthouse\\src\\Guesthouse.Api\\Guesthouse.Api.csproj",
       "packagesPath": "C:\\Users\\Damian\\.nuget\\packages\\",
-      "outputPath": "D:\\Kody\\Guesthouse\\src\\Guesthouse.Api\\obj\\",
+      "outputPath": "F:\\Guesthouse\\src\\Guesthouse.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12184,8 +12184,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "D:\\Kody\\Guesthouse\\src\\Guesthouse.Infrastructure\\Guesthouse.Infrastructure.csproj": {
-              "projectPath": "D:\\Kody\\Guesthouse\\src\\Guesthouse.Infrastructure\\Guesthouse.Infrastructure.csproj"
+            "F:\\Guesthouse\\src\\Guesthouse.Infrastructure\\Guesthouse.Infrastructure.csproj": {
+              "projectPath": "F:\\Guesthouse\\src\\Guesthouse.Infrastructure\\Guesthouse.Infrastructure.csproj"
             }
           }
         }

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Guesthouse.Api.Controllers
 {
-    [Route("controller")]
+    [Route("[controller]")]
     public class ReservationsController : Controller
     {
         private readonly IReservationService _reservationService;
@@ -23,8 +23,9 @@ namespace Guesthouse.Api.Controllers
 
             return Json(resevations);
         }
-
-        [HttpGet("{clientId}")]
+        
+        // zmienic route bo sa 2 takie same!!!
+        [HttpGet("client/{clientId}")]
         public async Task<IActionResult> GetForClient(Guid clientId)
         {
             var resevationsForClient = await _reservationService.GetForClient(clientId);

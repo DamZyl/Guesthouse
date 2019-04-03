@@ -8,7 +8,7 @@ namespace Guesthouse.Core.Domain
     {
         public virtual Employee Employee { get; protected set; }
         public virtual Client Client { get; protected set; }
-        private ISet<Reservation> _reservations = new HashSet<Reservation>();
+        public virtual Reservation Reservation { get; protected set; }
 
         public Guid Id { get; protected set; }
         public string CompanyName { get; protected set; }
@@ -21,7 +21,6 @@ namespace Guesthouse.Core.Domain
         public DateTime IssueDate { get; protected set; }
         public DateTime PayDate { get; protected set; }
         public decimal MoneyToPay { get; protected set; }
-        public IEnumerable<Reservation> Reservations => _reservations;
 
         protected Invoice()
         {

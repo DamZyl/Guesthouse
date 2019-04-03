@@ -49,9 +49,13 @@ namespace Guesthouse.Infrastructure.Database
                 .HasForeignKey(b => b.Id);
 
             builder.Entity<Invoice>()
-                .HasMany<Reservation>(b => b.Reservations)
+                .HasOne<Reservation>(b => b.Reservation)
                 .WithOne(b => b.Invoice)
-                .HasForeignKey(b => b.Id);
+                .HasForeignKey<Invoice>(b => b.ReservationId);
+
+            builder.Entity<Reservation>()
+                .HasOne<Invoice>(b => b.Invoice)
+                .WithOne(b => b.Reservation);
 
             builder.Entity<Client>()
                 .HasOne<Reservation>(b => b.Reservation)

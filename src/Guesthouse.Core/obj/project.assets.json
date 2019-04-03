@@ -3248,11 +3248,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\Kody\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj",
+      "projectUniqueName": "F:\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj",
       "projectName": "Guesthouse.Core",
-      "projectPath": "d:\\Kody\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj",
+      "projectPath": "F:\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj",
       "packagesPath": "C:\\Users\\Damian\\.nuget\\packages\\",
-      "outputPath": "d:\\Kody\\Guesthouse\\src\\Guesthouse.Core\\obj\\",
+      "outputPath": "F:\\Guesthouse\\src\\Guesthouse.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
