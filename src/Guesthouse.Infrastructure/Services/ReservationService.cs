@@ -51,7 +51,7 @@ namespace Guesthouse.Infrastructure.Services
             var client = await _clientRepository.GetOrFailAsync(clientId);
             var reservation = await _reservationRepository.GetAsync(id);
 
-            reservation = new Reservation(id, description, startReservation, endReservation);
+            reservation = Reservation.Create(id, description, startReservation, endReservation);
             reservation.ReservationPlace(client);
 
             await _reservationRepository.AddAsync(reservation); 

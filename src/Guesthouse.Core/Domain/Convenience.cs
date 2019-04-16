@@ -15,12 +15,15 @@ namespace Guesthouse.Core.Domain
         {
         }
 
-        public Convenience(Guid id, string name, decimal? cost)
+        protected Convenience(Guid id, string name, decimal? cost)
         {
             Id = id;
             SetName(name);
             SetCost(cost);
         }
+
+        public static Convenience Create(Guid id, string name, decimal? cost)
+            => new Convenience(id, name, cost);
 
         public void SetName(string name)
         {

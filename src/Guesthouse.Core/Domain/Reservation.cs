@@ -24,14 +24,18 @@ namespace Guesthouse.Core.Domain
         {
         }
 
-        public Reservation(Guid id, string description, DateTime startReservation,
-                DateTime EndReservation)
+        protected Reservation(Guid id, string description, DateTime startReservation,
+                DateTime endReservation)
         {
             Id = id;
             SetDescription(description);
-            SetDates(startReservation, EndReservation);
+            SetDates(startReservation, endReservation);
             Price = CalulatePrice(); 
         }
+
+        public static Reservation Create(Guid id, string description, DateTime startReservation,
+                DateTime endReservation)
+            => new Reservation(id, description, startReservation, endReservation);
 
         public void SetDescription(string description)
         {

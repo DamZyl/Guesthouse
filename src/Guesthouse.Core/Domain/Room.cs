@@ -17,13 +17,16 @@ namespace Guesthouse.Core.Domain
         {
         }
 
-        public Room(Guid id, int number, int floor, decimal price)
+        protected Room(Guid id, int number, int floor, decimal price)
         {
             Id = id;
-            Number = number;
-            Floor = floor;
-            Price = price;
+            SetNumber(number);
+            SetFloor(floor);
+            SetPrice(price);
         }
+
+        public static Room Create(Guid id, int number, int floor, decimal price)
+            => new Room(id, number, floor, price); 
 
         public void SetNumber(int number)
         {

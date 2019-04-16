@@ -19,7 +19,7 @@ namespace Guesthouse.Core.Domain
         {
         }
 
-        public Client(Guid id, string firstName, string lastName, string email,
+        protected Client(Guid id, string firstName, string lastName, string email,
                 string password, string phoneNumber, PayWay payType)
                 : base(id, firstName, lastName, email, password)
         {
@@ -27,6 +27,10 @@ namespace Guesthouse.Core.Domain
             ClientRole = ConstValues.CLIENT_DEFAULT_ROLE;
             PayType = payType;    
         }
+
+        public static Client Create(Guid id, string firstName, string lastName, string email,
+                string password, string phoneNumber, PayWay payType)
+            => new Client(id, firstName, lastName, email, password, phoneNumber, payType); 
 
         public void SetPhoneNumber(string phoneNumber)
         {
@@ -43,9 +47,9 @@ namespace Guesthouse.Core.Domain
             if (string.IsNullOrWhiteSpace(phoneNumber))
                 return false;
 
-            var r = new Regex(ConstValues.PHONE_NUMBER_REGEX);
+            var regex = new Regex(ConstValues.PHONE_NUMBER_REGEX);
 
-            return r.IsMatch(phoneNumber);
+            return regex.IsMatch(phoneNumber);
         }          
     }
 

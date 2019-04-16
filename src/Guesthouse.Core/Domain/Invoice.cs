@@ -26,7 +26,7 @@ namespace Guesthouse.Core.Domain
         {
         }
 
-        public Invoice(Guid id, Guid clientId, string clientName, Guid employeeId,
+        protected Invoice(Guid id, Guid clientId, string clientName, Guid employeeId,
                 string employeeName, Guid reservationId, string reservationDescription,
                 DateTime issueDate, DateTime payDate, decimal moneyToPay)
         {
@@ -41,6 +41,12 @@ namespace Guesthouse.Core.Domain
             SetDates(issueDate, payDate);
             MoneyToPay = moneyToPay;
         }
+
+        public static Invoice Create(Guid id, Guid clientId, string clientName, Guid employeeId,
+                string employeeName, Guid reservationId, string reservationDescription,
+                DateTime issueDate, DateTime payDate, decimal moneyToPay)
+            => new Invoice(id, clientId, clientName, employeeId, employeeName, reservationId,
+                    reservationDescription, issueDate, payDate, moneyToPay);
 
         public void SetDates(DateTime issueDate, DateTime payDate)
         {

@@ -18,11 +18,15 @@ namespace Guesthouse.Core.Domain
         {
         }
 
-        public Employee(Guid id, string firstName, string lastName, string email,
+        protected Employee(Guid id, string firstName, string lastName, string email,
                 string password, string role) : base(id, firstName, lastName, email, password)
         {
             SetRole(role);
         }
+
+        public static Employee Create(Guid id, string firstName, string lastName, string email,
+                string password, string role)
+            => new Employee(id, firstName, lastName, email, password, role);
 
         public void SetRole(string role)
         {
