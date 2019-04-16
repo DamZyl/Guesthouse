@@ -22,3 +22,15 @@ F:\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.
 F:\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.csproj.CopyComplete
 F:\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.dll
 F:\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.pdb
+D:\aa.Wszystko\cSharp\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Infrastructure\bin\Debug\netstandard2.0\Guesthouse.Infrastructure.deps.json
+D:\aa.Wszystko\cSharp\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Infrastructure\bin\Debug\netstandard2.0\Guesthouse.Infrastructure.dll
+D:\aa.Wszystko\cSharp\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Infrastructure\bin\Debug\netstandard2.0\Guesthouse.Infrastructure.pdb
+D:\aa.Wszystko\cSharp\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Infrastructure\bin\Debug\netstandard2.0\Guesthouse.Core.dll
+D:\aa.Wszystko\cSharp\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Infrastructure\bin\Debug\netstandard2.0\Guesthouse.Core.pdb
+D:\aa.Wszystko\cSharp\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.csprojAssemblyReference.cache
+D:\aa.Wszystko\cSharp\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.csproj.CoreCompileInputs.cache
+D:\aa.Wszystko\cSharp\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.AssemblyInfoInputs.cache
+D:\aa.Wszystko\cSharp\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.AssemblyInfo.cs
+D:\aa.Wszystko\cSharp\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.csproj.CopyComplete
+D:\aa.Wszystko\cSharp\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.dll
+D:\aa.Wszystko\cSharp\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.pdb

@@ -41,12 +41,12 @@ namespace Guesthouse.Infrastructure.Database
             builder.Entity<Reservation>()
                 .HasMany<Convenience>(b => b.Conveniences)
                 .WithOne(b => b.Reservation)
-                .HasForeignKey(b => b.Id);
+                .HasForeignKey(b => b.ReservationId);
 
             builder.Entity<Reservation>()
                 .HasMany<Room>(b => b.Rooms)
                 .WithOne(b => b.Reservation)
-                .HasForeignKey(b => b.Id);
+                .HasForeignKey(b => b.ReservationId);
 
             builder.Entity<Invoice>()
                 .HasOne<Reservation>(b => b.Reservation)

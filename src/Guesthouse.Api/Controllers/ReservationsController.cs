@@ -23,8 +23,7 @@ namespace Guesthouse.Api.Controllers
 
             return Json(resevations);
         }
-        
-        // zmienic route bo sa 2 takie same!!!
+
         [HttpGet("client/{clientId}")]
         public async Task<IActionResult> GetForClient(Guid clientId)
         {
@@ -45,7 +44,7 @@ namespace Guesthouse.Api.Controllers
         public async Task<IActionResult> Post([FromBody] CreateReservation command)
         {
             command.Id = Guid.NewGuid();
-            Guid clientId = Guid.NewGuid(); // Test usunac to potem!!!
+            Guid clientId = new Guid("9a3f404f-b234-4aac-98ec-eb8357d36b28"); // Test usunac to potem!!!
 
             await _reservationService.CreateAsync(clientId, command.Id, command.Description,
                     command.StartReservation, command.EndReservation);
@@ -53,7 +52,7 @@ namespace Guesthouse.Api.Controllers
             return Created($"/reservations/{command.Id}", null);
         }
 
-        [HttpPut]
+        [HttpPut("{reservationId}")]
         public async Task<IActionResult> Put(Guid reservationId, [FromBody] UpdateReservation command)
         {
             await _reservationService.UpdateAsync(reservationId, command.Description);

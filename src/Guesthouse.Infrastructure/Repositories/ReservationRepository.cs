@@ -37,7 +37,7 @@ namespace Guesthouse.Infrastructure.Repositories
 
         public async Task UpdateAsync(Reservation reservation)
         {
-            _databaseContext.Update(reservation);
+            _databaseContext.Reservations.Update(reservation);
             await _databaseContext.SaveChangesAsync();
         }
 

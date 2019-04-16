@@ -16,3 +16,12 @@ F:\Guesthouse\src\Guesthouse.Core\obj\Debug\netstandard2.0\Guesthouse.Core.Assem
 F:\Guesthouse\src\Guesthouse.Core\obj\Debug\netstandard2.0\Guesthouse.Core.dll
 F:\Guesthouse\src\Guesthouse.Core\obj\Debug\netstandard2.0\Guesthouse.Core.pdb
 F:\Guesthouse\src\Guesthouse.Core\obj\Debug\netstandard2.0\Guesthouse.Core.csprojAssemblyReference.cache
+D:\aa.Wszystko\cSharp\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Core\bin\Debug\netstandard2.0\Guesthouse.Core.deps.json
+D:\aa.Wszystko\cSharp\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Core\bin\Debug\netstandard2.0\Guesthouse.Core.dll
+D:\aa.Wszystko\cSharp\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Core\bin\Debug\netstandard2.0\Guesthouse.Core.pdb
+D:\aa.Wszystko\cSharp\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Core\obj\Debug\netstandard2.0\Guesthouse.Core.csprojAssemblyReference.cache
+D:\aa.Wszystko\cSharp\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Core\obj\Debug\netstandard2.0\Guesthouse.Core.csproj.CoreCompileInputs.cache
+D:\aa.Wszystko\cSharp\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Core\obj\Debug\netstandard2.0\Guesthouse.Core.AssemblyInfoInputs.cache
+D:\aa.Wszystko\cSharp\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Core\obj\Debug\netstandard2.0\Guesthouse.Core.AssemblyInfo.cs
+D:\aa.Wszystko\cSharp\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Core\obj\Debug\netstandard2.0\Guesthouse.Core.dll
+D:\aa.Wszystko\cSharp\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Core\obj\Debug\netstandard2.0\Guesthouse.Core.pdb
