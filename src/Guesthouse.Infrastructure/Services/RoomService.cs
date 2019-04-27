@@ -26,13 +26,6 @@ namespace Guesthouse.Infrastructure.Services
             return _mapper.Map<IEnumerable<RoomDto>>(rooms);
         }
 
-        // public async Task<IEnumerable<Room>> GetAvailableAsync()
-        // {
-        //     var availableRooms = await _unitOfWork.RoomRepository.GetAvailableAsync();
-
-        //     return _mapper.Map<IEnumerable<RoomDto>>(availableRooms);
-        // }
-
         public async Task<IEnumerable<Room>> GetAvailableAsync()
             => await _unitOfWork.RoomRepository.GetAvailableAsync();
 

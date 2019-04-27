@@ -68,7 +68,7 @@ namespace Guesthouse.Api.Controllers
         }
 
         [HttpDelete("{reservationId}")]
-        public async Task<IActionResult> Delete(Guid reservationId) // make service which give rooms for reservationId!!!
+        public async Task<IActionResult> Delete(Guid reservationId)
         {
             Guid clientId = new Guid("9a3f404f-b234-4aac-98ec-eb8357d36b28"); // Test delete later!!!
 

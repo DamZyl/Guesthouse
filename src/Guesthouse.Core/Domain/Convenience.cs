@@ -42,7 +42,7 @@ namespace Guesthouse.Core.Domain
 
         public void SetCost(decimal? cost)
         {
-            if (cost <= 0)
+            if (cost != null && cost <= 0)
             {
                 throw new Exception("Cost should be greater than 0.");
             }
@@ -50,7 +50,7 @@ namespace Guesthouse.Core.Domain
             Cost = cost;
         }
 
-        public void SetReservationId(Guid id)
+        public void SetReservationId(Guid id) // Delete this!!!
         {
             ReservationId = id;
         }

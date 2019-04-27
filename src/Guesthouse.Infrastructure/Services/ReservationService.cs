@@ -49,8 +49,7 @@ namespace Guesthouse.Infrastructure.Services
             var reservation = await _unitOfWork.ReservationRepository.GetAsync(id);
 
             reservation = Reservation.Create(id, description, startReservation, endReservation);
-            //reservation.ReservationPlace(client);
-
+           
             await _unitOfWork.ReservationRepository.AddAsync(reservation); 
             await _unitOfWork.Complete();
         }

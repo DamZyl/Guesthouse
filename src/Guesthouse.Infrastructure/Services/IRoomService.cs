@@ -9,8 +9,8 @@ namespace Guesthouse.Infrastructure.Services
     public interface IRoomService : IService
     {
         Task<IEnumerable<RoomDto>> GetOccupiedAsync();
-        Task<IEnumerable<Room>> GetAvailableAsync();
-        Task<IEnumerable<Room>> GetForReservationAsync(Guid id);
+        Task<IEnumerable<Room>> GetAvailableAsync(); // DTO
+        Task<IEnumerable<Room>> GetForReservationAsync(Guid id); // DTO
         Task<IEnumerable<RoomDto>> GetAllAsync();
     }
 }

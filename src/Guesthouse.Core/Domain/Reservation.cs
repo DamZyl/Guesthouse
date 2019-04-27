@@ -58,7 +58,7 @@ namespace Guesthouse.Core.Domain
             EndReservation = endReservation;
         }
 
-        // public void ReservationPlace(Client client, IEnumerable<Room> rooms, IEnumerable<Convenience> conveniences) // TODO(Think about dates)!!!
+        // public void ReservationPlace(Client client, IEnumerable<Room> rooms, IEnumerable<Convenience> conveniences)
         // {
         //     if (conveniences == null)
         //     {
@@ -76,7 +76,7 @@ namespace Guesthouse.Core.Domain
         //     }
         // }
 
-        public void ReservationPlace(Client client, IEnumerable<Room> rooms) // TODO(Think about dates)!!!
+        public void ReservationPlace(Client client, IEnumerable<Room> rooms) // Test version, because I think about Conveniences!!!
         {
             AddRooms(rooms);
             Price = CalulatePrice();
@@ -92,8 +92,7 @@ namespace Guesthouse.Core.Domain
             }
         }
 
-        // Think about db_FK(ReservationId) in Convenience may Intersection!!!
-        private void AddRooms(IEnumerable<Room> rooms) // Check function!!!
+        private void AddRooms(IEnumerable<Room> rooms) 
         {
             foreach (var room in rooms)
             {
@@ -105,6 +104,7 @@ namespace Guesthouse.Core.Domain
             }
         }
 
+        // Think about db_FK(ReservationId) in Convenience may Intersection!!!
         private void AddConveniences(IEnumerable<Convenience> conveniences) // Check function!!!
         {
             //convenience.SetReservationId(Id); -> Think about this

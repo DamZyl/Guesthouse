@@ -10,8 +10,8 @@ namespace Guesthouse.Core.Domain
         public int Number { get; protected set; }
         public int Floor { get; protected set; }
         public decimal Price { get; protected set; }
-        public DateTime? BookedAt { get; protected set; } // new properties
-        public DateTime? BookedTo { get; protected set; } // new properties
+        public DateTime? BookedAt { get; protected set; } 
+        public DateTime? BookedTo { get; protected set; } 
         public Guid? ReservationId { get; protected set; }
         public bool Occupied => ReservationId.HasValue;
 
@@ -34,7 +34,7 @@ namespace Guesthouse.Core.Domain
         {
             if (number <= 0)
             {
-                throw new Exception();
+                throw new Exception("Number shoud be greater than 0.");
             }
 
             if (Number == number)
@@ -49,7 +49,7 @@ namespace Guesthouse.Core.Domain
         {
             if (floor < 0)
             {
-                throw new Exception();
+                throw new Exception("Number shoud be 0 and greater.");
             }
 
             if (Floor == floor)
@@ -64,7 +64,7 @@ namespace Guesthouse.Core.Domain
         {
             if (price <= 0)
             {
-                throw new Exception();
+                throw new Exception("Price should be greater than 0.");
             }
 
             if (Price == price)
