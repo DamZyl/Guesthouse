@@ -34,3 +34,12 @@ D:\Kody\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Core\obj\Debug\netstandard2.
 D:\Kody\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Core\obj\Debug\netstandard2.0\Guesthouse.Core.AssemblyInfo.cs
 D:\Kody\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Core\obj\Debug\netstandard2.0\Guesthouse.Core.dll
 D:\Kody\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Core\obj\Debug\netstandard2.0\Guesthouse.Core.pdb
+F:\testowanie\TestowaniePracy\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Core\bin\Debug\netstandard2.0\Guesthouse.Core.deps.json
+F:\testowanie\TestowaniePracy\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Core\bin\Debug\netstandard2.0\Guesthouse.Core.dll
+F:\testowanie\TestowaniePracy\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Core\bin\Debug\netstandard2.0\Guesthouse.Core.pdb
+F:\testowanie\TestowaniePracy\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Core\obj\Debug\netstandard2.0\Guesthouse.Core.csproj.CoreCompileInputs.cache
+F:\testowanie\TestowaniePracy\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Core\obj\Debug\netstandard2.0\Guesthouse.Core.AssemblyInfoInputs.cache
+F:\testowanie\TestowaniePracy\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Core\obj\Debug\netstandard2.0\Guesthouse.Core.AssemblyInfo.cs
+F:\testowanie\TestowaniePracy\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Core\obj\Debug\netstandard2.0\Guesthouse.Core.dll
+F:\testowanie\TestowaniePracy\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Core\obj\Debug\netstandard2.0\Guesthouse.Core.pdb
+F:\testowanie\TestowaniePracy\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Core\obj\Debug\netstandard2.0\Guesthouse.Core.csprojAssemblyReference.cache

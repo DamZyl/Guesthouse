@@ -32,7 +32,7 @@ namespace Guesthouse.Core.Domain
         {
             if (string.IsNullOrWhiteSpace(role))
             {
-                throw new Exception();
+                throw new Exception("Role should not be empty.");
             }
 
             role = role.ToUppercaseFirstInvariant();
@@ -44,7 +44,7 @@ namespace Guesthouse.Core.Domain
 
             if (!_roles.Contains(role))
             {
-                throw new Exception();
+                throw new Exception("Role should be chosen from RoleList('ADMIN, USER, EMPLOYEE').");
             }
 
             EmployeeRole = role;

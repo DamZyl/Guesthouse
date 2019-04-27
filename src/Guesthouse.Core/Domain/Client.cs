@@ -36,7 +36,7 @@ namespace Guesthouse.Core.Domain
         {
             if (!IsPhoneNumberValid(phoneNumber))
             {
-                throw new Exception();
+                throw new Exception("PhoneNumber should have format 'xxx-xxx-xxx'.");
             }
 
             PhoneNumber = phoneNumber;

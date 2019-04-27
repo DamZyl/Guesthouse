@@ -33,7 +33,7 @@ namespace Guesthouse.Core.Domain
         {
             if (string.IsNullOrWhiteSpace(firstName))
             {
-                throw new Exception();
+                throw new Exception("FirstName should not be empty.");
             }
 
             firstName = firstName.ToUppercaseFirstInvariant();
@@ -50,7 +50,7 @@ namespace Guesthouse.Core.Domain
         {
             if (string.IsNullOrWhiteSpace(lastName))
             {
-                throw new Exception();
+                throw new Exception("LastName should not be empty.");
             }
 
             lastName = lastName.ToUppercaseFirstInvariant();
@@ -67,12 +67,12 @@ namespace Guesthouse.Core.Domain
         {
             if (string.IsNullOrWhiteSpace(email))
             {
-                throw new Exception();
+                throw new Exception("Email should not be empty.");
             }
 
             if (!new EmailAddressAttribute().IsValid(email))
             {
-                throw new Exception();
+                throw new Exception("Email does not match the EmailPattern.");
             }
             
             if (Email == email)
@@ -87,17 +87,17 @@ namespace Guesthouse.Core.Domain
         {
             if (string.IsNullOrWhiteSpace(password))
             {
-                throw new Exception();
+                throw new Exception("Password should not be empty.");
             }
 
             if (password.Length < ConstValues.PASSWORD_MIN_LENGTH)
             {
-                throw new Exception();
+                throw new Exception($"Password should be greather than {ConstValues.PASSWORD_MIN_LENGTH}");
             }
 
             if (password.Length > ConstValues.PASSWORD_MAX_LENGTH)
             {
-                throw new Exception();
+                throw new Exception($"Password should be shorter than {ConstValues.PASSWORD_MAX_LENGTH}");
             }
             
             if (Password == password)

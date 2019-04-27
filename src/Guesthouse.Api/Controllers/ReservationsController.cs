@@ -10,10 +10,13 @@ namespace Guesthouse.Api.Controllers
     public class ReservationsController : Controller
     {
         private readonly IReservationService _reservationService;
+        private readonly IRoomService _roomService;
 
-        public ReservationsController(IReservationService reservationService)
+        public ReservationsController(IReservationService reservationService,
+                IRoomService roomService)
         {
             _reservationService = reservationService;
+            _roomService = roomService;
         }
 
         [HttpGet]
@@ -44,10 +47,14 @@ namespace Guesthouse.Api.Controllers
         public async Task<IActionResult> Post([FromBody] CreateReservation command)
         {
             command.Id = Guid.NewGuid();
-            Guid clientId = new Guid("9a3f404f-b234-4aac-98ec-eb8357d36b28"); // Test usunac to potem!!!
+            Guid clientId = new Guid("9a3f404f-b234-4aac-98ec-eb8357d36b28"); // Test delete later!!!
 
             await _reservationService.CreateAsync(clientId, command.Id, command.Description,
                     command.StartReservation, command.EndReservation);
+
+            var rooms = await _roomService.GetAvailableAsync(); // Test delete later!!!
+
+            await _reservationService.ReservationPlaceAsync(clientId, command.Id, rooms);
 
             return Created($"/reservations/{command.Id}", null);
         }
@@ -61,9 +68,14 @@ namespace Guesthouse.Api.Controllers
         }
 
         [HttpDelete("{reservationId}")]
-        public async Task<IActionResult> Delete(Guid reservationId)
+        public async Task<IActionResult> Delete(Guid reservationId) // make service which give rooms for reservationId!!!
         {
+            Guid clientId = new Guid("9a3f404f-b234-4aac-98ec-eb8357d36b28"); // Test delete later!!!
+
             await _reservationService.DeleteAsync(reservationId);
+
+            var rooms = await _roomService.GetForReservationAsync(reservationId);
+            await _reservationService.CancelReservationPlaceAsync(clientId, reservationId, rooms);
 
             return NoContent();
         }

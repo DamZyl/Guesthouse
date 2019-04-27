@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using Guesthouse.Core.Domain;
 
 namespace Guesthouse.Infrastructure.Commands.Reservation
 {
@@ -8,5 +10,7 @@ namespace Guesthouse.Infrastructure.Commands.Reservation
         public string Description { get; set; }
         public DateTime StartReservation { get; set; }
         public DateTime EndReservation { get; set; }
+        public IEnumerable<Room> Rooms { get; set; }
+        
     }
 }

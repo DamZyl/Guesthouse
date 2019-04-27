@@ -13,7 +13,7 @@ namespace Guesthouse.Infrastructure.Extensions
 
             if (reservation == null)
             {
-                throw new Exception();
+                throw new Exception($"Reservation with id: '{id}' does not exist.");
             }
 
             return reservation;
@@ -25,7 +25,7 @@ namespace Guesthouse.Infrastructure.Extensions
 
             if (client == null)
             {
-                throw new Exception();
+                throw new Exception($"Client with id: '{id}' does not exist.");
             }
 
             return client;

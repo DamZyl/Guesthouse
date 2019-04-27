@@ -3248,11 +3248,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\Kody\\aa.PracaDyplomowa\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj",
+      "projectUniqueName": "f:\\testowanie\\TestowaniePracy\\aa.PracaDyplomowa\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj",
       "projectName": "Guesthouse.Core",
-      "projectPath": "d:\\Kody\\aa.PracaDyplomowa\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj",
+      "projectPath": "f:\\testowanie\\TestowaniePracy\\aa.PracaDyplomowa\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj",
       "packagesPath": "C:\\Users\\Damian\\.nuget\\packages\\",
-      "outputPath": "d:\\Kody\\aa.PracaDyplomowa\\Guesthouse\\src\\Guesthouse.Core\\obj\\",
+      "outputPath": "f:\\testowanie\\TestowaniePracy\\aa.PracaDyplomowa\\Guesthouse\\src\\Guesthouse.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

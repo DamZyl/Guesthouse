@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Guesthouse.Infrastructure.Repositories
 {
-    public class ClientRepository : IClientRepository
+    public class ClientRepository : IClientRepository 
     {
         private readonly DatabaseContext _databaseContext;
 

@@ -46,3 +46,15 @@ D:\Kody\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\net
 D:\Kody\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.csproj.CopyComplete
 D:\Kody\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.dll
 D:\Kody\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.pdb
+F:\testowanie\TestowaniePracy\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Infrastructure\bin\Debug\netstandard2.0\Guesthouse.Infrastructure.deps.json
+F:\testowanie\TestowaniePracy\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Infrastructure\bin\Debug\netstandard2.0\Guesthouse.Infrastructure.dll
+F:\testowanie\TestowaniePracy\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Infrastructure\bin\Debug\netstandard2.0\Guesthouse.Infrastructure.pdb
+F:\testowanie\TestowaniePracy\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Infrastructure\bin\Debug\netstandard2.0\Guesthouse.Core.dll
+F:\testowanie\TestowaniePracy\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Infrastructure\bin\Debug\netstandard2.0\Guesthouse.Core.pdb
+F:\testowanie\TestowaniePracy\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.csprojAssemblyReference.cache
+F:\testowanie\TestowaniePracy\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.csproj.CoreCompileInputs.cache
+F:\testowanie\TestowaniePracy\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.AssemblyInfoInputs.cache
+F:\testowanie\TestowaniePracy\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.AssemblyInfo.cs
+F:\testowanie\TestowaniePracy\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.csproj.CopyComplete
+F:\testowanie\TestowaniePracy\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.dll
+F:\testowanie\TestowaniePracy\aa.PracaDyplomowa\Guesthouse\src\Guesthouse.Infrastructure\obj\Debug\netstandard2.0\Guesthouse.Infrastructure.pdb

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Kody\\aa.PracaDyplomowa\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj": {}
+    "F:\\testowanie\\TestowaniePracy\\aa.PracaDyplomowa\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj": {}
   },
   "projects": {
-    "D:\\Kody\\aa.PracaDyplomowa\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj": {
+    "F:\\testowanie\\TestowaniePracy\\aa.PracaDyplomowa\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Kody\\aa.PracaDyplomowa\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj",
+        "projectUniqueName": "F:\\testowanie\\TestowaniePracy\\aa.PracaDyplomowa\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj",
         "projectName": "Guesthouse.Core",
-        "projectPath": "D:\\Kody\\aa.PracaDyplomowa\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj",
+        "projectPath": "F:\\testowanie\\TestowaniePracy\\aa.PracaDyplomowa\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj",
         "packagesPath": "C:\\Users\\Damian\\.nuget\\packages\\",
-        "outputPath": "D:\\Kody\\aa.PracaDyplomowa\\Guesthouse\\src\\Guesthouse.Core\\obj\\",
+        "outputPath": "F:\\testowanie\\TestowaniePracy\\aa.PracaDyplomowa\\Guesthouse\\src\\Guesthouse.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

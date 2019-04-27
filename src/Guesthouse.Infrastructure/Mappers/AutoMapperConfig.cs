@@ -14,6 +14,7 @@ namespace Guesthouse.Infrastructure.Mappers
                 cfg.CreateMap<Reservation, ReservationDto>()
                     .ForMember(x => x.RoomsCount, m => m.MapFrom(p => p.Rooms.Count()));
                 cfg.CreateMap<Reservation, ReservationDetailsDto>();
+                cfg.CreateMap<Room, RoomDto>();
             })
             .CreateMapper();
     }

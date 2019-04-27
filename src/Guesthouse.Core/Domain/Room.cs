@@ -10,6 +10,8 @@ namespace Guesthouse.Core.Domain
         public int Number { get; protected set; }
         public int Floor { get; protected set; }
         public decimal Price { get; protected set; }
+        public DateTime? BookedAt { get; protected set; } // new properties
+        public DateTime? BookedTo { get; protected set; } // new properties
         public Guid? ReservationId { get; protected set; }
         public bool Occupied => ReservationId.HasValue;
 
@@ -71,6 +73,30 @@ namespace Guesthouse.Core.Domain
             }
 
             Price = price;
+        }
+
+        public void Booked(Reservation reservation)
+        {
+            if (Occupied)
+            {
+                throw new Exception("Room was already booked.");
+            }
+
+            ReservationId = reservation.Id;
+            BookedAt = reservation.StartReservation;
+            BookedTo = reservation.EndReservation;
+        }
+
+        public void Cancel()
+        {
+            if (!Occupied)
+            {
+                throw new Exception("Room was not booked and can not be canceled.");
+            }
+
+            ReservationId = null;
+            BookedAt = null;
+            BookedTo = null;
         }
     }
 }

@@ -29,7 +29,7 @@ namespace Guesthouse.Core.Domain
         {
             if (string.IsNullOrWhiteSpace(name))
             {
-                throw new Exception();
+                throw new Exception("Name should not be empty.");
             }
 
             if (Name == name)
@@ -44,10 +44,15 @@ namespace Guesthouse.Core.Domain
         {
             if (cost <= 0)
             {
-                throw new Exception();
+                throw new Exception("Cost should be greater than 0.");
             }
 
             Cost = cost;
+        }
+
+        public void SetReservationId(Guid id)
+        {
+            ReservationId = id;
         }
     }
 }

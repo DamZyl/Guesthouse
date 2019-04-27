@@ -52,7 +52,7 @@ namespace Guesthouse.Core.Domain
         {
             if (issueDate > payDate)
             {
-                throw new Exception();
+                throw new Exception("IssueDate should be earlier than PayDate.");
             }
 
             IssueDate = issueDate;

@@ -39,7 +39,10 @@ namespace Guesthouse.Api
 
             services.AddScoped<IReservationRepository, ReservationRepository>();
             services.AddScoped<IClientRepository, ClientRepository>();
+            services.AddScoped<IRoomRepository, RoomRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IReservationService, ReservationService>();
+            services.AddScoped<IRoomService, RoomService>();
             services.AddSingleton(AutoMapperConfig.Initialize());
             services.AddTransient<DbInitializer>();
         }

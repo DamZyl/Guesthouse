@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Guesthouse.Core.Domain
 {
@@ -29,8 +30,7 @@ namespace Guesthouse.Core.Domain
         {
             Id = id;
             SetDescription(description);
-            SetDates(startReservation, endReservation);
-            Price = CalulatePrice(); 
+            SetDates(startReservation, endReservation); 
         }
 
         public static Reservation Create(Guid id, string description, DateTime startReservation,
@@ -41,7 +41,7 @@ namespace Guesthouse.Core.Domain
         {
             if (string.IsNullOrWhiteSpace(description))
             {
-                throw new Exception();
+                throw new Exception("Description should not be empty.");
             }
 
             Description = description;
@@ -51,22 +51,92 @@ namespace Guesthouse.Core.Domain
         {
             if (startReservation >= endReservation)
             {
-                throw new Exception();
+                throw new Exception("StartReservation should be earlier than EndReservation.");
             }
 
             StartReservation = startReservation;
             EndReservation = endReservation;
         }
 
-        public void ReservationPlace(Client client) // TODO!!!
+        // public void ReservationPlace(Client client, IEnumerable<Room> rooms, IEnumerable<Convenience> conveniences) // TODO(Think about dates)!!!
+        // {
+        //     if (conveniences == null)
+        //     {
+        //         AddRooms(rooms);
+        //         ClientId = client.Id;
+        //         ClientName = client.GetFullName();
+        //     }
+
+        //     else
+        //     {
+        //         AddRooms(rooms);
+        //         AddConveniences(conveniences);
+        //         ClientId = client.Id;
+        //         ClientName = client.GetFullName();    
+        //     }
+        // }
+
+        public void ReservationPlace(Client client, IEnumerable<Room> rooms) // TODO(Think about dates)!!!
         {
+            AddRooms(rooms);
+            Price = CalulatePrice();
             ClientId = client.Id;
-            ClientName = client.GetFullName();
+            ClientName = client.GetFullName();           
         }
 
-        private decimal CalulatePrice() // TODO!!!
+        public void CancelReservationPlace(Client client, IEnumerable<Room> rooms)
         {
-            return 0;
+            foreach (var room in rooms)
+            {
+                room.Cancel();
+            }
+        }
+
+        // Think about db_FK(ReservationId) in Convenience may Intersection!!!
+        private void AddRooms(IEnumerable<Room> rooms) // Check function!!!
+        {
+            foreach (var room in rooms)
+            {
+                if (!room.Occupied)
+                {
+                    room.Booked(this);
+                    _rooms.Add(room);    
+                }
+            }
+        }
+
+        private void AddConveniences(IEnumerable<Convenience> conveniences) // Check function!!!
+        {
+            //convenience.SetReservationId(Id); -> Think about this
+            foreach (var convenience in conveniences)
+            {
+                _conveniences.Add(convenience);
+            } 
+        }
+
+        private decimal CalulatePrice()
+        {
+            decimal reservationCost = 0;
+
+            foreach (var room in _rooms)
+            {
+                reservationCost += room.Price;
+            }
+
+            foreach (var convenience in _conveniences)
+            {
+                if (convenience.Cost == null)
+                {
+                    reservationCost += 0;
+                }
+
+                else
+                {
+                    reservationCost += (decimal)convenience.Cost;
+                }
+            }
+
+            return reservationCost;
         }
     }
 }
