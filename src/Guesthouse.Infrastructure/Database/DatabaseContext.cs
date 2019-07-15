@@ -88,6 +88,14 @@ namespace Guesthouse.Infrastructure.Database
                 .Property(p => p.PayType)
                 .HasConversion<string>();
 
+            builder.Entity<Reservation>()
+                .Property(p => p.ReservationStatus)
+                .HasConversion<string>();
+
+            builder.Entity<Reservation>()
+                .Property(p => p.PayStatus)
+                .HasConversion<string>();
+
             base.OnModelCreating(builder);
         }
     }

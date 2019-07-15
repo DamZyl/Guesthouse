@@ -35,7 +35,7 @@ namespace Guesthouse.Api
                 .AddJsonOptions(x => x.SerializerSettings.Formatting = Formatting.Indented);
 
             services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(Configuration
-                .GetConnectionString("GuesthouseDatabase"), b => b.MigrationsAssembly("Guesthouse.Infrastructure")));
+                .GetConnectionString("GuesthouseDatabase"), b => b.MigrationsAssembly("Guesthouse.Api")));
 
             services.AddScoped<IReservationRepository, ReservationRepository>();
             services.AddScoped<IClientRepository, ClientRepository>();

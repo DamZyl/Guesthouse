@@ -13,6 +13,9 @@ namespace Guesthouse.Infrastructure.DTO
         public decimal Price { get; set; }
         public DateTime StartReservation { get; set; }
         public DateTime EndReservation { get; set; }
+        public string ReservationStatus { get; set; }
+        public string PayStatus { get; set; }
+        public string Message { get; set; }
         public int RoomsCount { get; set; }
     }
 }

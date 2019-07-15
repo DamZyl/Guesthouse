@@ -18,6 +18,9 @@ namespace Guesthouse.Core.Domain
         public decimal Price { get; protected set; }
         public DateTime StartReservation { get; protected set; }
         public DateTime EndReservation { get; protected set; }
+        public ReservationStatus ReservationStatus { get; protected set; }
+        public PayStatus PayStatus { get; protected set; }
+        public string Message { get; set; }
         public IEnumerable<Room> Rooms => _rooms;
         public IEnumerable<Convenience> Conveniences => _conveniences;
 
@@ -139,4 +142,16 @@ namespace Guesthouse.Core.Domain
             return reservationCost;
         }
     }
+
+    public enum ReservationStatus
+    {
+        Confirmed,
+        Unconfirmed
+    }
+
+    public enum PayStatus
+    {
+        Paid,
+        NoPaid
+    } 
 }
