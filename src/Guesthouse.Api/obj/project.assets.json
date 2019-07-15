@@ -12160,17 +12160,17 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/damian/Documents/cSharp/Guesthouse/src/Guesthouse.Api/Guesthouse.Api.csproj",
+      "projectUniqueName": "/home/damian/Documents/cSharp/Praca/src/Guesthouse.Api/Guesthouse.Api.csproj",
       "projectName": "Guesthouse.Api",
-      "projectPath": "/home/damian/Documents/cSharp/Guesthouse/src/Guesthouse.Api/Guesthouse.Api.csproj",
+      "projectPath": "/home/damian/Documents/cSharp/Praca/src/Guesthouse.Api/Guesthouse.Api.csproj",
       "packagesPath": "/home/damian/.nuget/packages/",
-      "outputPath": "/home/damian/Documents/cSharp/Guesthouse/src/Guesthouse.Api/obj/",
+      "outputPath": "/home/damian/Documents/cSharp/Praca/src/Guesthouse.Api/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/home/damian/.nuget/NuGet/NuGet.Config"
+        "/home/damian/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"
@@ -12181,8 +12181,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "/home/damian/Documents/cSharp/Guesthouse/src/Guesthouse.Infrastructure/Guesthouse.Infrastructure.csproj": {
-              "projectPath": "/home/damian/Documents/cSharp/Guesthouse/src/Guesthouse.Infrastructure/Guesthouse.Infrastructure.csproj"
+            "/home/damian/Documents/cSharp/Praca/src/Guesthouse.Infrastructure/Guesthouse.Infrastructure.csproj": {
+              "projectPath": "/home/damian/Documents/cSharp/Praca/src/Guesthouse.Infrastructure/Guesthouse.Infrastructure.csproj"
             }
           }
         }

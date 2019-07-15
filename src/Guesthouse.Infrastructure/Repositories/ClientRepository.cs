@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Guesthouse.Core.Domain;
@@ -19,5 +20,17 @@ namespace Guesthouse.Infrastructure.Repositories
 
         public async Task<Client> GetAsync(Guid id)
             => await _databaseContext.Clients.SingleOrDefaultAsync(x => x.Id == id);
+
+        public async Task<IEnumerable<Client>> GetAllAsync()
+            => await _databaseContext.Clients.ToListAsync();
+
+        public async Task AddAsync(Client client)
+            => await _databaseContext.Clients.AddAsync(client);
+
+        public async Task UpdateAsync(Client client)
+            => _databaseContext.Clients.Update(client);
+
+        public async Task DeleteAsync(Client client)
+            => _databaseContext.Clients.Remove(client);
     }
 }

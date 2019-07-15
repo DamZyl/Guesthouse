@@ -9,6 +9,7 @@ namespace Guesthouse.Infrastructure.Repositories
         private readonly DatabaseContext _databaseContext;
         public IReservationRepository ReservationRepository { get; }
         public IClientRepository ClientRepository { get; }
+        public IEmployeeRepository EmployeeRepository { get; }
         public IRoomRepository RoomRepository { get; }
         
         public UnitOfWork(DatabaseContext databaseContext)
@@ -16,6 +17,7 @@ namespace Guesthouse.Infrastructure.Repositories
             _databaseContext = databaseContext;
             ReservationRepository = new ReservationRepository(_databaseContext);
             ClientRepository = new ClientRepository(_databaseContext);
+            EmployeeRepository = new EmployeeRepository(_databaseContext);
             RoomRepository = new RoomRepository(_databaseContext);
         }
 
