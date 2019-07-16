@@ -6,8 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Guesthouse.Api.Controllers
 {
-    [Route("[controller]")]
-    public class ReservationsController : Controller
+    public class ReservationsController : ApiBaseController
     {
         private readonly IReservationService _reservationService;
         private readonly IRoomService _roomService;
