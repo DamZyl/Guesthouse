@@ -8,6 +8,7 @@ namespace Guesthouse.Core.Repositories
     public interface IClientRepository : IRepository
     {
         Task<Client> GetAsync(Guid id);
+        Task<Client> GetAsync(string email);
         Task<IEnumerable<Client>> GetAllAsync();
         Task AddAsync(Client client);
         Task UpdateAsync(Client client);

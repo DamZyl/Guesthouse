@@ -57,6 +57,8 @@ namespace Guesthouse.Api
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IReservationService, ReservationService>();
             services.AddScoped<IRoomService, RoomService>();
+            services.AddScoped<IClientService, ClientService>();
+            services.AddScoped<IEmployeeService, EmployeeService>();
             services.AddSingleton(AutoMapperConfig.Initialize());
             services.AddSingleton<IJwtHandler, JwtHandler>();
             services.AddTransient<DbInitializer>();

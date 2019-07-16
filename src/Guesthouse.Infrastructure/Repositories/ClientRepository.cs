@@ -21,6 +21,8 @@ namespace Guesthouse.Infrastructure.Repositories
         public async Task<Client> GetAsync(Guid id)
             => await _databaseContext.Clients.SingleOrDefaultAsync(x => x.Id == id);
 
+        public async Task<Client> GetAsync(string email)
+            => await _databaseContext.Clients.SingleOrDefaultAsync(x => x.Email == email);
         public async Task<IEnumerable<Client>> GetAllAsync()
             => await _databaseContext.Clients.ToListAsync();
 
