@@ -32,18 +32,15 @@ namespace Guesthouse.Infrastructure.Repositories
                     .Include(p => p.Rooms).Include(p => p.Conveniences).ToListAsync();
 
         public async Task AddAsync(Reservation reservation)
-        {
-            await _databaseContext.Reservations.AddAsync(reservation);
-        }
+            => await _databaseContext.Reservations.AddAsync(reservation);
+        
 
         public async Task UpdateAsync(Reservation reservation)
-        {
-            _databaseContext.Reservations.Update(reservation);
-        }
+            => _databaseContext.Reservations.Update(reservation);
+        
 
         public async Task DeleteAsync(Reservation reservation)
-        {
-            _databaseContext.Reservations.Remove(reservation);
-        }
+            => _databaseContext.Reservations.Remove(reservation);
+        
     }
 }

@@ -52,3 +52,12 @@ F:/testowanie/TestowaniePracy/aa.PracaDyplomowa/Guesthouse/src/Guesthouse.Core/o
 /home/damian/Documents/cSharp/Guesthouse/src/Guesthouse.Core/obj/Debug/netstandard2.0/Guesthouse.Core.AssemblyInfo.cs
 /home/damian/Documents/cSharp/Guesthouse/src/Guesthouse.Core/obj/Debug/netstandard2.0/Guesthouse.Core.dll
 /home/damian/Documents/cSharp/Guesthouse/src/Guesthouse.Core/obj/Debug/netstandard2.0/Guesthouse.Core.pdb
+/home/damian/Documents/cSharp/Praca/src/Guesthouse.Core/bin/Debug/netstandard2.0/Guesthouse.Core.deps.json
+/home/damian/Documents/cSharp/Praca/src/Guesthouse.Core/bin/Debug/netstandard2.0/Guesthouse.Core.dll
+/home/damian/Documents/cSharp/Praca/src/Guesthouse.Core/bin/Debug/netstandard2.0/Guesthouse.Core.pdb
+/home/damian/Documents/cSharp/Praca/src/Guesthouse.Core/obj/Debug/netstandard2.0/Guesthouse.Core.csprojAssemblyReference.cache
+/home/damian/Documents/cSharp/Praca/src/Guesthouse.Core/obj/Debug/netstandard2.0/Guesthouse.Core.csproj.CoreCompileInputs.cache
+/home/damian/Documents/cSharp/Praca/src/Guesthouse.Core/obj/Debug/netstandard2.0/Guesthouse.Core.AssemblyInfoInputs.cache
+/home/damian/Documents/cSharp/Praca/src/Guesthouse.Core/obj/Debug/netstandard2.0/Guesthouse.Core.AssemblyInfo.cs
+/home/damian/Documents/cSharp/Praca/src/Guesthouse.Core/obj/Debug/netstandard2.0/Guesthouse.Core.dll
+/home/damian/Documents/cSharp/Praca/src/Guesthouse.Core/obj/Debug/netstandard2.0/Guesthouse.Core.pdb
