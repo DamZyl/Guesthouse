@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Guesthouse.Core.Domain.Enums;
 
 namespace Guesthouse.Infrastructure.Database
 {

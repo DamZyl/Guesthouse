@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Guesthouse.Core.Domain.Enums;
 
 namespace Guesthouse.Core.Domain
 {
@@ -142,16 +143,4 @@ namespace Guesthouse.Core.Domain
             return reservationCost;
         }
     }
-
-    public enum ReservationStatus
-    {
-        Confirmed,
-        Unconfirmed
-    }
-
-    public enum PayStatus
-    {
-        Paid,
-        NoPaid
-    } 
 }

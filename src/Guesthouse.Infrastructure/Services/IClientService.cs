@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using Guesthouse.Core.Domain;
+using Guesthouse.Core.Domain.Enums;
 using Guesthouse.Infrastructure.DTO;
 
 namespace Guesthouse.Infrastructure.Services

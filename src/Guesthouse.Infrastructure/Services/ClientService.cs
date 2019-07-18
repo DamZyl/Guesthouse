@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using AutoMapper;
 using Guesthouse.Core.Domain;
+using Guesthouse.Core.Domain.Enums;
 using Guesthouse.Core.Repositories;
 using Guesthouse.Infrastructure.DTO;
 using Guesthouse.Infrastructure.Extensions;

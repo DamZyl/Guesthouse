@@ -1,4 +1,5 @@
 using Guesthouse.Core.Domain;
+using Guesthouse.Core.Domain.Enums;
 
 namespace Guesthouse.Infrastructure.Commands.Users
 {

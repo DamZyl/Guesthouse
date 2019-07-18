@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Guesthouse.Core.Domain.Enums;
 using Guesthouse.Core.Utils;
 
 namespace Guesthouse.Core.Domain
@@ -51,13 +52,5 @@ namespace Guesthouse.Core.Domain
 
             return regex.IsMatch(phoneNumber);
         }          
-    }
-
-    public enum PayWay
-    {
-        Cash,
-        CreditCard,
-        Transfer,
-        Prepayment
     }
 }
