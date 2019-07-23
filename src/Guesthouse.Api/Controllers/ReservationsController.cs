@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Guesthouse.Infrastructure.Commands.Reservation;
 using Guesthouse.Infrastructure.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Guesthouse.Api.Controllers
@@ -10,12 +11,14 @@ namespace Guesthouse.Api.Controllers
     {
         private readonly IReservationService _reservationService;
         private readonly IRoomService _roomService;
+        private readonly IConvenienceService _convenienceService;
 
         public ReservationsController(IReservationService reservationService,
-                IRoomService roomService)
+                IRoomService roomService, IConvenienceService convenienceService)
         {
             _reservationService = reservationService;
             _roomService = roomService;
+            _convenienceService = convenienceService;
         }
 
         [HttpGet]
@@ -33,7 +36,8 @@ namespace Guesthouse.Api.Controllers
 
             return Json(resevationsForClient);
         }
-
+        
+        // [Authorize(Policy="Admin")] -> Test Policy!!!
         [HttpGet("{reservationId}")]
         public async Task<IActionResult> Get(Guid reservationId)
         {
@@ -52,8 +56,9 @@ namespace Guesthouse.Api.Controllers
                     command.StartReservation, command.EndReservation);
 
             var rooms = await _roomService.GetAvailableAsync(); // Test delete later!!!
+            var conveniences = await _convenienceService.GetAllAsync();
 
-            await _reservationService.ReservationPlaceAsync(clientId, command.Id, rooms);
+            await _reservationService.ReservationPlaceAsync(clientId, command.Id, rooms, conveniences);
 
             return Created($"/reservations/{command.Id}", null);
         }

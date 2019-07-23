@@ -6,12 +6,13 @@ namespace Guesthouse.Infrastructure.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly DatabaseContext _databaseContext;
+        private readonly DatabaseContext _databaseContext; 
         public IReservationRepository ReservationRepository { get; }
         public IClientRepository ClientRepository { get; }
         public IEmployeeRepository EmployeeRepository { get; }
         public IRoomRepository RoomRepository { get; }
-        
+        public IConvenienceRepository ConvenienceRepository { get; }
+
         public UnitOfWork(DatabaseContext databaseContext)
         {
             _databaseContext = databaseContext;
@@ -19,6 +20,7 @@ namespace Guesthouse.Infrastructure.Repositories
             ClientRepository = new ClientRepository(_databaseContext);
             EmployeeRepository = new EmployeeRepository(_databaseContext);
             RoomRepository = new RoomRepository(_databaseContext);
+            ConvenienceRepository = new ConvenienceRepository(_databaseContext);
         }
 
         public async Task Complete()

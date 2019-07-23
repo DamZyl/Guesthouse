@@ -9,6 +9,7 @@ namespace Guesthouse.Core.Repositories
         IClientRepository ClientRepository { get; }
         IEmployeeRepository EmployeeRepository { get;  }
         IRoomRepository RoomRepository { get; }
+        IConvenienceRepository ConvenienceRepository { get;  }
 
         Task Complete();
     }

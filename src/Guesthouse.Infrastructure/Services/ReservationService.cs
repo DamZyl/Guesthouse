@@ -75,17 +75,21 @@ namespace Guesthouse.Infrastructure.Services
         public async Task ReservationPlaceAsync(Guid clientId, Guid id, IEnumerable<Room> rooms,
                 IEnumerable<Convenience> conveniences)
         {
-            throw new NotImplementedException();
+            var reservation = await _unitOfWork.ReservationRepository.GetOrFailAsync(id);
+            var client = await _unitOfWork.ClientRepository.GetOrFailAsync(clientId);
+
+            reservation.ReservationPlace(client, rooms, conveniences);
+            await _unitOfWork.Complete();
         }
 
-        public async Task ReservationPlaceAsync(Guid clientId, Guid id, IEnumerable<Room> rooms)
+       /* public async Task ReservationPlaceAsync(Guid clientId, Guid id, IEnumerable<Room> rooms)
         {
             var reservation = await _unitOfWork.ReservationRepository.GetOrFailAsync(id);
             var client = await _unitOfWork.ClientRepository.GetOrFailAsync(clientId);
 
             reservation.ReservationPlace(client, rooms);
             await _unitOfWork.Complete();
-        }
+        }*/
 
         public async Task CancelReservationPlaceAsync(Guid clientId, Guid id, IEnumerable<Room> rooms)
         {

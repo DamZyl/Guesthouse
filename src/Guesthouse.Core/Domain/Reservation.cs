@@ -62,31 +62,33 @@ namespace Guesthouse.Core.Domain
             EndReservation = endReservation;
         }
 
-        // public void ReservationPlace(Client client, IEnumerable<Room> rooms, IEnumerable<Convenience> conveniences)
-        // {
-        //     if (conveniences == null)
-        //     {
-        //         AddRooms(rooms);
-        //         ClientId = client.Id;
-        //         ClientName = client.GetFullName();
-        //     }
+        public void ReservationPlace(Client client, IEnumerable<Room> rooms, IEnumerable<Convenience> conveniences)
+        {
+            if (conveniences == null)
+            {
+                AddRooms(rooms);
+                ClientId = client.Id;
+                ClientName = client.GetFullName();
+            }
 
-        //     else
-        //     {
-        //         AddRooms(rooms);
-        //         AddConveniences(conveniences);
-        //         ClientId = client.Id;
-        //         ClientName = client.GetFullName();    
-        //     }
-        // }
+            else
+            {
+                AddRooms(rooms);
+                AddConveniences(conveniences);
+                ClientId = client.Id;
+                ClientName = client.GetFullName();    
+            }
 
-        public void ReservationPlace(Client client, IEnumerable<Room> rooms) // Test version, because I think about Conveniences!!!
+            Price = CalulatePrice();
+        }
+
+        /*public void ReservationPlace(Client client, IEnumerable<Room> rooms) // Test version, because I think about Conveniences!!!
         {
             AddRooms(rooms);
             Price = CalulatePrice();
             ClientId = client.Id;
             ClientName = client.GetFullName();           
-        }
+        }*/
 
         public void CancelReservationPlace(Client client, IEnumerable<Room> rooms)
         {
@@ -100,18 +102,15 @@ namespace Guesthouse.Core.Domain
         {
             foreach (var room in rooms)
             {
-                if (!room.Occupied)
-                {
-                    room.Booked(this);
-                    _rooms.Add(room);    
-                }
+                if (room.Occupied) continue;
+                
+                room.Booked(this);
+                _rooms.Add(room);
             }
         }
-
-        // Think about db_FK(ReservationId) in Convenience may Intersection!!!
-        private void AddConveniences(IEnumerable<Convenience> conveniences) // Check function!!!
+        
+        private void AddConveniences(IEnumerable<Convenience> conveniences)
         {
-            //convenience.SetReservationId(Id); -> Think about this
             foreach (var convenience in conveniences)
             {
                 _conveniences.Add(convenience);
@@ -120,12 +119,7 @@ namespace Guesthouse.Core.Domain
 
         private decimal CalulatePrice()
         {
-            decimal reservationCost = 0;
-
-            foreach (var room in _rooms)
-            {
-                reservationCost += room.Price;
-            }
+            var reservationCost = _rooms.Sum(room => room.Price);
 
             foreach (var convenience in _conveniences)
             {

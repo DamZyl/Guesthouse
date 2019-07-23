@@ -15,7 +15,7 @@ namespace Guesthouse.Infrastructure.Services
                 DateTime startReservation, DateTime endReservation);
         Task ReservationPlaceAsync(Guid clientId, Guid id, IEnumerable<Room> rooms,
                 IEnumerable<Convenience> conveniences); // TODO!!!
-        Task ReservationPlaceAsync(Guid clientId, Guid id, IEnumerable<Room> rooms); // TODO!!!
+        //Task ReservationPlaceAsync(Guid clientId, Guid id, IEnumerable<Room> rooms); // TODO!!!
         Task CancelReservationPlaceAsync(Guid clientId, Guid id, IEnumerable<Room> rooms); // TODO!!!
         Task DeleteAsync(Guid id);
         Task UpdateAsync(Guid id, string description);

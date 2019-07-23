@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Guesthouse.Infrastructure.Commands.Users;
 using Guesthouse.Infrastructure.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Guesthouse.Api.Controllers
@@ -15,6 +16,7 @@ namespace Guesthouse.Api.Controllers
             _clientService = clientService;
         }
         
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> Get()
             => Json(await _clientService.GetAccountAsync(UserId)); 

@@ -34,6 +34,8 @@ namespace Guesthouse.Api
         
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthorization(x => x.AddPolicy("Admin", p => p.RequireRole("Admin")));
+            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
                 .AddJsonOptions(x => x.SerializerSettings.Formatting = Formatting.Indented);
             
@@ -53,10 +55,13 @@ namespace Guesthouse.Api
 
             services.AddScoped<IReservationRepository, ReservationRepository>();
             services.AddScoped<IClientRepository, ClientRepository>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<IRoomRepository, RoomRepository>();
+            services.AddScoped<IConvenienceRepository, ConvenienceRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IReservationService, ReservationService>();
             services.AddScoped<IRoomService, RoomService>();
+            services.AddScoped<IConvenienceService, ConvenienceService>();
             services.AddScoped<IClientService, ClientService>();
             services.AddScoped<IEmployeeService, EmployeeService>();
             services.AddSingleton(AutoMapperConfig.Initialize());

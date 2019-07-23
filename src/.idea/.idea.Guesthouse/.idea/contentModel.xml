@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/.Rider2019.1/system/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.Rider2019.1/system/resharper-host/local/Transient/ReSharperHost/v191/SolutionCaches/_Guesthouse.1183551144.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="Guesthouse.Api" t="IncludeRecursive">
+        <e p="Controllers" t="Include">
+          <e p="ApiBaseController.cs" t="Include" />
+          <e p="ClientsController.cs" t="Include" />
+          <e p="EmployeesController.cs" t="Include" />
+          <e p="ReservationsController.cs" t="Include" />
+        </e>
+        <e p="Guesthouse.Api.csproj" t="IncludeRecursive" />
+        <e p="Migrations" t="Include">
+          <e p="20190402172702_Init.Designer.cs" t="Include" />
+          <e p="20190402172702_Init.cs" t="Include" />
+          <e p="20190402173451_Fix_problem_with_Convenience.Designer.cs" t="Include" />
+          <e p="20190402173451_Fix_problem_with_Convenience.cs" t="Include" />
+          <e p="20190402175243_Rebuild_Reservation_model.Designer.cs" t="Include" />
+          <e p="20190402175243_Rebuild_Reservation_model.cs" t="Include" />
+          <e p="20190402182932_Convert_enum_to_string.Designer.cs" t="Include" />
+          <e p="20190402182932_Convert_enum_to_string.cs" t="Include" />
+          <e p="20190402204053_Add new values to databes and create DTO.Designer.cs" t="Include" />
+          <e p="20190402204053_Add new values to databes and create DTO.cs" t="Include" />
+          <e p="20190403213106_Fix_bug.Designer.cs" t="Include" />
+          <e p="20190403213106_Fix_bug.cs" t="Include" />
+          <e p="20190416181842_Fix_foreign_key.Designer.cs" t="Include" />
+          <e p="20190416181842_Fix_foreign_key.cs" t="Include" />
+          <e p="20190427200148_Add two columns to room.Designer.cs" t="Include" />
+          <e p="20190427200148_Add two columns to room.cs" t="Include" />
+          <e p="20190715202856_Correct_Reservation.Designer.cs" t="Include" />
+          <e p="20190715202856_Correct_Reservation.cs" t="Include" />
+          <e p="DatabaseContextModelSnapshot.cs" t="Include" />
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.2" t="Include">
+              <e p="Guesthouse.Api.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Guesthouse.Core" t="IncludeRecursive">
+        <e p="Domain" t="Include">
+          <e p="Client.cs" t="Include" />
+          <e p="Convenience.cs" t="Include" />
+          <e p="Employee.cs" t="Include" />
+          <e p="Enums" t="Include">
+            <e p="PayStatus.cs" t="Include" />
+            <e p="PayWay.cs" t="Include" />
+            <e p="ReservationStatus.cs" t="Include" />
+          </e>
+          <e p="Invoice.cs" t="Include" />
+          <e p="Reservation.cs" t="Include" />
+          <e p="Role.cs" t="Include" />
+          <e p="Room.cs" t="Include" />
+          <e p="User.cs" t="Include" />
+        </e>
+        <e p="Extensions" t="Include">
+          <e p="StringExtension.cs" t="Include" />
+        </e>
+        <e p="Guesthouse.Core.csproj" t="IncludeRecursive" />
+        <e p="Repositories" t="Include">
+          <e p="IClientRepository.cs" t="Include" />
+          <e p="IConvenienceRepository.cs" t="Include" />
+          <e p="IEmployeeRepository.cs" t="Include" />
+          <e p="IInvoiceRepository.cs" t="Include" />
+          <e p="IRepository.cs" t="Include" />
+          <e p="IReservationRepository.cs" t="Include" />
+          <e p="IRoomRepository.cs" t="Include" />
+          <e p="IUnitOfWork.cs" t="Include" />
+        </e>
+        <e p="Utils" t="Include">
+          <e p="ConstValues.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="Guesthouse.Core.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Guesthouse.Infrastructure" t="IncludeRecursive">
+        <e p="Commands" t="Include">
+          <e p="Reservation" t="Include">
+            <e p="CreateReservation.cs" t="Include" />
+            <e p="UpdateReservation.cs" t="Include" />
+          </e>
+          <e p="Users" t="Include">
+            <e p="Login.cs" t="Include" />
+            <e p="Register.cs" t="Include" />
+          </e>
+        </e>
+        <e p="DTO" t="Include">
+          <e p="AccountDto.cs" t="Include" />
+          <e p="ConvenienceDto.cs" t="Include" />
+          <e p="JwtDto.cs" t="Include" />
+          <e p="ReservationDetailsDto.cs" t="Include" />
+          <e p="ReservationDto.cs" t="Include" />
+          <e p="RoomDto.cs" t="Include" />
+          <e p="TokenDto.cs" t="Include" />
+        </e>
+        <e p="Database" t="Include">
+          <e p="DatabaseContext.cs" t="Include" />
+          <e p="DbInitializer.cs" t="Include" />
+        </e>
+        <e p="Extensions" t="Include">
+          <e p="DateTimeExtension.cs" t="Include" />
+          <e p="RepositoryExtension.cs" t="Include" />
+        </e>
+        <e p="Guesthouse.Infrastructure.csproj" t="IncludeRecursive" />
+        <e p="Mappers" t="Include">
+          <e p="AutoMapperConfig.cs" t="Include" />
+        </e>
+        <e p="Repositories" t="Include">
+          <e p="ClientRepository.cs" t="Include" />
+          <e p="ConvenienceRepository.cs" t="Include" />
+          <e p="EmployeeRepository.cs" t="Include" />
+          <e p="ReservationRepository.cs" t="Include" />
+          <e p="RoomRepository.cs" t="Include" />
+          <e p="UnitOfWork.cs" t="Include" />
+        </e>
+        <e p="Services" t="Include">
+          <e p="ClientService.cs" t="Include" />
+          <e p="ConvenienceService.cs" t="Include" />
+          <e p="EmployeeService.cs" t="Include" />
+          <e p="IClientService.cs" t="Include" />
+          <e p="IConvenienceService.cs" t="Include" />
+          <e p="IEmployeeService.cs" t="Include" />
+          <e p="IJwtHandler.cs" t="Include" />
+          <e p="IReservationService.cs" t="Include" />
+          <e p="IRoomService.cs" t="Include" />
+          <e p="IService.cs" t="Include" />
+          <e p="JwtHandler.cs" t="Include" />
+          <e p="ReservationService.cs" t="Include" />
+          <e p="RoomService.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="Guesthouse.Infrastructure.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Guesthouse.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

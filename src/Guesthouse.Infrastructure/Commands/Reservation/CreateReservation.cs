@@ -11,6 +11,6 @@ namespace Guesthouse.Infrastructure.Commands.Reservation
         public DateTime StartReservation { get; set; }
         public DateTime EndReservation { get; set; }
         public IEnumerable<Room> Rooms { get; set; }
-        
+        public IEnumerable<Convenience> Conveniences { get; set; }
     }
 }
