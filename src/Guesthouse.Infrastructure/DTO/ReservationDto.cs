@@ -17,5 +17,6 @@ namespace Guesthouse.Infrastructure.DTO
         public string PayStatus { get; set; }
         public string Message { get; set; }
         public int RoomsCount { get; set; }
+        public int ConveniencesCount { get; set; } 
     }
 }

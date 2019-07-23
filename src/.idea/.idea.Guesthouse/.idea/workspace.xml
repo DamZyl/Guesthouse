@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec93b5c2-2f99-42d2-9a52-7d99be17373f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Guesthouse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Guesthouse/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Guesthouse.Api/Controllers/ReservationsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Guesthouse.Api/Controllers/ReservationsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guesthouse.Api/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Guesthouse.Api/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guesthouse.Core/Domain/Reservation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Guesthouse.Core/Domain/Reservation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Guesthouse.Infrastructure/Repositories/ConvenienceRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Guesthouse.Infrastructure/Repositories/ConvenienceRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guesthouse.Infrastructure/DTO/ReservationDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Guesthouse.Infrastructure/DTO/ReservationDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Guesthouse.Infrastructure/Mappers/AutoMapperConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Guesthouse.Infrastructure/Mappers/AutoMapperConfig.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,43 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Guesthouse.Core/Domain/Reservation.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1011">
-              <caret line="67" column="9" lean-forward="true" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
-              <folding>
-                <marker date="1563916838000" expanded="true" signature="6:102" ph="..." />
-                <marker date="1563916838000" expanded="true" signature="136:4674" ph="{...}" />
-                <marker date="1563916838000" expanded="true" signature="167:4672" ph="{...}" />
-                <marker date="1563916838000" expanded="true" signature="1171:1191" ph="{...}" />
-                <marker date="1563916838000" expanded="true" signature="1319:1562" ph="{...}" />
-                <marker date="1563916838000" expanded="true" signature="1840:2057" ph="{...}" />
-                <marker date="1563916838000" expanded="true" signature="1906:2007" ph="{...}" />
-                <marker date="1563916838000" expanded="true" signature="2139:2430" ph="{...}" />
-                <marker date="1563916838000" expanded="true" signature="2201:2325" ph="{...}" />
-                <marker date="1563916838000" expanded="true" signature="2485:2540" ph="{...}" />
-                <marker date="1563916838000" expanded="true" signature="2657:3260" ph="{...}" />
-                <marker date="1563916838000" expanded="true" signature="2720:2792" ph="{...}" />
-                <marker date="1563916838000" expanded="true" signature="2843:2993" ph="{...}" />
-                <marker date="1563916838000" expanded="true" signature="3011:3212" ph="{...}" />
-                <marker date="1563916838000" expanded="true" signature="3344:3463" ph="{...}" />
-                <marker date="1563916838000" expanded="true" signature="3394:3453" ph="{...}" />
-                <marker date="1563916838000" expanded="true" signature="3715:3934" ph="{...}" />
-                <marker date="1563916838000" expanded="true" signature="3765:3924" ph="{...}" />
-                <marker date="1563916838000" expanded="true" signature="4019:4170" ph="{...}" />
-                <marker date="1563916838000" expanded="true" signature="4083:4159" ph="{...}" />
-                <marker date="1563916838000" expanded="true" signature="4211:4666" ph="{...}" />
-                <marker date="1563916838000" expanded="true" signature="4343:4619" ph="{...}" />
-                <marker date="1563916838000" expanded="true" signature="4403:4481" ph="{...}" />
-                <marker date="1563916838000" expanded="true" signature="4503:4605" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -72,6 +34,7 @@
     <setting file="file://$PROJECT_DIR$/Guesthouse.Infrastructure/Services/IReservationService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Guesthouse.Infrastructure/Repositories/EmployeeRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E8D55573-7AC6-4A31-A960-E81F1EB8FCC9/f1/00c10131/TimeSpan.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Guesthouse.Infrastructure/DTO/ReservationDto.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E8D55573-7AC6-4A31-A960-E81F1EB8FCC9/27/9462ac7c/Int64.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Guesthouse.Infrastructure/DTO/ConvenienceDto.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Guesthouse.Infrastructure/Database/DbInitializer.cs" root0="FORCE_HIGHLIGHTING" />
@@ -104,6 +67,7 @@
     <setting file="file://$PROJECT_DIR$/Guesthouse.Api/Controllers/EmployeesController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Guesthouse.Api/Controllers/ClientsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Guesthouse.Core/Domain/Reservation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Guesthouse.Infrastructure/DTO/ReservationDetailsDto.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E8D55573-7AC6-4A31-A960-E81F1EB8FCC9/0e/fc0b4a22/Guid.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Guesthouse.Infrastructure/Services/IConvenienceService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Guesthouse.Infrastructure/Commands/Reservation/CreateReservation.cs" root0="FORCE_HIGHLIGHTING" />
@@ -164,7 +128,6 @@
         <option value="$PROJECT_DIR$/Guesthouse.Infrastructure/Services/IClientService.cs" />
         <option value="$PROJECT_DIR$/Guesthouse.Infrastructure/Services/ClientService.cs" />
         <option value="$PROJECT_DIR$/Guesthouse.Infrastructure/DTO/AccountDto.cs" />
-        <option value="$PROJECT_DIR$/Guesthouse.Infrastructure/Mappers/AutoMapperConfig.cs" />
         <option value="$PROJECT_DIR$/Guesthouse.Api/Controllers/EmployeesController.cs" />
         <option value="$PROJECT_DIR$/Guesthouse.Api/Controllers/ClientsController.cs" />
         <option value="$PROJECT_DIR$/Guesthouse.Infrastructure/Services/ReservationService.cs" />
@@ -178,8 +141,10 @@
         <option value="$PROJECT_DIR$/Guesthouse.Infrastructure/Repositories/UnitOfWork.cs" />
         <option value="$PROJECT_DIR$/Guesthouse.Infrastructure/Repositories/ConvenienceRepository.cs" />
         <option value="$PROJECT_DIR$/Guesthouse.Api/Startup.cs" />
-        <option value="$PROJECT_DIR$/Guesthouse.Api/Controllers/ReservationsController.cs" />
         <option value="$PROJECT_DIR$/Guesthouse.Core/Domain/Reservation.cs" />
+        <option value="$PROJECT_DIR$/Guesthouse.Api/Controllers/ReservationsController.cs" />
+        <option value="$PROJECT_DIR$/Guesthouse.Infrastructure/DTO/ReservationDto.cs" />
+        <option value="$PROJECT_DIR$/Guesthouse.Infrastructure/Mappers/AutoMapperConfig.cs" />
       </list>
     </option>
   </component>
@@ -281,12 +246,12 @@
       <workItem from="1563488261543" duration="399000" />
       <workItem from="1563549641432" duration="1079000" />
       <workItem from="1563708739563" duration="1205000" />
-      <workItem from="1563910235890" duration="6629000" />
+      <workItem from="1563910235890" duration="7474000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22207000" />
+    <option name="totallyTimeSpent" value="23052000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -344,64 +309,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E8D55573-7AC6-4A31-A960-E81F1EB8FCC9/fc/d561c17f/AsyncTaskMethodBuilder`1.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="260" column="8" selection-start-line="260" selection-start-column="8" selection-end-line="260" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E8D55573-7AC6-4A31-A960-E81F1EB8FCC9/70/f181572d/ExecutionContext.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="155" column="6" selection-start-line="155" selection-start-column="6" selection-end-line="155" selection-end-column="6" />
-          <folding>
-            <marker date="1563481001317" expanded="true" signature="0:333" ph="/* Decompiled with JetBrains decompiler ... */" />
-            <marker date="1563481001317" expanded="false" signature="341:436" ph="..." />
-            <marker date="1563481001317" expanded="true" signature="464:10580" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="534:10578" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="1024:1072" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="1217:1385" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="1466:1527" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="1573:1862" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="1928:2298" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="2349:2946" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="2984:3369" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="3412:3613" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="3655:3749" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="3671:3743" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="3778:3849" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="3794:3843" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="3971:4135" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="4267:6088" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="4761:5071" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="5163:5204" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="5231:5314" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="5740:6044" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="6217:8358" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="6415:8220" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="6497:7498" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="6567:6937" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="7077:7488" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="7212:7476" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="7545:7876" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="7615:7866" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="7889:8212" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="7959:8202" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="8247:8352" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="8425:8513" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="8574:8835" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="8960:10462" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="9452:9668" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="9837:10110" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="9872:9939" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="9952:10102" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="10504:10535" ph="{...}" />
-            <marker date="1563481001317" expanded="true" signature="10562:10574" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/35D1D668-9205-4C08-8AC0-8401C2EDB00B/1d/d4211a1f/Controller.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
@@ -542,33 +449,6 @@
           <folding>
             <marker date="1563299738820" expanded="true" signature="54:263" ph="{...}" />
             <marker date="1563299738820" expanded="true" signature="84:261" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Guesthouse.Infrastructure/Mappers/AutoMapperConfig.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="26" column="58" selection-start-line="26" selection-start-column="58" selection-end-line="26" selection-end-column="58" />
-          <folding>
-            <marker date="1563550554433" expanded="false" signature="6:103" ph="..." />
-            <marker date="1563550554433" expanded="true" signature="148:1233" ph="{...}" />
-            <marker date="1563550554433" expanded="true" signature="191:1231" ph="{...}" />
-            <marker date="1563550554433" expanded="true" signature="299:1195" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Guesthouse.Api/Controllers/EmployeesController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="69" lean-forward="true" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
-          <folding>
-            <marker date="1563550695793" expanded="true" signature="6:207" ph="..." />
-            <marker date="1563550695793" expanded="true" signature="245:1234" ph="{...}" />
-            <marker date="1563550695793" expanded="true" signature="304:1232" ph="{...}" />
-            <marker date="1563550695793" expanded="true" signature="440:508" ph="{...}" />
-            <marker date="1563550695793" expanded="true" signature="786:1029" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1026,25 +906,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Guesthouse.Api/Controllers/ReservationsController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="57" column="95" selection-start-line="57" selection-start-column="95" selection-end-line="57" selection-end-column="95" />
-          <folding>
-            <marker date="1563916111357" expanded="false" signature="6:213" ph="..." />
-            <marker date="1563916111357" expanded="true" signature="251:3058" ph="{...}" />
-            <marker date="1563916111357" expanded="true" signature="313:3056" ph="{...}" />
-            <marker date="1563916111357" expanded="true" signature="664:832" ph="{...}" />
-            <marker date="1563916111357" expanded="true" signature="898:1028" ph="{...}" />
-            <marker date="1563916111357" expanded="true" signature="1137:1294" ph="{...}" />
-            <marker date="1563916111357" expanded="true" signature="1404:1542" ph="{...}" />
-            <marker date="1563916111357" expanded="true" signature="1666:2256" ph="{...}" />
-            <marker date="1563916111357" expanded="true" signature="2397:2537" ph="{...}" />
-            <marker date="1563916111357" expanded="true" signature="2646:3050" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Guesthouse.Api/Startup.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
@@ -1088,7 +949,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Guesthouse.Core/Domain/Reservation.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1011">
+        <state relative-caret-position="1206">
           <caret line="67" column="9" lean-forward="true" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
           <folding>
             <marker date="1563916838000" expanded="true" signature="6:102" ph="..." />
@@ -1115,6 +976,76 @@
             <marker date="1563916838000" expanded="true" signature="4343:4619" ph="{...}" />
             <marker date="1563916838000" expanded="true" signature="4403:4481" ph="{...}" />
             <marker date="1563916838000" expanded="true" signature="4503:4605" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Guesthouse.Api/Controllers/EmployeesController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="69" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
+          <folding>
+            <marker date="1563550695793" expanded="true" signature="6:207" ph="..." />
+            <marker date="1563550695793" expanded="true" signature="245:1234" ph="{...}" />
+            <marker date="1563550695793" expanded="true" signature="304:1232" ph="{...}" />
+            <marker date="1563550695793" expanded="true" signature="440:508" ph="{...}" />
+            <marker date="1563550695793" expanded="true" signature="786:1029" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Guesthouse.Infrastructure/Mappers/AutoMapperConfig.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="10" column="45" lean-forward="true" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+          <folding>
+            <marker date="1563917660955" expanded="false" signature="6:103" ph="..." />
+            <marker date="1563917660955" expanded="true" signature="148:1360" ph="{...}" />
+            <marker date="1563917660955" expanded="true" signature="191:1358" ph="{...}" />
+            <marker date="1563917660955" expanded="true" signature="299:1322" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Guesthouse.Infrastructure/DTO/ReservationDto.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+          <folding>
+            <marker date="1563917513427" expanded="false" signature="6:77" ph="..." />
+            <marker date="1563917513427" expanded="true" signature="118:732" ph="{...}" />
+            <marker date="1563917513427" expanded="true" signature="152:730" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Guesthouse.Infrastructure/DTO/ReservationDetailsDto.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding>
+            <marker date="1563227283734" expanded="false" signature="6:63" ph="..." />
+            <marker date="1563227283734" expanded="true" signature="104:302" ph="{...}" />
+            <marker date="1563227283734" expanded="true" signature="162:300" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Guesthouse.Api/Controllers/ReservationsController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
+          <folding>
+            <marker date="1563917399192" expanded="true" signature="6:213" ph="..." />
+            <marker date="1563917399192" expanded="true" signature="251:2973" ph="{...}" />
+            <marker date="1563917399192" expanded="true" signature="313:2971" ph="{...}" />
+            <marker date="1563917399192" expanded="true" signature="664:832" ph="{...}" />
+            <marker date="1563917399192" expanded="true" signature="898:1028" ph="{...}" />
+            <marker date="1563917399192" expanded="true" signature="1137:1294" ph="{...}" />
+            <marker date="1563917399192" expanded="true" signature="1404:1542" ph="{...}" />
+            <marker date="1563917399192" expanded="true" signature="1666:2256" ph="{...}" />
+            <marker date="1563917399192" expanded="true" signature="2397:2537" ph="{...}" />
+            <marker date="1563917399192" expanded="true" signature="2666:2965" ph="{...}" />
           </folding>
         </state>
       </provider>

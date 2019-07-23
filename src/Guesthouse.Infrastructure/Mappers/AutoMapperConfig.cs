@@ -17,7 +17,9 @@ namespace Guesthouse.Infrastructure.Mappers
                     .ForMember(x => x.PayStatus, 
                         m => m.MapFrom(p => p.PayStatus.ToString()))
                     .ForMember(x => x.RoomsCount, 
-                        m => m.MapFrom(p => p.Rooms.Count()));
+                        m => m.MapFrom(p => p.Rooms.Count()))
+                    .ForMember(x => x.ConveniencesCount, 
+                        m => m.MapFrom(p => p.Conveniences.Count()));
                 cfg.CreateMap<Reservation, ReservationDetailsDto>();
                 cfg.CreateMap<Client, AccountDto>()
                     .ForMember(x => x.Role, 

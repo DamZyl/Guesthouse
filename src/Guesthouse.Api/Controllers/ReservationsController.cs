@@ -70,15 +70,14 @@ namespace Guesthouse.Api.Controllers
             return NoContent();
         }
 
+        [Authorize]
         [HttpDelete("{reservationId}")]
         public async Task<IActionResult> Delete(Guid reservationId)
         {
-            Guid clientId = new Guid("9a3f404f-b234-4aac-98ec-eb8357d36b28"); // Test delete later!!!
-
             await _reservationService.DeleteAsync(reservationId);
 
             var rooms = await _roomService.GetForReservationAsync(reservationId);
-            await _reservationService.CancelReservationPlaceAsync(clientId, reservationId, rooms);
+            await _reservationService.CancelReservationPlaceAsync(UserId, reservationId, rooms);
 
             return NoContent();
         }
