@@ -36,8 +36,7 @@ namespace Guesthouse.Api.Controllers
 
             return Json(resevationsForClient);
         }
-        
-        // [Authorize(Policy="Admin")] -> Test Policy!!!
+       
         [HttpGet("{reservationId}")]
         public async Task<IActionResult> Get(Guid reservationId)
         {
@@ -46,19 +45,19 @@ namespace Guesthouse.Api.Controllers
             return Json(resevation);
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] CreateReservation command)
         {
             command.Id = Guid.NewGuid();
-            Guid clientId = new Guid("9a3f404f-b234-4aac-98ec-eb8357d36b28"); // Test delete later!!!
-
-            await _reservationService.CreateAsync(clientId, command.Id, command.Description,
+            
+            await _reservationService.CreateAsync(UserId, command.Id, command.Description,
                     command.StartReservation, command.EndReservation);
 
             var rooms = await _roomService.GetAvailableAsync(); // Test delete later!!!
-            var conveniences = await _convenienceService.GetAllAsync();
+            var conveniences = await _convenienceService.GetAllAsync(); // Test delete later!!!
 
-            await _reservationService.ReservationPlaceAsync(clientId, command.Id, rooms, conveniences);
+            await _reservationService.ReservationPlaceAsync(UserId, command.Id, rooms, conveniences);
 
             return Created($"/reservations/{command.Id}", null);
         }

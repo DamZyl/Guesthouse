@@ -18,6 +18,6 @@ namespace Guesthouse.Infrastructure.Repositories
         }
 
         public async Task <IEnumerable<Convenience>> GetAllAsync()
-            => await _databaseContext.Conveniences.Where(x => x.Name == "Hot Water").ToListAsync();
+            => await _databaseContext.Conveniences.ToListAsync();
     }
 }

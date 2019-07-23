@@ -35,6 +35,8 @@ namespace Guesthouse.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAuthorization(x => x.AddPolicy("Admin", p => p.RequireRole("Admin")));
+            services.AddAuthorization(x => x.AddPolicy("Employee", p => p.RequireRole("Employee")));
+            services.AddAuthorization(x => x.AddPolicy("User", p => p.RequireRole("User")));
             
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
                 .AddJsonOptions(x => x.SerializerSettings.Formatting = Formatting.Indented);

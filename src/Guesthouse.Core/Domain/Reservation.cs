@@ -21,7 +21,7 @@ namespace Guesthouse.Core.Domain
         public DateTime EndReservation { get; protected set; }
         public ReservationStatus ReservationStatus { get; protected set; }
         public PayStatus PayStatus { get; protected set; }
-        public string Message { get; set; }
+        public string Message { get; protected set; }
         public IEnumerable<Room> Rooms => _rooms;
         public IEnumerable<Convenience> Conveniences => _conveniences;
 
@@ -34,7 +34,9 @@ namespace Guesthouse.Core.Domain
         {
             Id = id;
             SetDescription(description);
-            SetDates(startReservation, endReservation); 
+            SetDates(startReservation, endReservation);
+            ReservationStatus = ReservationStatus.Unconfirmed;
+            PayStatus = PayStatus.NoPaid;
         }
 
         public static Reservation Create(Guid id, string description, DateTime startReservation,
@@ -62,8 +64,18 @@ namespace Guesthouse.Core.Domain
             EndReservation = endReservation;
         }
 
+        public void SetPayStatus(PayStatus payStatus)
+        {
+            PayStatus = payStatus;
+        }
+
         public void ReservationPlace(Client client, IEnumerable<Room> rooms, IEnumerable<Convenience> conveniences)
         {
+            if (client.PayType == PayWay.Prepayment)
+            {
+                PayStatus = PayStatus.Paid;
+            }
+            
             if (conveniences == null)
             {
                 AddRooms(rooms);
@@ -82,14 +94,6 @@ namespace Guesthouse.Core.Domain
             Price = CalulatePrice();
         }
 
-        /*public void ReservationPlace(Client client, IEnumerable<Room> rooms) // Test version, because I think about Conveniences!!!
-        {
-            AddRooms(rooms);
-            Price = CalulatePrice();
-            ClientId = client.Id;
-            ClientName = client.GetFullName();           
-        }*/
-
         public void CancelReservationPlace(Client client, IEnumerable<Room> rooms)
         {
             foreach (var room in rooms)
@@ -97,6 +101,12 @@ namespace Guesthouse.Core.Domain
                 room.Cancel();
             }
         }
+
+        public void SendMessage(string message)
+            => Message = message;
+
+        public void ConfirmReservationStatus()
+            => ReservationStatus = ReservationStatus.Confirmed;
 
         private void AddRooms(IEnumerable<Room> rooms) 
         {
