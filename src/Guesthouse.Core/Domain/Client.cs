@@ -43,6 +43,11 @@ namespace Guesthouse.Core.Domain
             PhoneNumber = phoneNumber;
         }
 
+        public void SetReservationId(Guid? reservationId)
+        {
+            ReservationId = reservationId;
+        }
+
         private bool IsPhoneNumberValid(string phoneNumber)
         {
             if (string.IsNullOrWhiteSpace(phoneNumber))

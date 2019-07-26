@@ -91,6 +91,7 @@ namespace Guesthouse.Core.Domain
                 ClientName = client.GetFullName();    
             }
 
+            client.SetReservationId(this.Id);
             Price = CalulatePrice();
         }
 
@@ -100,6 +101,8 @@ namespace Guesthouse.Core.Domain
             {
                 room.Cancel();
             }
+            
+            client.SetReservationId(null);
         }
 
         public void SendMessage(string message)
