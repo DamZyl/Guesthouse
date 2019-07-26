@@ -1,6 +1,6 @@
 namespace Guesthouse.Core.Repositories
 {
-    public interface IInvoiceRepository
+    public interface IInvoiceRepository : IRepository
     {
          
     }

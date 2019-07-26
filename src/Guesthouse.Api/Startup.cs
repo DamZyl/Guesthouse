@@ -1,7 +1,12 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using Guesthouse.Core.Repositories;
 using Guesthouse.Infrastructure.Auth;
 using Guesthouse.Infrastructure.Database;
+using Guesthouse.Infrastructure.IoC;
+using Guesthouse.Infrastructure.IoC.Modules;
 using Guesthouse.Infrastructure.Repositories;
 using Guesthouse.Services.Mappers;
 using Guesthouse.Services.Services;
@@ -19,13 +24,14 @@ namespace Guesthouse.Api
     public class Startup
     {
         public IConfiguration Configuration { get; }
+        public IContainer Container { get; private set; }
 
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
         
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.Configure<SqlOptions>(Configuration.GetSection("sql"));
             
@@ -55,12 +61,6 @@ namespace Guesthouse.Api
             services.AddAuthorization(x => x.AddPolicy("Employee", p => p.RequireRole("Employee")));
             services.AddAuthorization(x => x.AddPolicy("User", p => p.RequireRole("User")));
 
-            services.AddScoped<IReservationRepository, ReservationRepository>();
-            services.AddScoped<IClientRepository, ClientRepository>();
-            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
-            services.AddScoped<IRoomRepository, RoomRepository>();
-            services.AddScoped<IConvenienceRepository, ConvenienceRepository>();
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IReservationService, ReservationService>();
             services.AddScoped<IRoomService, RoomService>();
             services.AddScoped<IConvenienceService, ConvenienceService>();
@@ -69,6 +69,13 @@ namespace Guesthouse.Api
             services.AddSingleton(AutoMapperConfig.Initialize());
             services.AddSingleton<IJwtHandler, JwtHandler>();
             services.AddTransient<DbInitializer>();
+            
+            var builder =  new ContainerBuilder();
+            builder.Populate(services);
+            builder.RegisterModule(new InfrastructureModule(Configuration));
+            Container = builder.Build();
+
+            return new AutofacServiceProvider(Container);
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, DbInitializer initDb)
