@@ -131,3 +131,5 @@ F:/testowanie/TestowaniePracy/aa.PracaDyplomowa/Guesthouse/src/Guesthouse.Api/ob
 /home/damian/Documents/cSharp/Praca/src/Guesthouse.Api/obj/Debug/netcoreapp2.2/Guesthouse.Api.csproj.CopyComplete
 /home/damian/Documents/cSharp/Praca/src/Guesthouse.Api/obj/Debug/netcoreapp2.2/Guesthouse.Api.dll
 /home/damian/Documents/cSharp/Praca/src/Guesthouse.Api/obj/Debug/netcoreapp2.2/Guesthouse.Api.pdb
+/home/damian/Documents/cSharp/Praca/src/Guesthouse.Api/bin/Debug/netcoreapp2.2/Guesthouse.Services.dll
+/home/damian/Documents/cSharp/Praca/src/Guesthouse.Api/bin/Debug/netcoreapp2.2/Guesthouse.Services.pdb

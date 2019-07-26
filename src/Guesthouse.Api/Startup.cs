@@ -1,23 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using Guesthouse.Core.Repositories;
+using Guesthouse.Infrastructure.Auth;
 using Guesthouse.Infrastructure.Database;
-using Guesthouse.Infrastructure.Mappers;
 using Guesthouse.Infrastructure.Repositories;
-using Guesthouse.Infrastructure.Services;
+using Guesthouse.Services.Mappers;
+using Guesthouse.Services.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 
@@ -34,26 +27,33 @@ namespace Guesthouse.Api
         
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAuthorization(x => x.AddPolicy("Admin", p => p.RequireRole("Admin")));
-            services.AddAuthorization(x => x.AddPolicy("Employee", p => p.RequireRole("Employee")));
-            services.AddAuthorization(x => x.AddPolicy("User", p => p.RequireRole("User")));
+            services.Configure<SqlOptions>(Configuration.GetSection("sql"));
             
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
                 .AddJsonOptions(x => x.SerializerSettings.Formatting = Formatting.Indented);
             
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(cfg =>
-            {
-                cfg.TokenValidationParameters = new TokenValidationParameters
+            services.AddDbContext<DatabaseContext>();
+
+            var jwtSection = Configuration.GetSection("Jwt");
+            services.Configure<JwtOptions>(jwtSection);
+            var jwtOptions = new JwtOptions();
+            jwtSection.Bind(jwtOptions);
+            
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(cfg =>
                 {
-                    ValidIssuer = Configuration["Jwt:Issuer"],
-                    ValidateAudience = false,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
-                };
-            });
-
-
-            services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(Configuration
-                .GetConnectionString("GuesthouseDatabase"), b => b.MigrationsAssembly("Guesthouse.Api")));
+                    cfg.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtOptions.SecretKey)),
+                        ValidIssuer = jwtOptions.Issuer,
+                        ValidateAudience = false,
+                        ValidateLifetime = jwtOptions.ValidateLifetime
+                    };
+                });
+            
+            services.AddAuthorization(x => x.AddPolicy("Admin", p => p.RequireRole("Admin")));
+            services.AddAuthorization(x => x.AddPolicy("Employee", p => p.RequireRole("Employee")));
+            services.AddAuthorization(x => x.AddPolicy("User", p => p.RequireRole("User")));
 
             services.AddScoped<IReservationRepository, ReservationRepository>();
             services.AddScoped<IClientRepository, ClientRepository>();

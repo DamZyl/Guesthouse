@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "a783681128d3bcb09db55730b1126fa444d00d02"
+    "signature": "08fea828dbe9f50652ea6580aeceb99d19c317bb"
   },
   "compilationOptions": {
     "defines": [
@@ -25,7 +25,9 @@
       "Guesthouse.Api/1.0.0": {
         "dependencies": {
           "AutoMapper": "8.0.0",
-          "Guesthouse.Infrastructure": "1.0.0",
+          "Autofac": "4.9.3",
+          "Autofac.Extensions.DependencyInjection": "4.4.0",
+          "Guesthouse.Services": "1.0.0",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
           "Microsoft.EntityFrameworkCore": "2.2.3",
@@ -40,6 +42,32 @@
         },
         "compile": {
           "Guesthouse.Api.dll": {}
+        }
+      },
+      "Autofac/4.9.3": {
+        "runtime": {
+          "lib/netstandard2.0/Autofac.dll": {
+            "assemblyVersion": "4.9.3.0",
+            "fileVersion": "4.9.3.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Autofac.dll": {}
+        }
+      },
+      "Autofac.Extensions.DependencyInjection/4.4.0": {
+        "dependencies": {
+          "Autofac": "4.9.3",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.2.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Autofac.Extensions.DependencyInjection.dll": {
+            "assemblyVersion": "4.4.0.0",
+            "fileVersion": "4.4.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Autofac.Extensions.DependencyInjection.dll": {}
         }
       },
       "AutoMapper/8.0.0": {
@@ -221,6 +249,7 @@
       "Guesthouse.Infrastructure/1.0.0": {
         "dependencies": {
           "AutoMapper": "8.0.0",
+          "Autofac": "4.9.3",
           "Guesthouse.Core": "1.0.0",
           "Microsoft.EntityFrameworkCore": "2.2.3",
           "Microsoft.EntityFrameworkCore.Design": "2.2.3",
@@ -233,6 +262,18 @@
         },
         "compile": {
           "Guesthouse.Infrastructure.dll": {}
+        }
+      },
+      "Guesthouse.Services/1.0.0": {
+        "dependencies": {
+          "Guesthouse.Core": "1.0.0",
+          "Guesthouse.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "Guesthouse.Services.dll": {}
+        },
+        "compile": {
+          "Guesthouse.Services.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3325,6 +3366,20 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Autofac/4.9.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MW8tWselk92OzGRRlUUgakGTQ/mlxfs0ZJ0XF5MLDhe6KT+TE88kBtstGiARbU/tTxjUrDNqxZOkEmkM1HcfPg==",
+      "path": "autofac/4.9.3",
+      "hashPath": "autofac.4.9.3.nupkg.sha512"
+    },
+    "Autofac.Extensions.DependencyInjection/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XO9Zk1zIUv9FyuGg9biGlGTPrSamdZKSZ+lHGTxnOaKkTmW1iWP276nlQ/l2V3XoVk86+SHyRnzH5MmhULGamg==",
+      "path": "autofac.extensions.dependencyinjection/4.4.0",
+      "hashPath": "autofac.extensions.dependencyinjection.4.4.0.nupkg.sha512"
+    },
     "AutoMapper/8.0.0": {
       "type": "package",
       "serviceable": true,
@@ -3422,6 +3477,11 @@
       "sha512": ""
     },
     "Guesthouse.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Guesthouse.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

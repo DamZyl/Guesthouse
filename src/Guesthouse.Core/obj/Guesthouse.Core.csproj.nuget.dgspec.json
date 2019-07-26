@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/damian/Documents/cSharp/Guesthouse/src/Guesthouse.Core/Guesthouse.Core.csproj": {}
+    "/home/damian/Documents/cSharp/Praca/src/Guesthouse.Core/Guesthouse.Core.csproj": {}
   },
   "projects": {
-    "/home/damian/Documents/cSharp/Guesthouse/src/Guesthouse.Core/Guesthouse.Core.csproj": {
+    "/home/damian/Documents/cSharp/Praca/src/Guesthouse.Core/Guesthouse.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/damian/Documents/cSharp/Guesthouse/src/Guesthouse.Core/Guesthouse.Core.csproj",
+        "projectUniqueName": "/home/damian/Documents/cSharp/Praca/src/Guesthouse.Core/Guesthouse.Core.csproj",
         "projectName": "Guesthouse.Core",
-        "projectPath": "/home/damian/Documents/cSharp/Guesthouse/src/Guesthouse.Core/Guesthouse.Core.csproj",
+        "projectPath": "/home/damian/Documents/cSharp/Praca/src/Guesthouse.Core/Guesthouse.Core.csproj",
         "packagesPath": "/home/damian/.nuget/packages/",
-        "outputPath": "/home/damian/Documents/cSharp/Guesthouse/src/Guesthouse.Core/obj/",
+        "outputPath": "/home/damian/Documents/cSharp/Praca/src/Guesthouse.Core/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/share/dotnet/sdk/NuGetFallbackFolder"

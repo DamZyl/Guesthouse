@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks;
-using Guesthouse.Infrastructure.Commands.Reservation;
-using Guesthouse.Infrastructure.Services;
+using Guesthouse.Services.Reservations.Commands;
+using Guesthouse.Services.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

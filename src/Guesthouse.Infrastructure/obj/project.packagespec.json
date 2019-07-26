@@ -37,6 +37,10 @@
           "target": "Package",
           "version": "[8.0.0, )"
         },
+        "Autofac": {
+          "target": "Package",
+          "version": "[4.9.3, )"
+        },
         "Microsoft.EntityFrameworkCore": {
           "target": "Package",
           "version": "[2.2.3, )"

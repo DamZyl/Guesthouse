@@ -18,8 +18,8 @@
     "frameworks": {
       "netcoreapp2.2": {
         "projectReferences": {
-          "/home/damian/Documents/cSharp/Praca/src/Guesthouse.Infrastructure/Guesthouse.Infrastructure.csproj": {
-            "projectPath": "/home/damian/Documents/cSharp/Praca/src/Guesthouse.Infrastructure/Guesthouse.Infrastructure.csproj"
+          "/home/damian/Documents/cSharp/Praca/src/Guesthouse.Services/Guesthouse.Services.csproj": {
+            "projectPath": "/home/damian/Documents/cSharp/Praca/src/Guesthouse.Services/Guesthouse.Services.csproj"
           }
         }
       }
@@ -36,6 +36,14 @@
         "AutoMapper": {
           "target": "Package",
           "version": "[8.0.0, )"
+        },
+        "Autofac": {
+          "target": "Package",
+          "version": "[4.9.3, )"
+        },
+        "Autofac.Extensions.DependencyInjection": {
+          "target": "Package",
+          "version": "[4.4.0, )"
         },
         "Microsoft.AspNetCore.App": {
           "suppressParent": "All",
