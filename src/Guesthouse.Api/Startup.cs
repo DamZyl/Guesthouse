@@ -8,6 +8,7 @@ using Guesthouse.Infrastructure.Database;
 using Guesthouse.Infrastructure.IoC;
 using Guesthouse.Infrastructure.IoC.Modules;
 using Guesthouse.Infrastructure.Repositories;
+using Guesthouse.Services.IoC;
 using Guesthouse.Services.Mappers;
 using Guesthouse.Services.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -61,18 +62,12 @@ namespace Guesthouse.Api
             services.AddAuthorization(x => x.AddPolicy("Employee", p => p.RequireRole("Employee")));
             services.AddAuthorization(x => x.AddPolicy("User", p => p.RequireRole("User")));
 
-            services.AddScoped<IReservationService, ReservationService>();
-            services.AddScoped<IRoomService, RoomService>();
-            services.AddScoped<IConvenienceService, ConvenienceService>();
-            services.AddScoped<IClientService, ClientService>();
-            services.AddScoped<IEmployeeService, EmployeeService>();
-            services.AddSingleton(AutoMapperConfig.Initialize());
-            services.AddSingleton<IJwtHandler, JwtHandler>();
             services.AddTransient<DbInitializer>();
             
             var builder =  new ContainerBuilder();
             builder.Populate(services);
             builder.RegisterModule(new InfrastructureModule(Configuration));
+            builder.RegisterModule(new ServicesModule(Configuration));
             Container = builder.Build();
 
             return new AutofacServiceProvider(Container);

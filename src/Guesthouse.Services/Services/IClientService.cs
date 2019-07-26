@@ -6,7 +6,7 @@ using Guesthouse.Services.Users.Dto;
 
 namespace Guesthouse.Services.Services
 {
-    public interface IClientService
+    public interface IClientService : IService
     {
         Task<AccountDto> GetAccountAsync(Guid clientId);
         Task RegisterAsync(Guid id, string firstName, string lastName, string email, 

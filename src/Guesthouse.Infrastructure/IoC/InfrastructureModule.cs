@@ -16,6 +16,7 @@ namespace Guesthouse.Infrastructure.IoC
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterModule<RepositoryModule>();
+            builder.RegisterModule<AuthModule>();
         }
     }
 }
