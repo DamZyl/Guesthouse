@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using Guesthouse.Services;
 using Guesthouse.Services.Reservations.Commands;
 using Guesthouse.Services.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -13,8 +14,8 @@ namespace Guesthouse.Api.Controllers
         private readonly IRoomService _roomService;
         private readonly IConvenienceService _convenienceService;
 
-        public ReservationsController(IReservationService reservationService,
-                IRoomService roomService, IConvenienceService convenienceService)
+        public ReservationsController(IDispatcher dispatcher, IReservationService reservationService,
+                IRoomService roomService, IConvenienceService convenienceService) : base(dispatcher)
         {
             _reservationService = reservationService;
             _roomService = roomService;
@@ -49,17 +50,18 @@ namespace Guesthouse.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] CreateReservation command)
         {
-            command.Id = Guid.NewGuid();
+            /*command.Id = Guid.NewGuid();
             
             await _reservationService.CreateAsync(UserId, command.Id, command.Description,
-                    command.StartReservation, command.EndReservation);
+                    command.StartReservation, command.EndReservation);*/
+            await SendAsync(command);
 
             var rooms = await _roomService.GetAvailableAsync(); // Test delete later!!!
             var conveniences = await _convenienceService.GetAllAsync(); // Test delete later!!!
 
             await _reservationService.ReservationPlaceAsync(UserId, command.Id, rooms, conveniences);
 
-            return Created($"/reservations/{command.Id}", null);
+            return CreatedAtAction(nameof(Get), new {id = command.Id}, null);
         }
 
         [HttpPut("{reservationId}")]

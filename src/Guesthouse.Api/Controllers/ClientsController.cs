@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using Guesthouse.Services;
 using Guesthouse.Services.Services;
 using Guesthouse.Services.Users.Commands;
 using Microsoft.AspNetCore.Authorization;
@@ -11,7 +12,7 @@ namespace Guesthouse.Api.Controllers
     {
         private readonly IClientService _clientService;
 
-        public ClientsController(IClientService clientService)
+        public ClientsController(IDispatcher dispatcher, IClientService clientService) : base(dispatcher)
         {
             _clientService = clientService;
         }

@@ -16,6 +16,9 @@ namespace Guesthouse.Services.IoC.Modules
                 .Where(x => x.IsAssignableTo<IService>())
                 .AsImplementedInterfaces()
                 .InstancePerLifetimeScope();
+            
+            builder.RegisterAssemblyTypes(typeof(ServiceModule).Assembly)
+                .AsImplementedInterfaces();
         }
     }
 }

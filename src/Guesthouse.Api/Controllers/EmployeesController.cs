@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using Guesthouse.Services;
 using Guesthouse.Services.Services;
 using Guesthouse.Services.Users.Commands;
 using Microsoft.AspNetCore.Authorization;
@@ -11,7 +12,7 @@ namespace Guesthouse.Api.Controllers
     {
         private readonly IEmployeeService _employeeService;
 
-        public EmployeesController(IEmployeeService employeeService)
+        public EmployeesController(IDispatcher dispatcher, IEmployeeService employeeService) : base(dispatcher)
         {
             _employeeService = employeeService;
         }
