@@ -1,3 +1,4 @@
+using Guesthouse.Core.Utils.Exceptions;
 using System;
 
 namespace Guesthouse.Core.Domain
@@ -29,7 +30,7 @@ namespace Guesthouse.Core.Domain
         {
             if (string.IsNullOrWhiteSpace(name))
             {
-                throw new Exception("Name should not be empty.");
+                throw new DomainException(ErrorCodes.InvalidName, "Name should not be empty.");
             }
 
             if (Name == name)
@@ -44,7 +45,7 @@ namespace Guesthouse.Core.Domain
         {
             if (cost != null && cost <= 0)
             {
-                throw new Exception("Cost should be greater than 0.");
+                throw new DomainException(ErrorCodes.InvalidCost, "Cost should be greater than 0.");
             }
 
             Cost = cost;

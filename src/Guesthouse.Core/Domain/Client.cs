@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Guesthouse.Core.Domain.Enums;
 using Guesthouse.Core.Utils;
+using Guesthouse.Core.Utils.Exceptions;
 
 namespace Guesthouse.Core.Domain
 {
@@ -37,7 +38,7 @@ namespace Guesthouse.Core.Domain
         {
             if (!IsPhoneNumberValid(phoneNumber))
             {
-                throw new Exception("PhoneNumber should have format 'xxx-xxx-xxx'.");
+                throw new DomainException(ErrorCodes.InvalidPhoneNumber, "PhoneNumber should have format 'xxx-xxx-xxx'.");
             }
 
             PhoneNumber = phoneNumber;
