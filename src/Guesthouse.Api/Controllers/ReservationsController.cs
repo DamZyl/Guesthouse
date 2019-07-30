@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Guesthouse.Core.Domain.Enums;
 using Guesthouse.Services;
 using Guesthouse.Services.Reservations.Commands;
 using Guesthouse.Services.Reservations.Dto;
@@ -13,16 +14,8 @@ namespace Guesthouse.Api.Controllers
 {
     public class ReservationsController : ApiBaseController
     {
-        private readonly IReservationService _reservationService;
-        private readonly IRoomService _roomService;
-        private readonly IConvenienceService _convenienceService;
-
-        public ReservationsController(IDispatcher dispatcher, IReservationService reservationService,
-                IRoomService roomService, IConvenienceService convenienceService) : base(dispatcher)
+        public ReservationsController(IDispatcher dispatcher) : base(dispatcher)
         {
-            _reservationService = reservationService;
-            _roomService = roomService;
-            _convenienceService = convenienceService;
         }
 
         [HttpGet]
@@ -42,15 +35,18 @@ namespace Guesthouse.Api.Controllers
         public async Task<ActionResult> Post([FromBody] CreateReservation command)
         {
             command.UserId = UserId;
+
             await SendAsync(command);
 
-            return CreatedAtAction(nameof(Get), new {id = command.Id}, null);
+            return CreatedAtAction(nameof(Get), new { id = command.Id }, null);
         }
 
         [HttpPut("{reservationId}")]
         public async Task<ActionResult> Put(Guid reservationId, [FromBody] UpdateReservation command)
         {
-            await _reservationService.UpdateAsync(reservationId, command.Description);
+            command.Id = reservationId;
+
+            await SendAsync(command);
 
             return NoContent();
         }
@@ -59,10 +55,7 @@ namespace Guesthouse.Api.Controllers
         [HttpDelete("{reservationId}")]
         public async Task<ActionResult> Delete(Guid reservationId)
         {
-            await _reservationService.DeleteAsync(reservationId);
-
-            var rooms = await _roomService.GetForReservationAsync(reservationId);
-            await _reservationService.CancelReservationPlaceAsync(UserId, reservationId, rooms);
+            await SendAsync(new DeleteReservation { Id = reservationId, UserId = UserId });
 
             return NoContent();
         }

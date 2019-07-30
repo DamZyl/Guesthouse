@@ -66,6 +66,11 @@ namespace Guesthouse.Core.Domain
 
         public void SetPayStatus(PayStatus payStatus)
         {
+            if (PayStatus == payStatus || payStatus == PayStatus.NoPaid)
+            {
+                return;
+            }
+
             PayStatus = payStatus;
         }
 
@@ -108,8 +113,15 @@ namespace Guesthouse.Core.Domain
         public void SendMessage(string message)
             => Message = message;
 
-        public void ConfirmReservationStatus()
-            => ReservationStatus = ReservationStatus.Confirmed;
+        public void ConfirmReservationStatus(ReservationStatus reservationStatus)
+        {
+            if (ReservationStatus == reservationStatus || reservationStatus == ReservationStatus.Unconfirmed)
+            {
+                return;
+            }
+
+            ReservationStatus = ReservationStatus.Confirmed;
+        }
 
         private void AddRooms(IEnumerable<Room> rooms) 
         {
