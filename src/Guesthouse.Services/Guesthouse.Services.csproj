@@ -6,7 +6,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Reservations\Queries" />
     <Folder Include="Users\Handlers" />
     <Folder Include="Users\Queries" />
   </ItemGroup>

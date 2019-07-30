@@ -23,7 +23,7 @@ namespace Guesthouse.Api.Controllers
                 return NotFound();
             }
 
-            return result;
+            return Json(result);
         }
 
         protected Guid UserId => User?.Identity?.IsAuthenticated == true ?
