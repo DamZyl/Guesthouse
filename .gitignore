@@ -7,3 +7,12 @@ src/Guesthouse\.Infrastructure/obj/
 
 src/Guesthouse\.Services/obj/
 src/.vs/Guesthouse/v16/Server/sqlite3
+src/.vs/Guesthouse/v16
+src/Guesthouse.Api/bin
+src/Guesthouse.Core/bin
+src/Guesthouse.Api/obj
+src/Guesthouse.Core/obj
+src/Guesthouse.Infrastructure/bin
+src/Guesthouse.Infrastructure/obj
+src/Guesthouse.Services/bin
+src/Guesthouse.Services/obj

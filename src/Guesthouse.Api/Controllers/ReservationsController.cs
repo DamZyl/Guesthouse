@@ -50,16 +50,8 @@ namespace Guesthouse.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] CreateReservation command)
         {
-            /*command.Id = Guid.NewGuid();
-            
-            await _reservationService.CreateAsync(UserId, command.Id, command.Description,
-                    command.StartReservation, command.EndReservation);*/
+            command.UserId = UserId;
             await SendAsync(command);
-
-            var rooms = await _roomService.GetAvailableAsync(); // Test delete later!!!
-            var conveniences = await _convenienceService.GetAllAsync(); // Test delete later!!!
-
-            await _reservationService.ReservationPlaceAsync(UserId, command.Id, rooms, conveniences);
 
             return CreatedAtAction(nameof(Get), new {id = command.Id}, null);
         }

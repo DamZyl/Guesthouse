@@ -8,6 +8,7 @@ namespace Guesthouse.Services.Reservations.Commands
     public class CreateReservation : ICommand
     {
         public Guid Id { get; set; }
+        public Guid UserId { get; set; }
         public string Description { get; set; }
         public DateTime StartReservation { get; set; }
         public DateTime EndReservation { get; set; }
@@ -18,6 +19,7 @@ namespace Guesthouse.Services.Reservations.Commands
         public CreateReservation(Guid id, string description, DateTime startReservation, DateTime endReservation)
         {
             Id = id == Guid.Empty ? Guid.NewGuid() : id;
+            UserId = Guid.Empty;
             Description = description;
             StartReservation = startReservation;
             EndReservation = endReservation;
