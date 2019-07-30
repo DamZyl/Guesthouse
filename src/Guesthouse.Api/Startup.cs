@@ -2,6 +2,7 @@
 using System.Text;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using Guesthouse.Api.Framework;
 using Guesthouse.Core.Repositories;
 using Guesthouse.Infrastructure.Auth;
 using Guesthouse.Infrastructure.Database;
@@ -87,6 +88,7 @@ namespace Guesthouse.Api
             app.UseHttpsRedirection();
             initDb.SeedData().Wait();
             app.UseAuthentication();
+            app.UseErrorHandler();
             app.UseMvc();
         }
     }
