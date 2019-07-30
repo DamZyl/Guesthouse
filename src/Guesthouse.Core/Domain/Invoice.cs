@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Guesthouse.Core.Utils;
+using Guesthouse.Core.Utils.Exceptions;
 
 namespace Guesthouse.Core.Domain
 {
@@ -52,7 +53,7 @@ namespace Guesthouse.Core.Domain
         {
             if (issueDate > payDate)
             {
-                throw new Exception("IssueDate should be earlier than PayDate.");
+                throw new DomainException(ErrorCodes.InvalidDate, "IssueDate should be earlier than PayDate.");
             }
 
             IssueDate = issueDate;

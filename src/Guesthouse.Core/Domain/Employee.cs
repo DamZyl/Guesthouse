@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Guesthouse.Core.Extensions;
+using Guesthouse.Core.Utils.Exceptions;
 
 namespace Guesthouse.Core.Domain
 {
@@ -32,7 +33,7 @@ namespace Guesthouse.Core.Domain
         {
             if (string.IsNullOrWhiteSpace(role))
             {
-                throw new Exception("Role should not be empty.");
+                throw new DomainException(ErrorCodes.InvalidRole, "Role should not be empty.");
             }
 
             role = role.ToUppercaseFirstInvariant();
@@ -44,7 +45,7 @@ namespace Guesthouse.Core.Domain
 
             if (!_roles.Contains(role))
             {
-                throw new Exception("Role should be chosen from RoleList('ADMIN, USER, EMPLOYEE').");
+                throw new DomainException(ErrorCodes.InvalidRole, "Role should be chosen from RoleList('ADMIN, USER, EMPLOYEE').");
             }
 
             EmployeeRole = role;

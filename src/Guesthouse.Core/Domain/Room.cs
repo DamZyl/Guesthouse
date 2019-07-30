@@ -1,3 +1,4 @@
+using Guesthouse.Core.Utils.Exceptions;
 using System;
 
 namespace Guesthouse.Core.Domain
@@ -34,7 +35,7 @@ namespace Guesthouse.Core.Domain
         {
             if (number <= 0)
             {
-                throw new Exception("Number shoud be greater than 0.");
+                throw new DomainException(ErrorCodes.InvalidNumber, "Number shoud be greater than 0.");
             }
 
             if (Number == number)
@@ -49,7 +50,7 @@ namespace Guesthouse.Core.Domain
         {
             if (floor < 0)
             {
-                throw new Exception("Number shoud be 0 and greater.");
+                throw new DomainException(ErrorCodes.InvalidFloor, "Number shoud be 0 and greater.");
             }
 
             if (Floor == floor)
@@ -64,7 +65,7 @@ namespace Guesthouse.Core.Domain
         {
             if (price <= 0)
             {
-                throw new Exception("Price should be greater than 0.");
+                throw new DomainException(ErrorCodes.InvalidPrice, "Price should be greater than 0.");
             }
 
             if (Price == price)
@@ -79,7 +80,7 @@ namespace Guesthouse.Core.Domain
         {
             if (Occupied)
             {
-                throw new Exception("Room was already booked.");
+                throw new DomainException(ErrorCodes.BookedRoom, "Room was already booked.");
             }
 
             ReservationId = reservation.Id;
@@ -91,7 +92,7 @@ namespace Guesthouse.Core.Domain
         {
             if (!Occupied)
             {
-                throw new Exception("Room was not booked and can not be canceled.");
+                throw new DomainException(ErrorCodes.NotBookedRoom, "Room was not booked and can not be canceled.");
             }
 
             ReservationId = null;

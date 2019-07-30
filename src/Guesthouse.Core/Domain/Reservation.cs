@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Guesthouse.Core.Domain.Enums;
+using Guesthouse.Core.Utils.Exceptions;
 
 namespace Guesthouse.Core.Domain
 {
@@ -47,7 +48,7 @@ namespace Guesthouse.Core.Domain
         {
             if (string.IsNullOrWhiteSpace(description))
             {
-                throw new Exception("Description should not be empty.");
+                throw new DomainException(ErrorCodes.InvalidDescription, "Description should not be empty.");
             }
 
             Description = description;
@@ -57,7 +58,7 @@ namespace Guesthouse.Core.Domain
         {
             if (startReservation >= endReservation)
             {
-                throw new Exception("StartReservation should be earlier than EndReservation.");
+                throw new DomainException(ErrorCodes.InvalidDate, "StartReservation should be earlier than EndReservation.");
             }
 
             StartReservation = startReservation;
@@ -96,7 +97,7 @@ namespace Guesthouse.Core.Domain
                 ClientName = client.GetFullName();    
             }
 
-            client.SetReservationId(this.Id);
+            client.SetReservationId(Id);
             Price = CalulatePrice();
         }
 
