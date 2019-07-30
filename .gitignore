@@ -6,3 +6,4 @@ src/Guesthouse\.Api/obj/
 src/Guesthouse\.Infrastructure/obj/
 
 src/Guesthouse\.Services/obj/
+src/.vs/Guesthouse/v16/Server/sqlite3
