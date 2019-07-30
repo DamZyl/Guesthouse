@@ -1,7 +1,10 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Guesthouse.Services;
 using Guesthouse.Services.Reservations.Commands;
+using Guesthouse.Services.Reservations.Dto;
+using Guesthouse.Services.Reservations.Queries;
 using Guesthouse.Services.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -23,32 +26,20 @@ namespace Guesthouse.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
-        {
-            var resevations = await _reservationService.GetAllAsync();
-
-            return Json(resevations);
-        }
+        public async Task<ActionResult<IEnumerable<ReservationDto>>> Get([FromQuery] GetReservations query)
+            => Result(await QueryAsync(query));
 
         [HttpGet("client/{clientId}")]
-        public async Task<IActionResult> GetForClient(Guid clientId)
-        {
-            var resevationsForClient = await _reservationService.GetForClient(clientId);
+        public async Task<ActionResult<IEnumerable<ReservationDto>>> GetForClient(Guid clientId)
+            => Result(await QueryAsync(new GetReservationsForClient { ClientId = clientId }));
 
-            return Json(resevationsForClient);
-        }
-       
         [HttpGet("{reservationId}")]
-        public async Task<IActionResult> Get(Guid reservationId)
-        {
-            var resevation = await _reservationService.GetAsync(reservationId);
-
-            return Json(resevation);
-        }
+        public async Task<ActionResult<ReservationDetailsDto>> Get(Guid reservationId)
+            => Result(await QueryAsync(new GetReservation { Id = reservationId }));
 
         [Authorize]
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] CreateReservation command)
+        public async Task<ActionResult> Post([FromBody] CreateReservation command)
         {
             command.UserId = UserId;
             await SendAsync(command);
@@ -57,7 +48,7 @@ namespace Guesthouse.Api.Controllers
         }
 
         [HttpPut("{reservationId}")]
-        public async Task<IActionResult> Put(Guid reservationId, [FromBody] UpdateReservation command)
+        public async Task<ActionResult> Put(Guid reservationId, [FromBody] UpdateReservation command)
         {
             await _reservationService.UpdateAsync(reservationId, command.Description);
 
@@ -66,7 +57,7 @@ namespace Guesthouse.Api.Controllers
 
         [Authorize]
         [HttpDelete("{reservationId}")]
-        public async Task<IActionResult> Delete(Guid reservationId)
+        public async Task<ActionResult> Delete(Guid reservationId)
         {
             await _reservationService.DeleteAsync(reservationId);
 

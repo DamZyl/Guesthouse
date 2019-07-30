@@ -19,11 +19,11 @@ namespace Guesthouse.Api.Controllers
         
         [Authorize]
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<ActionResult> Get()
             => Json(await _employeeService.GetAccountAsync(UserId)); 
         
         [HttpPost("register")]
-        public async Task<IActionResult> Post([FromBody]Register command)
+        public async Task<ActionResult> Post([FromBody]Register command)
         {
             await _employeeService.RegisterAsync(Guid.NewGuid(), command.FirstName, command.LastName,
                 command.Email, command.Password, command.EmployeeRole);
@@ -32,7 +32,7 @@ namespace Guesthouse.Api.Controllers
         }
         
         [HttpPost("login")]
-        public async Task<IActionResult> Post([FromBody]Login command)
+        public async Task<ActionResult> Post([FromBody]Login command)
             => Json(await _employeeService.LoginAsync(command.Email, command.Password));
     }
 }
