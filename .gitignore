@@ -1,2 +1,7 @@
 
 src/\.idea/
+src/.vs/Guesthouse/v16
+src/Guesthouse.Api/obj
+src/Guesthouse.Core/obj
+src/Guesthouse.Infrastructure/obj
+src/Guesthouse.Services/obj

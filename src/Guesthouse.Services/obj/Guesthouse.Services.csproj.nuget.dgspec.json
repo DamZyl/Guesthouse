@@ -1,33 +1,204 @@
 {
   "format": 1,
   "restore": {
-    "/home/damian/Documents/cSharp/Praca/src/Guesthouse.Services/Guesthouse.Services.csproj": {}
+    "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Services\\Guesthouse.Services.csproj": {}
   },
   "projects": {
-    "/home/damian/Documents/cSharp/Praca/src/Guesthouse.Services/Guesthouse.Services.csproj": {
+    "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/damian/Documents/cSharp/Praca/src/Guesthouse.Services/Guesthouse.Services.csproj",
-        "projectName": "Guesthouse.Services",
-        "projectPath": "/home/damian/Documents/cSharp/Praca/src/Guesthouse.Services/Guesthouse.Services.csproj",
-        "packagesPath": "/home/damian/.nuget/packages/",
-        "outputPath": "/home/damian/Documents/cSharp/Praca/src/Guesthouse.Services/obj/",
+        "projectUniqueName": "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj",
+        "projectName": "Guesthouse.Core",
+        "projectPath": "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj",
+        "packagesPath": "C:\\Users\\Damian\\.nuget\\packages\\",
+        "outputPath": "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/home/damian/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Damian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\DevExpress\\Components\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Infrastructure\\Guesthouse.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Infrastructure\\Guesthouse.Infrastructure.csproj",
+        "projectName": "Guesthouse.Infrastructure",
+        "projectPath": "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Infrastructure\\Guesthouse.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Damian\\.nuget\\packages\\",
+        "outputPath": "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Damian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\DevExpress\\Components\\System\\Components\\Packages": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj": {
+                "projectPath": "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Autofac": {
+              "target": "Package",
+              "version": "[4.9.3, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Services\\Guesthouse.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Services\\Guesthouse.Services.csproj",
+        "projectName": "Guesthouse.Services",
+        "projectPath": "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Services\\Guesthouse.Services.csproj",
+        "packagesPath": "C:\\Users\\Damian\\.nuget\\packages\\",
+        "outputPath": "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Damian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\DevExpress\\Components\\System\\Components\\Packages": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj": {
+                "projectPath": "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj"
+              },
+              "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Infrastructure\\Guesthouse.Infrastructure.csproj": {
+                "projectPath": "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Infrastructure\\Guesthouse.Infrastructure.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

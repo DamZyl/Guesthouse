@@ -1,28 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/home/damian/Documents/cSharp/Praca/src/Guesthouse.Core/Guesthouse.Core.csproj": {}
+    "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj": {}
   },
   "projects": {
-    "/home/damian/Documents/cSharp/Praca/src/Guesthouse.Core/Guesthouse.Core.csproj": {
+    "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/damian/Documents/cSharp/Praca/src/Guesthouse.Core/Guesthouse.Core.csproj",
+        "projectUniqueName": "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj",
         "projectName": "Guesthouse.Core",
-        "projectPath": "/home/damian/Documents/cSharp/Praca/src/Guesthouse.Core/Guesthouse.Core.csproj",
-        "packagesPath": "/home/damian/.nuget/packages/",
-        "outputPath": "/home/damian/Documents/cSharp/Praca/src/Guesthouse.Core/obj/",
+        "projectPath": "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj",
+        "packagesPath": "C:\\Users\\Damian\\.nuget\\packages\\",
+        "outputPath": "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/home/damian/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Damian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\DevExpress\\Components\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
