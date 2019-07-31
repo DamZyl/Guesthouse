@@ -12,6 +12,7 @@ namespace Guesthouse.Infrastructure.Repositories
         public IEmployeeRepository EmployeeRepository { get; }
         public IRoomRepository RoomRepository { get; }
         public IConvenienceRepository ConvenienceRepository { get; }
+        public IInvoiceRepository InvoiceRepository { get; }
 
         public UnitOfWork(DatabaseContext databaseContext)
         {
@@ -21,6 +22,7 @@ namespace Guesthouse.Infrastructure.Repositories
             EmployeeRepository = new EmployeeRepository(_databaseContext);
             RoomRepository = new RoomRepository(_databaseContext);
             ConvenienceRepository = new ConvenienceRepository(_databaseContext);
+            InvoiceRepository = new InvoiceRepository(_databaseContext);
         }
 
         public async Task Complete()

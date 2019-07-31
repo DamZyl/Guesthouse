@@ -49,11 +49,11 @@ namespace Guesthouse.Infrastructure.Database
                 await _databaseContext.SaveChangesAsync();
             }
 
-            if (!_databaseContext.Invoices.Any())
+            /*if (!_databaseContext.Invoices.Any())
             {
                 await _databaseContext.AddRangeAsync(_invoices);
                 await _databaseContext.SaveChangesAsync();
-            }
+            }*/
         }
 
         List<Room> _rooms = new List<Room>()
@@ -90,11 +90,11 @@ namespace Guesthouse.Infrastructure.Database
                 DateTime.UtcNow, DateTime.UtcNow.AddDays(2))
         };
 
-        List<Invoice> _invoices = new List<Invoice>()
+        /*List<Invoice> _invoices = new List<Invoice>()
         {
             Invoice.Create(Guid.NewGuid(), new Guid("72df4af1-b177-4629-8be5-af358a6674b4"), "Robert Wojciech",
                new Guid("313afe18-fb09-4feb-89fc-0a9e6c3bb3f9"), "Marek Nowak", new Guid("01b2f819-3d7c-4932-aadb-60a5d0feba9d"),
                "My reservation", DateTime.UtcNow, DateTime.UtcNow.AddDays(2), 50M)
-        };
+        };*/
     }
 }

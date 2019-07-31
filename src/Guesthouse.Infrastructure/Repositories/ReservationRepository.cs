@@ -27,7 +27,7 @@ namespace Guesthouse.Infrastructure.Repositories
             => await _databaseContext.Reservations.Include(p => p.Rooms)
                     .Include(p => p.Conveniences).ToListAsync();
 
-        public async Task<IEnumerable<Reservation>> GetForClient(Guid clientId)
+        public async Task<IEnumerable<Reservation>> GetForClientAsync(Guid clientId)
             => await _databaseContext.Reservations.Where(x => x.ClientId == clientId)
                     .Include(p => p.Rooms).Include(p => p.Conveniences).ToListAsync();
 

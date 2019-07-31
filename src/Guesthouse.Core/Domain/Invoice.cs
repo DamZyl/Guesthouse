@@ -27,27 +27,21 @@ namespace Guesthouse.Core.Domain
         {
         }
 
-        protected Invoice(Guid id, Guid clientId, string clientName, Guid employeeId,
-                string employeeName, Guid reservationId, string reservationDescription,
-                DateTime issueDate, DateTime payDate, decimal moneyToPay)
+        protected Invoice(Guid id, Guid clientId, Guid employeeId, Guid reservationId,
+                DateTime issueDate, DateTime payDate)
         {
             Id = id;
             CompanyName = ConstValues.COMPANY_NAME;
             ClientId = clientId;
-            ClientName = clientName;
             EmployeeId = employeeId;
-            EmployeeName = employeeName;
             ReservationId = reservationId;
-            ReservationDescription = reservationDescription;
             SetDates(issueDate, payDate);
-            MoneyToPay = moneyToPay;
         }
 
-        public static Invoice Create(Guid id, Guid clientId, string clientName, Guid employeeId,
-                string employeeName, Guid reservationId, string reservationDescription,
-                DateTime issueDate, DateTime payDate, decimal moneyToPay)
-            => new Invoice(id, clientId, clientName, employeeId, employeeName, reservationId,
-                    reservationDescription, issueDate, payDate, moneyToPay);
+        public static Invoice Create(Guid id, Guid clientId, Guid employeeId, Guid reservationId,
+                DateTime issueDate, DateTime payDate)
+            => new Invoice(id, clientId, employeeId, reservationId,
+                    issueDate, payDate);
 
         public void SetDates(DateTime issueDate, DateTime payDate)
         {
@@ -58,6 +52,29 @@ namespace Guesthouse.Core.Domain
 
             IssueDate = issueDate;
             PayDate = payDate;
+        }
+
+        public void SetDetailsData(Client client, Employee employee, Reservation reservation)
+        {
+            if (client == null)
+            {
+                throw new DomainException(ErrorCodes.InvalidObject, "Client should not be null.");
+            }
+
+            if (employee == null)
+            {
+                throw new DomainException(ErrorCodes.InvalidObject, "Employee should not be null.");
+            }
+
+            if (reservation == null)
+            {
+                throw new DomainException(ErrorCodes.InvalidObject, "Reservation should not be null.");
+            }
+
+            ClientName = client.GetFullName();
+            EmployeeName = employee.GetFullName();
+            ReservationDescription = reservation.Description;
+            MoneyToPay = reservation.Price;
         }
     }
 }

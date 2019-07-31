@@ -10,7 +10,7 @@ namespace Guesthouse.Core.Repositories
         // Add methods to Room and Converience!!!
         Task<Reservation> GetAsync(Guid id);
         Task<IEnumerable<Reservation>> GetAllAsync();
-        Task<IEnumerable<Reservation>> GetForClient(Guid clientId);
+        Task<IEnumerable<Reservation>> GetForClientAsync(Guid clientId);
         Task AddAsync(Reservation reservation);
         Task DeleteAsync(Reservation reservation);
         Task UpdateAsync(Reservation reservation);

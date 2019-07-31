@@ -36,7 +36,7 @@ namespace Guesthouse.Services.Services
 
         public async Task<IEnumerable<ReservationDto>> GetForClient(Guid clientId)
         {
-            var reservationsForClient = await _unitOfWork.ReservationRepository.GetForClient(clientId);
+            var reservationsForClient = await _unitOfWork.ReservationRepository.GetForClientAsync(clientId);
 
             return _mapper.Map<IEnumerable<ReservationDto>>(reservationsForClient);
         }
