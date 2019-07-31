@@ -2,6 +2,7 @@ using System.Linq;
 using AutoMapper;
 using Guesthouse.Core.Domain;
 using Guesthouse.Services.DTO;
+using Guesthouse.Services.Invoices.Dto;
 using Guesthouse.Services.Reservations.Dto;
 using Guesthouse.Services.Users.Dto;
 
@@ -29,6 +30,8 @@ namespace Guesthouse.Services.Mappers
                     .ForMember(x => x.Role, 
                         m => m.MapFrom(p => p.EmployeeRole));
                 cfg.CreateMap<Room, RoomDto>();
+                cfg.CreateMap<Convenience, ConvenienceDto>();
+                cfg.CreateMap<Invoice, InvoiceDto>();
             })
             .CreateMapper();
     }

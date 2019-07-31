@@ -33,6 +33,5 @@ namespace Guesthouse.Infrastructure.Repositories
 
         public async Task DeleteAsync(Invoice invoice)
             => _databaseContext.Invoices.Remove(invoice);
-
     }
 }

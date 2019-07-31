@@ -16,6 +16,7 @@ namespace Guesthouse.Core.Utils.Exceptions
         public static string InvalidLastName => "invalid_last_name";
         public static string InvalidName => "invalid_name";
         public static string InvalidNumber => "invalid_number";
+        public static string InvalidObject => "invalid_object";
         public static string InvalidPassword => "invalid_password";
         public static string InvalidPhoneNumber => "invalid_phone_number";
         public static string InvalidPrice => "invalid_price";
