@@ -26,10 +26,10 @@ namespace Guesthouse.Api.Controllers
         public async Task<ActionResult<InvoiceDto>> Get(Guid invoiceId)
             => Result(await QueryAsync(new GetInvoice { Id = invoiceId }));
 
-        /*[HttpPost]
+        [HttpPost]
         public async Task<ActionResult> Post([FromBody] CreateInvoice command)
         {
-            command.UserId = UserId;
+            //command.UserId = UserId;
 
             await SendAsync(command);
 
@@ -42,6 +42,6 @@ namespace Guesthouse.Api.Controllers
             await SendAsync(new DeleteInvoice { Id = invoiceId });
 
             return NoContent();
-        }*/
+        }
     }
 }

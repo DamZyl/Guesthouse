@@ -67,5 +67,17 @@ namespace Guesthouse.Infrastructure.Extensions
 
             return employee;
         }
+
+        public static async Task<Invoice> GetOrFailAsync(this IInvoiceRepository repository, Guid id)
+        {
+            var invoice = await repository.GetAsync(id);
+
+            if (invoice == null)
+            {
+                throw new Exception($"Invoice with id: '{id}' does not exist.");
+            }
+
+            return invoice;
+        }
     }
 }
