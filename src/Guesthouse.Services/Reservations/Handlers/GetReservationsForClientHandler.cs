@@ -22,7 +22,7 @@ namespace Guesthouse.Services.Reservations.Handlers
 
         public async Task<IEnumerable<ReservationDto>> HandleAsync(GetReservationsForClient query)
         {
-            var reservationsForClient = await _unitOfWork.ReservationRepository.GetForClient(query.ClientId);
+            var reservationsForClient = await _unitOfWork.ReservationRepository.GetForClientAsync(query.ClientId);
 
             return _mapper.Map<IEnumerable<ReservationDto>>(reservationsForClient);
         }
