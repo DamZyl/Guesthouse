@@ -35,7 +35,7 @@ namespace Guesthouse.Api
         
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            services.Configure<SqlOptions>(Configuration.GetSection("sqlwin"));
+            services.Configure<SqlOptions>(Configuration.GetSection("sql"));
             
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
                 .AddJsonOptions(x => x.SerializerSettings.Formatting = Formatting.Indented);

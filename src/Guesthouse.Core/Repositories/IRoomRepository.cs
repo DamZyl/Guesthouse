@@ -7,6 +7,7 @@ namespace Guesthouse.Core.Repositories
 {
     public interface IRoomRepository : IRepository
     {
+        Task<Room> GetAsync(Guid id);
         Task<IEnumerable<Room>> GetOccupiedAsync();
         Task<IEnumerable<Room>> GetAvailableAsync();
         Task<IEnumerable<Room>> GetForReservationAsync(Guid id);

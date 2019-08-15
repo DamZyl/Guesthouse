@@ -1,5 +1,5 @@
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Guesthouse.Core.Domain;
 using Guesthouse.Core.Repositories;
@@ -19,5 +19,8 @@ namespace Guesthouse.Infrastructure.Repositories
 
         public async Task <IEnumerable<Convenience>> GetAllAsync()
             => await _databaseContext.Conveniences.ToListAsync();
+
+        public async Task<Convenience> GetAsync(Guid id)
+            => await _databaseContext.Conveniences.SingleOrDefaultAsync(x => x.Id == id);
     }
 }

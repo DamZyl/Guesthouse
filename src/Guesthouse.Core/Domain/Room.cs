@@ -9,7 +9,7 @@ namespace Guesthouse.Core.Domain
 
         public Guid Id { get; protected set; }
         public int Number { get; protected set; }
-        public int Floor { get; protected set; }
+        public int Floor { get;  protected set; }
         public decimal Price { get; protected set; }
         public DateTime? BookedAt { get; protected set; } 
         public DateTime? BookedTo { get; protected set; } 

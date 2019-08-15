@@ -1,8 +1,10 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Guesthouse.Core.Domain;
 using Guesthouse.Core.Repositories;
 using Guesthouse.Infrastructure.Extensions;
 using Guesthouse.Services.Reservations.Commands;
+using Guesthouse.Services.Services;
 
 namespace Guesthouse.Services.Reservations.Handlers
 {
@@ -24,9 +26,18 @@ namespace Guesthouse.Services.Reservations.Handlers
 
             var client = await _unitOfWork.ClientRepository.GetOrFailAsync(command.UserId);
 
-            var rooms = await _unitOfWork.RoomRepository.GetAvailableAsync(); // Test delete later!!!
-            var conveniences = await _unitOfWork.ConvenienceRepository.GetAllAsync(); // Test delete later!!!
-
+            var rooms = new HashSet<Room>();
+            foreach (var id in command.Rooms)
+            {
+                rooms.Add(await _unitOfWork.RoomRepository.GetAsync(id));
+            }
+            
+            var conveniences = new HashSet<Convenience>();
+            foreach (var id in command.Conveniences)
+            {
+                conveniences.Add(await _unitOfWork.ConvenienceRepository.GetAsync(id));
+            }
+            
             reservation.ReservationPlace(client, rooms, conveniences);
 
             await _unitOfWork.ReservationRepository.AddAsync(reservation); 
