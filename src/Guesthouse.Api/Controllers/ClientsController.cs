@@ -1,8 +1,11 @@
 using System;
 using System.Threading.Tasks;
+using Guesthouse.Infrastructure.Auth;
 using Guesthouse.Services;
 using Guesthouse.Services.Services;
 using Guesthouse.Services.Users.Commands;
+using Guesthouse.Services.Users.Dto;
+using Guesthouse.Services.Users.Queries;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,29 +13,23 @@ namespace Guesthouse.Api.Controllers
 {
     public class ClientsController : ApiBaseController
     {
-        private readonly IClientService _clientService;
+        public ClientsController(IDispatcher dispatcher) : base(dispatcher) { }
 
-        public ClientsController(IDispatcher dispatcher, IClientService clientService) : base(dispatcher)
-        {
-            _clientService = clientService;
-        }
-        
         [Authorize]
         [HttpGet]
-        public async Task<ActionResult> Get()
-            => Json(await _clientService.GetAccountAsync(UserId)); 
+        public async Task<ActionResult<AccountDto>> Get()
+            => Result(await QueryAsync(new GetClient {Id = UserId})); 
         
         [HttpPost("register")]
         public async Task<ActionResult> Post([FromBody]Register command)
         {
-            await _clientService.RegisterAsync(Guid.NewGuid(), command.FirstName, command.LastName,
-                command.Email, command.Password, command.PhoneNumber, command.PayType);
+            await SendAsync(command);
 
-            return Created("/employees", null);
+            return CreatedAtAction(nameof(Get), new { id = command.Id }, null);
         }
-        
+
         [HttpPost("login")]
-        public async Task<ActionResult> Post([FromBody]Login command)
-            => Json(await _clientService.LoginAsync(command.Email, command.Password));
+        public async Task<ActionResult<TokenDto>> Post([FromBody] Login command)
+            => Result(await QueryAsync(new LoginClient { Command = command}));
     }
 }

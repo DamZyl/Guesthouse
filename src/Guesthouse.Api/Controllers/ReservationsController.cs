@@ -14,9 +14,7 @@ namespace Guesthouse.Api.Controllers
 {
     public class ReservationsController : ApiBaseController
     {
-        public ReservationsController(IDispatcher dispatcher) : base(dispatcher)
-        {
-        }
+        public ReservationsController(IDispatcher dispatcher) : base(dispatcher) { }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ReservationDto>>> Get([FromQuery] GetReservations query)
