@@ -47,7 +47,13 @@ namespace Guesthouse.Services.Services
             var client = await _unitOfWork.ClientRepository.GetOrFailAsync(clientId);
             var reservation = await _unitOfWork.ReservationRepository.GetAsync(id);
 
-            reservation = Reservation.Create(id, description, startReservation, endReservation);
+            reservation = Reservation.Builder.Create()
+                .WithId(id)
+                .WithDescription(description)
+                .WithDates(startReservation, endReservation)
+                .WithReservationStatus()
+                .WithPayStatus()
+                .Build();
            
             await _unitOfWork.ReservationRepository.AddAsync(reservation); 
             await _unitOfWork.Complete();
