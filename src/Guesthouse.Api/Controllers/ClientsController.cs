@@ -18,7 +18,7 @@ namespace Guesthouse.Api.Controllers
         [Authorize]
         [HttpGet]
         public async Task<ActionResult<AccountDto>> Get()
-            => Result(await QueryAsync(new GetClient {Id = UserId})); 
+            => Result(await QueryAsync(new GetClient { Id = UserId })); 
         
         [HttpPost("register")]
         public async Task<ActionResult> Post([FromBody]Register command)
@@ -30,6 +30,6 @@ namespace Guesthouse.Api.Controllers
 
         [HttpPost("login")]
         public async Task<ActionResult<TokenDto>> Post([FromBody] Login command)
-            => Result(await QueryAsync(new LoginClient { Command = command}));
+            => Result(await QueryAsync(new LoginClient { Command = command }));
     }
 }

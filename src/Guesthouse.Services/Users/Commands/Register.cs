@@ -27,5 +27,17 @@ namespace Guesthouse.Services.Users.Commands
             PhoneNumber = phoneNumber;
             PayType = payType;
         }
+        
+        [JsonConstructor]
+        public Register(Guid id, string firstName, string lastName, string email,
+            string password, string employeeRole)
+        {
+            Id = id == Guid.Empty ? Guid.NewGuid() : id;
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
+            Password = password;
+            EmployeeRole = employeeRole;
+        }
     }
 }
