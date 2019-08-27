@@ -6,7 +6,7 @@ using Guesthouse.Services.Users.Commands;
 
 namespace Guesthouse.Services.Users.Handlers
 {
-    public class RegisterClientHandler : ICommandHandler<Register>
+    public class RegisterClientHandler : ICommandHandler<RegisterClient>
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -15,7 +15,7 @@ namespace Guesthouse.Services.Users.Handlers
             _unitOfWork = unitOfWork;
         }
         
-        public async Task HandleAsync(Register command)
+        public async Task HandleAsync(RegisterClient command)
         {
             var client = await _unitOfWork.ClientRepository.GetOrFailAsync(command.Email);
 

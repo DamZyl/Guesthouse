@@ -21,7 +21,7 @@ namespace Guesthouse.Api.Controllers
             => Result(await QueryAsync(new GetEmployee { Id = UserId }));
         
         [HttpPost("register")]
-        public async Task<ActionResult> Post([FromBody]Register command)
+        public async Task<ActionResult> Post([FromBody]RegisterEmployee command)
         {
             await SendAsync(command);
 
