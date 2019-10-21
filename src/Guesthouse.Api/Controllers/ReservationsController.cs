@@ -1,12 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Guesthouse.Core.Domain.Enums;
 using Guesthouse.Services;
 using Guesthouse.Services.Reservations.Commands;
 using Guesthouse.Services.Reservations.Dto;
 using Guesthouse.Services.Reservations.Queries;
-using Guesthouse.Services.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
