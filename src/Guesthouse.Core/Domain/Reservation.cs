@@ -30,19 +30,17 @@ namespace Guesthouse.Core.Domain
         {
         }
 
-        protected Reservation(Guid id, string description, DateTime startReservation,
-                DateTime endReservation)
+        protected Reservation(Builder builder)
         {
-            Id = id;
-            SetDescription(description);
-            SetDates(startReservation, endReservation);
-            ReservationStatus = ReservationStatus.Unconfirmed;
-            PayStatus = PayStatus.NoPaid;
+            Id = builder.Id;
+            Description = builder.Description;
+            StartReservation = builder.StartReservation;
+            EndReservation = builder.EndReservation;
+            ReservationStatus = builder.ReservationStatus;
+            PayStatus = builder.PayStatus;
         }
 
-        public static Reservation Create(Guid id, string description, DateTime startReservation,
-                DateTime endReservation)
-            => new Reservation(id, description, startReservation, endReservation);
+        //public static Reservation Create(Builder builder) => new Reservation(builder);
 
         public void SetDescription(string description)
         {
@@ -54,7 +52,7 @@ namespace Guesthouse.Core.Domain
             Description = description;
         }
 
-        public void SetDates(DateTime startReservation, DateTime endReservation)
+        /*public void SetDates(DateTime startReservation, DateTime endReservation)
         {
             if (startReservation >= endReservation)
             {
@@ -63,7 +61,7 @@ namespace Guesthouse.Core.Domain
 
             StartReservation = startReservation;
             EndReservation = endReservation;
-        }
+        }*/
 
         public void SetPayStatus(PayStatus payStatus)
         {
@@ -111,8 +109,7 @@ namespace Guesthouse.Core.Domain
             client.SetReservationId(null);
         }
 
-        public void SendMessage(string message)
-            => Message = message;
+        public void SendMessage(string message) => Message = message;
 
         public void ConfirmReservationStatus(ReservationStatus reservationStatus)
         {
@@ -161,6 +158,65 @@ namespace Guesthouse.Core.Domain
             }
 
             return reservationCost;
+        }
+
+        public class Builder
+        {
+            internal Guid Id { get; set; }
+            internal string Description { get; set; }
+            internal DateTime StartReservation { get; set; }
+            internal DateTime EndReservation { get; set; }
+            internal ReservationStatus ReservationStatus { get; set; }
+            internal PayStatus PayStatus { get; set; }
+
+            public Builder WithId(Guid id)
+            {
+                Id = id;
+                
+                return this;
+            }
+
+            public Builder WithDescription(string description)
+            {
+                if (string.IsNullOrWhiteSpace(description))
+                {
+                    throw new DomainException(ErrorCodes.InvalidDescription, "Description should not be empty.");
+                }
+
+                Description = description;
+
+                return this;
+            }
+
+            public Builder WithDates(DateTime startReservation, DateTime endReservation)
+            {
+                if (startReservation >= endReservation)
+                {
+                    throw new DomainException(ErrorCodes.InvalidDate, "StartReservation should be earlier than EndReservation.");
+                }
+
+                StartReservation = startReservation;
+                EndReservation = endReservation;
+
+                return this;
+            }
+
+            public Builder WithReservationStatus(ReservationStatus reservationStatus = ReservationStatus.Unconfirmed)
+            {
+                ReservationStatus = reservationStatus;
+                
+                return this;
+            }
+
+            public Builder WithPayStatus(PayStatus payStatus = PayStatus.NoPaid)
+            {
+                PayStatus = payStatus;
+
+                return this;
+            }
+            
+            public static Builder Create() => new Builder();
+            public Reservation Build() => new Reservation(this);
         }
     }
 }

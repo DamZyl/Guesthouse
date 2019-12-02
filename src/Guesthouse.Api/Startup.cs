@@ -3,15 +3,10 @@ using System.Text;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Guesthouse.Api.Framework;
-using Guesthouse.Core.Repositories;
 using Guesthouse.Infrastructure.Auth;
 using Guesthouse.Infrastructure.Database;
 using Guesthouse.Infrastructure.IoC;
-using Guesthouse.Infrastructure.IoC.Modules;
-using Guesthouse.Infrastructure.Repositories;
 using Guesthouse.Services.IoC;
-using Guesthouse.Services.Mappers;
-using Guesthouse.Services.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -35,7 +30,7 @@ namespace Guesthouse.Api
         
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            services.Configure<SqlOptions>(Configuration.GetSection("sqlwin"));
+            services.Configure<SqlOptions>(Configuration.GetSection("sql"));
             
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
                 .AddJsonOptions(x => x.SerializerSettings.Formatting = Formatting.Indented);

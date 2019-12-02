@@ -28,6 +28,9 @@ namespace Guesthouse.Infrastructure.Repositories
             => await _databaseContext.Rooms.Where(x => x.Occupied).ToListAsync();
 
         public async Task<IEnumerable<Room>> GetForReservationAsync(Guid id)
-            => await _databaseContext.Rooms.Where(x => x.ReservationId == id).ToListAsync();  
+            => await _databaseContext.Rooms.Where(x => x.ReservationId == id).ToListAsync();
+
+        public async Task<Room> GetAsync(Guid id)
+            => await _databaseContext.Rooms.SingleOrDefaultAsync(x => x.Id == id);
     }
 }

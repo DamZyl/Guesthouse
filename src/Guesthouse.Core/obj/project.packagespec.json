@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "/home/damian/Documents/cSharp/Praca/src/Guesthouse.Core/Guesthouse.Core.csproj",
+    "projectUniqueName": "/home/damian/Documents/Guesthouse/src/Guesthouse.Core/Guesthouse.Core.csproj",
     "projectName": "Guesthouse.Core",
-    "projectPath": "/home/damian/Documents/cSharp/Praca/src/Guesthouse.Core/Guesthouse.Core.csproj",
-    "outputPath": "/home/damian/Documents/cSharp/Praca/src/Guesthouse.Core/obj/",
+    "projectPath": "/home/damian/Documents/Guesthouse/src/Guesthouse.Core/Guesthouse.Core.csproj",
+    "outputPath": "/home/damian/Documents/Guesthouse/src/Guesthouse.Core/obj/",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
       "/usr/share/dotnet/sdk/NuGetFallbackFolder"

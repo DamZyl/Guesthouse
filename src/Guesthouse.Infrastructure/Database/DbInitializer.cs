@@ -86,8 +86,13 @@ namespace Guesthouse.Infrastructure.Database
 
         List<Reservation> _reservations = new List<Reservation>()
         {
-            Reservation.Create(new Guid("01b2f819-3d7c-4932-aadb-60a5d0feba9d"), "My reservation",
-                DateTime.UtcNow, DateTime.UtcNow.AddDays(2))
+            Reservation.Builder.Create()
+                .WithId(new Guid("01b2f819-3d7c-4932-aadb-60a5d0feba9d"))
+                .WithDescription("My reservation")
+                .WithDates(DateTime.UtcNow, DateTime.UtcNow.AddDays(2))
+                .WithReservationStatus()
+                .WithPayStatus()
+                .Build()
         };
 
         /*List<Invoice> _invoices = new List<Invoice>()
