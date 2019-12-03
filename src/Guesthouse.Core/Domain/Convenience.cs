@@ -1,16 +1,18 @@
 using Guesthouse.Core.Utils.Exceptions;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Guesthouse.Core.Domain
 {
     public class Convenience
     {
-        public virtual Reservation Reservation { get; protected set; }
+        private ISet<ReservationConvenience> _reservation = new HashSet<ReservationConvenience>();
 
         public Guid Id { get; protected set; }
-        public Guid? ReservationId { get; protected set;}
         public string Name { get; protected set; }
         public decimal? Cost { get; protected set; }
+        public IEnumerable<ReservationConvenience> Reservations => _reservation;
 
         protected Convenience()
         {
@@ -49,11 +51,6 @@ namespace Guesthouse.Core.Domain
             }
 
             Cost = cost;
-        }
-
-        public void SetReservationId(Guid id) // Delete this!!!
-        {
-            ReservationId = id;
         }
     }
 }

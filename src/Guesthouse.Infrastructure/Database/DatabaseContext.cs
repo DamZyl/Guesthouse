@@ -14,6 +14,8 @@ namespace Guesthouse.Infrastructure.Database
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
+        public DbSet<ReservationConvenience> ReservationConveniences { get; set; }
+        public DbSet<ReservationRoom> ReservationRooms { get; set; }
         public DbSet<Room> Rooms { get; set; }
         
         public DatabaseContext(IOptions<SqlOptions> sqlOptions)
@@ -39,6 +41,8 @@ namespace Guesthouse.Infrastructure.Database
             modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
             modelBuilder.ApplyConfiguration(new InvoiceConfiguration());
             modelBuilder.ApplyConfiguration(new ReservationConfiguration());
+            modelBuilder.ApplyConfiguration(new ReservationConvenienceConfiguration());
+            modelBuilder.ApplyConfiguration(new ReservationRoomConfiguration());
             modelBuilder.ApplyConfiguration(new RoomConfiguration());
         }
     }

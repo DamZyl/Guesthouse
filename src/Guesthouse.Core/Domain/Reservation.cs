@@ -10,8 +10,8 @@ namespace Guesthouse.Core.Domain
     {
         public virtual Invoice Invoice { get; protected set; }
         public virtual Client Client { get; protected set; }
-        private ISet<Room> _rooms = new HashSet<Room>();
-        private ISet<Convenience> _conveniences = new HashSet<Convenience>();
+        private ISet<ReservationRoom> _rooms = new HashSet<ReservationRoom>();
+        private ISet<ReservationConvenience> _conveniences = new HashSet<ReservationConvenience>();
 
         public Guid Id { get; protected set; }
         public string Description { get; protected set; }
@@ -23,8 +23,8 @@ namespace Guesthouse.Core.Domain
         public ReservationStatus ReservationStatus { get; protected set; }
         public PayStatus PayStatus { get; protected set; }
         public string Message { get; protected set; }
-        public IEnumerable<Room> Rooms => _rooms;
-        public IEnumerable<Convenience> Conveniences => _conveniences;
+        public IEnumerable<ReservationRoom> Rooms => _rooms;
+        public IEnumerable<ReservationConvenience> Conveniences => _conveniences;
 
         protected Reservation()
         {
@@ -73,7 +73,7 @@ namespace Guesthouse.Core.Domain
             PayStatus = payStatus;
         }
 
-        public void ReservationPlace(Client client, IEnumerable<Room> rooms, IEnumerable<Convenience> conveniences)
+        public void ReservationPlace(Client client, IEnumerable<ReservationRoom> rooms, IEnumerable<ReservationConvenience> conveniences)
         {
             if (client.PayType == PayWay.Prepayment)
             {
@@ -96,7 +96,7 @@ namespace Guesthouse.Core.Domain
             }
 
             client.SetReservationId(Id);
-            Price = CalulatePrice();
+            //Price = CalulatePrice();
         }
 
         public void CancelReservationPlace(Client client, IEnumerable<Room> rooms)
@@ -121,18 +121,18 @@ namespace Guesthouse.Core.Domain
             ReservationStatus = ReservationStatus.Confirmed;
         }
 
-        private void AddRooms(IEnumerable<Room> rooms) 
+        private void AddRooms(IEnumerable<ReservationRoom> rooms) 
         {
             foreach (var room in rooms)
             {
-                if (room.Occupied) continue;
+                //if (room.Occupied) continue;
                 
-                room.Booked(this);
+                //room.Booked(this);
                 _rooms.Add(room);
             }
         }
         
-        private void AddConveniences(IEnumerable<Convenience> conveniences)
+        private void AddConveniences(IEnumerable<ReservationConvenience> conveniences)
         {
             foreach (var convenience in conveniences)
             {
@@ -140,7 +140,7 @@ namespace Guesthouse.Core.Domain
             } 
         }
 
-        private decimal CalulatePrice()
+        /*private decimal CalulatePrice()
         {
             var reservationCost = _rooms.Sum(room => room.Price);
 
@@ -158,7 +158,7 @@ namespace Guesthouse.Core.Domain
             }
 
             return reservationCost;
-        }
+        }*/
 
         public class Builder
         {

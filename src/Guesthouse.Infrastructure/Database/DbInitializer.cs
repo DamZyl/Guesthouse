@@ -19,7 +19,7 @@ namespace Guesthouse.Infrastructure.Database
 
         public async Task SeedData()
         {
-            if (!_databaseContext.Clients.Any())
+            /*if (!_databaseContext.Clients.Any())
             {
                 await _databaseContext.AddRangeAsync(_clients);
                 await _databaseContext.SaveChangesAsync();
@@ -47,7 +47,7 @@ namespace Guesthouse.Infrastructure.Database
             {
                 await _databaseContext.AddRangeAsync(_reservations);
                 await _databaseContext.SaveChangesAsync();
-            }
+            }*/
 
             /*if (!_databaseContext.Invoices.Any())
             {
@@ -56,7 +56,7 @@ namespace Guesthouse.Infrastructure.Database
             }*/
         }
 
-        List<Room> _rooms = new List<Room>()
+        /*List<Room> _rooms = new List<Room>()
         {
             Room.Create(Guid.NewGuid(), 1, 1, 50),
             Room.Create(Guid.NewGuid(), 2, 1, 60)
@@ -93,7 +93,7 @@ namespace Guesthouse.Infrastructure.Database
                 .WithReservationStatus()
                 .WithPayStatus()
                 .Build()
-        };
+        };*/
 
         /*List<Invoice> _invoices = new List<Invoice>()
         {

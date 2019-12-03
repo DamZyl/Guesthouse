@@ -9,20 +9,20 @@ namespace Guesthouse.Infrastructure.Database.Configurations
         public void Configure(EntityTypeBuilder<Reservation> builder)
         {
             builder.HasKey(b => b.Id);
-
-            builder.HasMany<Convenience>(b => b.Conveniences)
-                .WithOne(b => b.Reservation)
-                .HasForeignKey(b => b.ReservationId);
-
-            builder.HasMany<Room>(b => b.Rooms)
-                .WithOne(b => b.Reservation)
-                .HasForeignKey(b => b.ReservationId);
-
-            builder.HasOne<Invoice>(b => b.Invoice)
-                .WithOne(b => b.Reservation);
             
-            builder.HasOne<Client>(b => b.Client)
-                .WithOne(b => b.Reservation);
+            builder.HasOne(b => b.Client)
+                .WithOne(b => b.Reservation)
+                .HasForeignKey<Reservation>(b => b.ClientId);
+
+            builder.HasMany(b => b.Rooms)
+                .WithOne(b => b.Reservation)
+                .HasForeignKey(b => b.ReservationId)
+                .OnDelete(DeleteBehavior.Cascade);
+            
+            builder.HasMany(b => b.Conveniences)
+                .WithOne(b => b.Reservation)
+                .HasForeignKey(b => b.ReservationId)
+                .OnDelete(DeleteBehavior.Cascade);
             
             builder.Property(p => p.ReservationStatus)
                 .HasConversion<string>();

@@ -21,14 +21,14 @@ namespace Guesthouse.Infrastructure.Repositories
         public async Task<IEnumerable<Room>> GetAllAsync()
             => await _databaseContext.Rooms.ToListAsync();
 
-        public async Task<IEnumerable<Room>> GetAvailableAsync()
+        /*public async Task<IEnumerable<Room>> GetAvailableAsync()
             => await _databaseContext.Rooms.Where(x => !x.Occupied).ToListAsync();
 
         public async Task<IEnumerable<Room>> GetOccupiedAsync()
             => await _databaseContext.Rooms.Where(x => x.Occupied).ToListAsync();
 
         public async Task<IEnumerable<Room>> GetForReservationAsync(Guid id)
-            => await _databaseContext.Rooms.Where(x => x.ReservationId == id).ToListAsync();
+            => await _databaseContext.Rooms.Where(x => x.ReservationId == id).ToListAsync();*/
 
         public async Task<Room> GetAsync(Guid id)
             => await _databaseContext.Rooms.SingleOrDefaultAsync(x => x.Id == id);

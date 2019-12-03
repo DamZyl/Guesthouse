@@ -81,7 +81,7 @@ namespace Guesthouse.Api
             }
 
             app.UseHttpsRedirection();
-            initDb.SeedData().Wait();
+            //initDb.SeedData().Wait();
             app.UseAuthentication();
             app.UseErrorHandler();
             app.UseMvc();

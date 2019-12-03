@@ -1,20 +1,21 @@
 using Guesthouse.Core.Utils.Exceptions;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Guesthouse.Core.Domain
 {
     public class Room
     {
-        public virtual Reservation Reservation { get; protected set; }
+        private ISet<ReservationRoom> _reservations = new HashSet<ReservationRoom>();
 
         public Guid Id { get; protected set; }
         public int Number { get; protected set; }
         public int Floor { get;  protected set; }
         public decimal Price { get; protected set; }
         public DateTime? BookedAt { get; protected set; } 
-        public DateTime? BookedTo { get; protected set; } 
-        public Guid? ReservationId { get; protected set; }
-        public bool Occupied => ReservationId.HasValue;
+        public DateTime? BookedTo { get; protected set; }
+        public IEnumerable<ReservationRoom> Reservations => _reservations;
 
         protected Room()
         {
@@ -78,24 +79,12 @@ namespace Guesthouse.Core.Domain
 
         public void Booked(Reservation reservation)
         {
-            if (Occupied)
-            {
-                throw new DomainException(ErrorCodes.BookedRoom, "Room was already booked.");
-            }
-
-            ReservationId = reservation.Id;
             BookedAt = reservation.StartReservation;
             BookedTo = reservation.EndReservation;
         }
 
         public void Cancel()
         {
-            if (!Occupied)
-            {
-                throw new DomainException(ErrorCodes.NotBookedRoom, "Room was not booked and can not be canceled.");
-            }
-
-            ReservationId = null;
             BookedAt = null;
             BookedTo = null;
         }

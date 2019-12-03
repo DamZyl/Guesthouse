@@ -30,11 +30,11 @@ namespace Guesthouse.Services.Reservations.Handlers
 
             var client = await _unitOfWork.ClientRepository.GetOrFailAsync(command.UserId);
 
-            var rooms = new HashSet<Room>();
+            /*var rooms = new HashSet<Room>();
             foreach (var id in command.Rooms)
             {
                 rooms.Add(await _unitOfWork.RoomRepository.GetAsync(id));
-            }
+            }*/
             
             // Problem with this part!!! -> Fix this problem later!!! 
             /*var conveniences = new HashSet<Convenience>();
@@ -43,7 +43,7 @@ namespace Guesthouse.Services.Reservations.Handlers
                 conveniences.Add(await _unitOfWork.ConvenienceRepository.GetAsync(id));
             }*/
 
-            reservation.ReservationPlace(client, rooms, null);
+            //reservation.ReservationPlace(client, rooms, null);*/
 
             await _unitOfWork.ReservationRepository.AddAsync(reservation); 
             await _unitOfWork.Complete();

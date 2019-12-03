@@ -9,9 +9,6 @@ namespace Guesthouse.Infrastructure.Database.Configurations
         public void Configure(EntityTypeBuilder<Employee> builder)
         {
             builder.HasKey(b => b.Id);
-
-            builder.HasOne(b => b.Invoice)
-                .WithOne(b => b.Employee);
         }
     }
 }
