@@ -52,9 +52,9 @@ namespace Guesthouse.Infrastructure.Database
                 .Build()
         };
 
-        private List<ReservationRoom> _reservationRooms = new List<ReservationRoom>();
+        //private List<ReservationRoom> _reservationRooms = new List<ReservationRoom>();
 
-        private List<ReservationConvenience> _reservationConveniences = new List<ReservationConvenience>();
+        //private List<ReservationConvenience> _reservationConveniences = new List<ReservationConvenience>();
         /*private List<Invoice> _invoices = new List<Invoice>()
         {
             Invoice.Create(Guid.NewGuid(), new Guid("72df4af1-b177-4629-8be5-af358a6674b4"), "Robert Wojciech",
@@ -66,7 +66,7 @@ namespace Guesthouse.Infrastructure.Database
         {
             _databaseContext = databaseContext;
             
-            _reservationRooms.Add(ReservationRoom.Booked(_reservations.ElementAtOrDefault(0),
+            /*_reservationRooms.Add(ReservationRoom.Booked(_reservations.ElementAtOrDefault(0),
                 _rooms.ElementAtOrDefault(0)));
             _reservationRooms.Add(ReservationRoom.Booked(_reservations.ElementAtOrDefault(0),
                 _rooms.ElementAtOrDefault(1)));
@@ -74,7 +74,7 @@ namespace Guesthouse.Infrastructure.Database
             _reservationConveniences.Add(ReservationConvenience.Create(_reservations.ElementAtOrDefault(0),
                 _conveninces.ElementAtOrDefault(0)));
             _reservationConveniences.Add(ReservationConvenience.Create(_reservations.ElementAtOrDefault(0),
-                _conveninces.ElementAtOrDefault(1)));
+                _conveninces.ElementAtOrDefault(1)));*/
         }
 
         public async Task SeedData()
@@ -109,7 +109,7 @@ namespace Guesthouse.Infrastructure.Database
                 await _databaseContext.SaveChangesAsync();
             }
             
-            if (!_databaseContext.ReservationRooms.Any())
+            /*if (!_databaseContext.ReservationRooms.Any())
             {
                 await _databaseContext.AddRangeAsync(_reservationRooms);
                 await _databaseContext.SaveChangesAsync();
@@ -119,7 +119,7 @@ namespace Guesthouse.Infrastructure.Database
             {
                 await _databaseContext.AddRangeAsync(_reservationConveniences);
                 await _databaseContext.SaveChangesAsync();
-            }
+            }*/
 
             /*if (!_databaseContext.Invoices.Any())
             {

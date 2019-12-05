@@ -78,3 +78,12 @@ D:/Kody/Praca/Guesthouse/src/Guesthouse.Core/obj/Debug/netstandard2.0/Guesthouse
 /home/damian/Documents/Guesthouse/src/Guesthouse.Core/obj/Debug/netstandard2.0/Guesthouse.Core.AssemblyInfo.cs
 /home/damian/Documents/Guesthouse/src/Guesthouse.Core/obj/Debug/netstandard2.0/Guesthouse.Core.dll
 /home/damian/Documents/Guesthouse/src/Guesthouse.Core/obj/Debug/netstandard2.0/Guesthouse.Core.pdb
+/home/damian/Dokumenty/Guesthouse/src/Guesthouse.Core/bin/Debug/netstandard2.0/Guesthouse.Core.deps.json
+/home/damian/Dokumenty/Guesthouse/src/Guesthouse.Core/bin/Debug/netstandard2.0/Guesthouse.Core.dll
+/home/damian/Dokumenty/Guesthouse/src/Guesthouse.Core/bin/Debug/netstandard2.0/Guesthouse.Core.pdb
+/home/damian/Dokumenty/Guesthouse/src/Guesthouse.Core/obj/Debug/netstandard2.0/Guesthouse.Core.csprojAssemblyReference.cache
+/home/damian/Dokumenty/Guesthouse/src/Guesthouse.Core/obj/Debug/netstandard2.0/Guesthouse.Core.csproj.CoreCompileInputs.cache
+/home/damian/Dokumenty/Guesthouse/src/Guesthouse.Core/obj/Debug/netstandard2.0/Guesthouse.Core.AssemblyInfoInputs.cache
+/home/damian/Dokumenty/Guesthouse/src/Guesthouse.Core/obj/Debug/netstandard2.0/Guesthouse.Core.AssemblyInfo.cs
+/home/damian/Dokumenty/Guesthouse/src/Guesthouse.Core/obj/Debug/netstandard2.0/Guesthouse.Core.dll
+/home/damian/Dokumenty/Guesthouse/src/Guesthouse.Core/obj/Debug/netstandard2.0/Guesthouse.Core.pdb

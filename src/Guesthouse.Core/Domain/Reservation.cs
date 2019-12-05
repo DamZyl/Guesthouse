@@ -137,7 +137,7 @@ namespace Guesthouse.Core.Domain
             _conveniences.Add(ReservationConvenience.Create(this, convenience));
         }
 
-        private decimal CalulatePrice()
+        private decimal CalulatePrice() // nie liczy!!!
         {
             var reservationCost = _rooms.Sum(room => room.Price);
 

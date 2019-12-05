@@ -1,14 +1,11 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "/home/damian/Documents/Guesthouse/src/Guesthouse.Core/Guesthouse.Core.csproj",
+    "projectUniqueName": "/home/damian/Dokumenty/Guesthouse/src/Guesthouse.Core/Guesthouse.Core.csproj",
     "projectName": "Guesthouse.Core",
-    "projectPath": "/home/damian/Documents/Guesthouse/src/Guesthouse.Core/Guesthouse.Core.csproj",
-    "outputPath": "/home/damian/Documents/Guesthouse/src/Guesthouse.Core/obj/",
+    "projectPath": "/home/damian/Dokumenty/Guesthouse/src/Guesthouse.Core/Guesthouse.Core.csproj",
+    "outputPath": "/home/damian/Dokumenty/Guesthouse/src/Guesthouse.Core/obj/",
     "projectStyle": "PackageReference",
-    "fallbackFolders": [
-      "/usr/share/dotnet/sdk/NuGetFallbackFolder"
-    ],
     "originalTargetFrameworks": [
       "netstandard2.0"
     ],
@@ -31,23 +28,23 @@
       "dependencies": {
         "Microsoft.EntityFrameworkCore": {
           "target": "Package",
-          "version": "[2.2.3, )"
+          "version": "[2.2.6, )"
         },
         "Microsoft.EntityFrameworkCore.Design": {
           "target": "Package",
-          "version": "[2.2.3, )"
+          "version": "[2.2.6, )"
         },
         "Microsoft.EntityFrameworkCore.InMemory": {
           "target": "Package",
-          "version": "[2.2.3, )"
+          "version": "[2.2.6, )"
         },
         "Microsoft.EntityFrameworkCore.SqlServer": {
           "target": "Package",
-          "version": "[2.2.3, )"
+          "version": "[2.2.6, )"
         },
         "Microsoft.EntityFrameworkCore.Tools": {
           "target": "Package",
-          "version": "[2.2.3, )"
+          "version": "[2.2.6, )"
         },
         "NETStandard.Library": {
           "suppressParent": "All",

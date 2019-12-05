@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Guesthouse.Core.Domain;
 using Guesthouse.Core.Repositories;
@@ -29,12 +30,13 @@ namespace Guesthouse.Services.Reservations.Handlers
                 .Build();
 
             var client = await _unitOfWork.ClientRepository.GetOrFailAsync(command.UserId);
+            var reservationRooms = await _unitOfWork.ReservationRoomRepository.GetAllAsync();
 
-            /*var rooms = new HashSet<Room>();
+            var rooms = new HashSet<Room>();
             foreach (var id in command.Rooms)
             {
                 rooms.Add(await _unitOfWork.RoomRepository.GetAsync(id));
-            }*/
+            }
             
             // Problem with this part!!! -> Fix this problem later!!! 
             /*var conveniences = new HashSet<Convenience>();
@@ -42,10 +44,17 @@ namespace Guesthouse.Services.Reservations.Handlers
             {
                 conveniences.Add(await _unitOfWork.ConvenienceRepository.GetAsync(id));
             }*/
+            
+            var reservationRoomsToSave = new HashSet<ReservationRoom>();
+            foreach (var room in rooms)
+            {
+                reservationRoomsToSave.Add(ReservationRoom.Booked(reservation, room));
+            }
+            
+            reservation.ReservationPlace(client, reservationRoomsToSave, rooms, null);
 
-            //reservation.ReservationPlace(client, rooms, null);*/
-
-            await _unitOfWork.ReservationRepository.AddAsync(reservation); 
+            await _unitOfWork.ReservationRepository.AddAsync(reservation);
+            await _unitOfWork.ReservationRoomRepository.AddRangeAsync(reservationRoomsToSave);
             await _unitOfWork.Complete();
         }
     }
