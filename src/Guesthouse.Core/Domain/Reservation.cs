@@ -26,9 +26,7 @@ namespace Guesthouse.Core.Domain
         public IEnumerable<ReservationRoom> Rooms => _rooms;
         public IEnumerable<ReservationConvenience> Conveniences => _conveniences;
 
-        protected Reservation()
-        {
-        }
+        protected Reservation() { }
 
         protected Reservation(Builder builder)
         {
@@ -40,8 +38,6 @@ namespace Guesthouse.Core.Domain
             PayStatus = builder.PayStatus;
         }
 
-        //public static Reservation Create(Builder builder) => new Reservation(builder);
-
         public void SetDescription(string description)
         {
             if (string.IsNullOrWhiteSpace(description))
@@ -51,17 +47,6 @@ namespace Guesthouse.Core.Domain
 
             Description = description;
         }
-
-        /*public void SetDates(DateTime startReservation, DateTime endReservation)
-        {
-            if (startReservation >= endReservation)
-            {
-                throw new DomainException(ErrorCodes.InvalidDate, "StartReservation should be earlier than EndReservation.");
-            }
-
-            StartReservation = startReservation;
-            EndReservation = endReservation;
-        }*/
 
         public void SetPayStatus(PayStatus payStatus)
         {
@@ -73,7 +58,8 @@ namespace Guesthouse.Core.Domain
             PayStatus = payStatus;
         }
 
-        public void ReservationPlace(Client client, IEnumerable<ReservationRoom> rooms, IEnumerable<ReservationConvenience> conveniences)
+        public void ReservationPlace(Client client, IEnumerable<ReservationRoom> reservationRooms,
+            IEnumerable<Room> rooms, IEnumerable<Convenience> conveniences)
         {
             if (client.PayType == PayWay.Prepayment)
             {
@@ -81,29 +67,41 @@ namespace Guesthouse.Core.Domain
             }
             
             if (conveniences == null)
-            {
-                AddRooms(rooms);
+            { // refactor to function!!!
+                foreach (var room in rooms)
+                {
+                    AddRooms(reservationRooms, room);    
+                }
+                
                 ClientId = client.Id;
                 ClientName = client.GetFullName();
             }
 
             else
             {
-                AddRooms(rooms);
-                AddConveniences(conveniences);
+                foreach (var room in rooms)
+                {
+                    AddRooms(reservationRooms, room);    
+                }
+
+                foreach (var convenience in conveniences)
+                {
+                    AddConveniences(convenience);    
+                }
+                
                 ClientId = client.Id;
                 ClientName = client.GetFullName();    
             }
 
             client.SetReservationId(Id);
-            //Price = CalulatePrice();
+            Price = CalulatePrice();
         }
 
-        public void CancelReservationPlace(Client client, IEnumerable<Room> rooms)
+        public void CancelReservationPlace(Client client, IEnumerable<ReservationRoom> rooms)
         {
-            foreach (var room in rooms)
+            for (var i = 0; i < rooms.Count() - 1; i++)
             {
-                room.Cancel();
+                _rooms.Remove(rooms.ElementAt(i));
             }
             
             client.SetReservationId(null);
@@ -121,26 +119,25 @@ namespace Guesthouse.Core.Domain
             ReservationStatus = ReservationStatus.Confirmed;
         }
 
-        private void AddRooms(IEnumerable<ReservationRoom> rooms) 
+        private void AddRooms(IEnumerable<ReservationRoom> reservationRooms, Room room) 
         {
-            foreach (var room in rooms)
+            foreach (var reservationRoom in reservationRooms)
             {
-                //if (room.Occupied) continue;
+                if (!IsRoomAvailable(reservationRoom))
+                {
+                    throw new Exception("this room is booked");
+                }
                 
-                //room.Booked(this);
-                _rooms.Add(room);
+                _rooms.Add(ReservationRoom.Booked(this, room));
             }
         }
         
-        private void AddConveniences(IEnumerable<ReservationConvenience> conveniences)
+        private void AddConveniences(Convenience convenience)
         {
-            foreach (var convenience in conveniences)
-            {
-                _conveniences.Add(convenience);
-            } 
+            _conveniences.Add(ReservationConvenience.Create(this, convenience));
         }
 
-        /*private decimal CalulatePrice()
+        private decimal CalulatePrice()
         {
             var reservationCost = _rooms.Sum(room => room.Price);
 
@@ -158,7 +155,25 @@ namespace Guesthouse.Core.Domain
             }
 
             return reservationCost;
-        }*/
+        }
+
+        private bool IsRoomAvailable(ReservationRoom reservationRoom)
+        {
+            if (StartReservation < DateTime.Now)
+                return false;
+
+            if (StartReservation > reservationRoom.BookedAt && StartReservation > EndReservation && EndReservation > reservationRoom.BookedAt)
+            {
+                return false;
+            }
+
+            if (StartReservation < reservationRoom.BookedTo && EndReservation < reservationRoom.BookedTo && StartReservation > EndReservation)
+            {
+                return false;
+            }
+
+            return true;
+        }
 
         public class Builder
         {

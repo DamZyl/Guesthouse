@@ -14,9 +14,7 @@ namespace Guesthouse.Core.Domain
         public string Email { get; protected set; }
         public string Password { get; protected set; }
 
-        protected User()
-        {
-        }
+        protected User() { }
 
         protected User(Guid id, string firstName, string lastName, string email, string password)
         {

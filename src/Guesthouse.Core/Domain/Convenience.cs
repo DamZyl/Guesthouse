@@ -14,9 +14,7 @@ namespace Guesthouse.Core.Domain
         public decimal? Cost { get; protected set; }
         public IEnumerable<ReservationConvenience> Reservations => _reservation;
 
-        protected Convenience()
-        {
-        }
+        protected Convenience() { }
 
         protected Convenience(Guid id, string name, decimal? cost)
         {

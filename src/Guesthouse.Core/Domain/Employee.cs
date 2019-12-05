@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Guesthouse.Core.Extensions;
+using Guesthouse.Core.Utils;
 using Guesthouse.Core.Utils.Exceptions;
 
 namespace Guesthouse.Core.Domain
@@ -15,9 +16,7 @@ namespace Guesthouse.Core.Domain
 
         public string EmployeeRole { get; protected set; }
 
-        protected Employee()
-        {
-        }
+        protected Employee() { }
 
         protected Employee(Guid id, string firstName, string lastName, string email,
                 string password, string role) : base(id, firstName, lastName, email, password)

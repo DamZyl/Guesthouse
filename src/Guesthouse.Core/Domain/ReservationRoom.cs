@@ -9,6 +9,9 @@ namespace Guesthouse.Core.Domain
 
         public Guid ReservationId { get; protected set; }
         public Guid RoomId { get; protected set; }
+        public DateTime BookedAt { get; protected set; } 
+        public DateTime BookedTo { get; protected set; }
+        public decimal Price { get; protected set; }
 
         protected ReservationRoom() { }
         
@@ -16,9 +19,10 @@ namespace Guesthouse.Core.Domain
         {
             ReservationId = reservation.Id;
             RoomId = room.Id;
+            Price = room.Price;
         }
         
-        public static ReservationRoom Create(Reservation reservation, Room room)
+        public static ReservationRoom Booked(Reservation reservation, Room room)
             => new ReservationRoom(reservation, room);
     }
 }

@@ -1,4 +1,4 @@
-namespace Guesthouse.Core.Domain
+namespace Guesthouse.Core.Utils
 {
     public static class Role
     {

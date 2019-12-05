@@ -13,13 +13,9 @@ namespace Guesthouse.Core.Domain
         public int Number { get; protected set; }
         public int Floor { get;  protected set; }
         public decimal Price { get; protected set; }
-        public DateTime? BookedAt { get; protected set; } 
-        public DateTime? BookedTo { get; protected set; }
         public IEnumerable<ReservationRoom> Reservations => _reservations;
 
-        protected Room()
-        {
-        }
+        protected Room() { }
 
         protected Room(Guid id, int number, int floor, decimal price)
         {
@@ -75,18 +71,6 @@ namespace Guesthouse.Core.Domain
             }
 
             Price = price;
-        }
-
-        public void Booked(Reservation reservation)
-        {
-            BookedAt = reservation.StartReservation;
-            BookedTo = reservation.EndReservation;
-        }
-
-        public void Cancel()
-        {
-            BookedAt = null;
-            BookedTo = null;
         }
     }
 }

@@ -9,6 +9,7 @@ namespace Guesthouse.Core.Domain
 
         public Guid ReservationId { get; protected set; }
         public Guid ConvenienceId { get; protected set; }
+        public decimal? Cost { get; protected set; }
 
         protected ReservationConvenience() { }
         
@@ -16,6 +17,7 @@ namespace Guesthouse.Core.Domain
         {
             ReservationId = reservation.Id;
             ConvenienceId = convenience.Id;
+            Cost = convenience.Cost;
         }
         
         public static ReservationConvenience Create(Reservation reservation, Convenience convenience)

@@ -17,9 +17,7 @@ namespace Guesthouse.Core.Domain
         public PayWay PayType { get; protected set; } 
         public Guid? ReservationId { get; protected set;}
 
-        protected Client()
-        {
-        }
+        protected Client() { }
 
         protected Client(Guid id, string firstName, string lastName, string email,
                 string password, string phoneNumber, PayWay payType)
