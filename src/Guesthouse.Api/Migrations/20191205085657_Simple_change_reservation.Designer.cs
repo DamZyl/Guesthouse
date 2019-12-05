@@ -4,14 +4,16 @@ using Guesthouse.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Guesthouse.Infrastructure.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20191205085657_Simple_change_reservation")]
+    partial class Simple_change_reservation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -124,7 +126,7 @@ namespace Guesthouse.Infrastructure.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<Guid?>("ClientId");
+                    b.Property<Guid>("ClientId");
 
                     b.Property<string>("ClientName");
 
@@ -147,8 +149,7 @@ namespace Guesthouse.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("ClientId")
-                        .IsUnique()
-                        .HasFilter("[ClientId] IS NOT NULL");
+                        .IsUnique();
 
                     b.ToTable("Reservations");
                 });
@@ -225,7 +226,8 @@ namespace Guesthouse.Infrastructure.Migrations
                 {
                     b.HasOne("Guesthouse.Core.Domain.Client", "Client")
                         .WithOne("Reservation")
-                        .HasForeignKey("Guesthouse.Core.Domain.Reservation", "ClientId");
+                        .HasForeignKey("Guesthouse.Core.Domain.Reservation", "ClientId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Guesthouse.Core.Domain.ReservationConvenience", b =>

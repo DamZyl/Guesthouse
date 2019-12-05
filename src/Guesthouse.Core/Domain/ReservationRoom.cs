@@ -18,6 +18,8 @@ namespace Guesthouse.Core.Domain
         protected ReservationRoom(Reservation reservation, Room room)
         {
             ReservationId = reservation.Id;
+            BookedAt = reservation.StartReservation;
+            BookedTo = reservation.EndReservation;
             RoomId = room.Id;
             Price = room.Price;
         }

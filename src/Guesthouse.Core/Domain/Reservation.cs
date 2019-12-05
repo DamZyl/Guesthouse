@@ -15,7 +15,7 @@ namespace Guesthouse.Core.Domain
 
         public Guid Id { get; protected set; }
         public string Description { get; protected set; }
-        public Guid ClientId { get; protected set; }
+        public Guid? ClientId { get; protected set; }
         public string ClientName { get; protected set; }
         public decimal Price { get; protected set; }
         public DateTime StartReservation { get; protected set; }
