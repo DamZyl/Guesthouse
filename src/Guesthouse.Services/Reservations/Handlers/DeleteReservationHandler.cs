@@ -25,7 +25,6 @@ namespace Guesthouse.Services.Reservations.Handlers
 
             reservation.CancelReservationPlace(client, reservationRooms);
             await _unitOfWork.ReservationRepository.DeleteAsync(reservation);
-            await _unitOfWork.ReservationRoomRepository.DeleteRangeAsync(reservationRooms);
             await _unitOfWork.Complete();
         }
     }

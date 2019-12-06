@@ -44,17 +44,9 @@ namespace Guesthouse.Services.Reservations.Handlers
             {
                 conveniences.Add(await _unitOfWork.ConvenienceRepository.GetAsync(id));
             }*/
-            
-            var reservationRoomsToSave = new HashSet<ReservationRoom>();
-            foreach (var room in rooms)
-            {
-                reservationRoomsToSave.Add(ReservationRoom.Booked(reservation, room));
-            }
-            
-            reservation.ReservationPlace(client, reservationRoomsToSave, rooms, null);
+            reservation.ReservationPlace(client, reservationRooms, rooms, null);
 
             await _unitOfWork.ReservationRepository.AddAsync(reservation);
-            await _unitOfWork.ReservationRoomRepository.AddRangeAsync(reservationRoomsToSave);
             await _unitOfWork.Complete();
         }
     }

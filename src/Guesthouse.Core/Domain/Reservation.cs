@@ -60,19 +60,19 @@ namespace Guesthouse.Core.Domain
 
         public void ReservationPlace(Client client, IEnumerable<ReservationRoom> reservationRooms,
             IEnumerable<Room> rooms, IEnumerable<Convenience> conveniences)
-        {
+        {   
             if (client.PayType == PayWay.Prepayment)
             {
                 PayStatus = PayStatus.Paid;
             }
-            
+
             if (conveniences == null)
-            { // refactor to function!!!
+            {
                 foreach (var room in rooms)
                 {
-                    AddRooms(reservationRooms, room);    
+                    AddRooms(reservationRooms, room);
                 }
-                
+
                 ClientId = client.Id;
                 ClientName = client.GetFullName();
             }
@@ -81,20 +81,20 @@ namespace Guesthouse.Core.Domain
             {
                 foreach (var room in rooms)
                 {
-                    AddRooms(reservationRooms, room);    
+                    AddRooms(reservationRooms, room);
                 }
 
                 foreach (var convenience in conveniences)
                 {
-                    AddConveniences(convenience);    
+                    AddConveniences(convenience);
                 }
-                
+
                 ClientId = client.Id;
-                ClientName = client.GetFullName();    
+                ClientName = client.GetFullName();
             }
 
-            client.SetReservationId(Id);
             Price = CalulatePrice();
+            client.SetReservationId(Id);
         }
 
         public void CancelReservationPlace(Client client, IEnumerable<ReservationRoom> rooms)
@@ -121,23 +121,20 @@ namespace Guesthouse.Core.Domain
 
         private void AddRooms(IEnumerable<ReservationRoom> reservationRooms, Room room) 
         {
-            foreach (var reservationRoom in reservationRooms)
+            if (reservationRooms.Any(reservationRoom => !IsRoomAvailable(reservationRoom)))
             {
-                if (!IsRoomAvailable(reservationRoom))
-                {
-                    throw new Exception("this room is booked");
-                }
-                
-                _rooms.Add(ReservationRoom.Booked(this, room));
+                throw new Exception("this room is booked");
             }
+                    
+            _rooms.Add(ReservationRoom.Booked(this, room));
         }
-        
+       
         private void AddConveniences(Convenience convenience)
         {
             _conveniences.Add(ReservationConvenience.Create(this, convenience));
         }
-
-        private decimal CalulatePrice() // nie liczy!!!
+        
+        private decimal CalulatePrice() 
         {
             var reservationCost = _rooms.Sum(room => room.Price);
 
@@ -161,7 +158,7 @@ namespace Guesthouse.Core.Domain
         {
             if (StartReservation < DateTime.Now)
                 return false;
-
+                
             if (StartReservation > reservationRoom.BookedAt && StartReservation > EndReservation && EndReservation > reservationRoom.BookedAt)
             {
                 return false;

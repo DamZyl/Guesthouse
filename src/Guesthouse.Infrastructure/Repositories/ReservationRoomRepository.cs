@@ -27,11 +27,5 @@ namespace Guesthouse.Infrastructure.Repositories
         
         public async Task<IEnumerable<ReservationRoom>> GetByReservationAsync(Guid reservationId)
             => await _databaseContext.ReservationRooms.Where(x => x.ReservationId == reservationId).ToListAsync();
-
-        public async Task AddRangeAsync(IEnumerable<ReservationRoom> reservationRoom)
-            => await _databaseContext.ReservationRooms.AddRangeAsync(reservationRoom);
-
-        public async Task DeleteRangeAsync(IEnumerable<ReservationRoom> reservationRooms)
-            => _databaseContext.ReservationRooms.RemoveRange(reservationRooms);
     }
 }

@@ -12,7 +12,5 @@ namespace Guesthouse.Core.Repositories
 
         Task<ReservationRoom> GetAsync(Guid roomId);
         Task<IEnumerable<ReservationRoom>> GetByReservationAsync(Guid reservationId);
-        Task AddRangeAsync(IEnumerable<ReservationRoom> reservationRoom);
-        Task DeleteRangeAsync(IEnumerable<ReservationRoom> reservationRooms);
     }
 }
