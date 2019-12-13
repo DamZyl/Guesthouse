@@ -32,6 +32,9 @@ namespace Guesthouse.Infrastructure.Repositories
             => await _databaseContext.Invoices.AddAsync(invoice);
 
         public async Task DeleteAsync(Invoice invoice)
-            => _databaseContext.Invoices.Remove(invoice);
+        {
+            _databaseContext.Invoices.Remove(invoice);
+            await Task.CompletedTask;
+        }
     }
 }

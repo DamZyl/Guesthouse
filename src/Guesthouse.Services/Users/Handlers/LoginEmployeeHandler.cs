@@ -31,7 +31,7 @@ namespace Guesthouse.Services.Users.Handlers
                 throw new Exception("Invalid creationals.");
             }
 
-            var jwt = _jwtHandler.CreateToken(employee.Id, employee.EmployeeRole);
+            var jwt = _jwtHandler.CreateToken(employee.Id, employee.GetFullName(), employee.EmployeeRole);
 
             return new TokenDto
             {
