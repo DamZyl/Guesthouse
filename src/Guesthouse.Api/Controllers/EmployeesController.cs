@@ -1,6 +1,9 @@
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Guesthouse.Infrastructure.Auth;
 using Guesthouse.Services;
+using Guesthouse.Services.Reservations.Commands;
 using Guesthouse.Services.Users.Commands;
 using Guesthouse.Services.Users.Dto;
 using Guesthouse.Services.Users.Queries;
@@ -14,9 +17,13 @@ namespace Guesthouse.Api.Controllers
         public EmployeesController(IDispatcher dispatcher) : base(dispatcher) { }
 
         [Authorize]
-        [HttpGet]
+        [HttpGet("account")]
         public async Task<ActionResult<AccountDto>> Get()
             => Result(await QueryAsync(new GetEmployee { Id = UserId }));
+        
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<AccountDto>>> Get([FromQuery] GetEmployees query)
+            => Result(await QueryAsync(query));
         
         [HttpPost("register")]
         public async Task<ActionResult> Post([FromBody]RegisterEmployee command)
@@ -30,5 +37,13 @@ namespace Guesthouse.Api.Controllers
         [HttpPost("login")]
         public async Task<ActionResult<TokenDto>> Post([FromBody] Login command)
             => Result(await QueryAsync(new LoginEmployee {Command = command}));
+        
+        [HttpDelete("{employeeId}")]
+        public async Task<ActionResult> Delete(Guid employeeId)
+        {
+            await SendAsync(new DeleteEmployee { Id = employeeId });
+
+            return NoContent();
+        }
     }
 }

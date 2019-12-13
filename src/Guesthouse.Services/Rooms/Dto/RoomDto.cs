@@ -1,6 +1,6 @@
 using System;
 
-namespace Guesthouse.Services.DTO
+namespace Guesthouse.Services.Rooms.Dto
 {
     public class RoomDto
     {

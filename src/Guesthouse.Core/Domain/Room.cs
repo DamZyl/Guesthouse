@@ -13,6 +13,7 @@ namespace Guesthouse.Core.Domain
         public int Number { get; protected set; }
         public int Floor { get;  protected set; }
         public decimal Price { get; protected set; }
+        public bool IsBlock { get; set; }
         public IEnumerable<ReservationRoom> Reservations => _reservations;
 
         protected Room() { }
@@ -23,6 +24,7 @@ namespace Guesthouse.Core.Domain
             SetNumber(number);
             SetFloor(floor);
             SetPrice(price);
+            SetIsBlock(false);
         }
 
         public static Room Create(Guid id, int number, int floor, decimal price)
@@ -71,6 +73,11 @@ namespace Guesthouse.Core.Domain
             }
 
             Price = price;
+        }
+
+        public void SetIsBlock(bool isBlock)
+        {
+            IsBlock = isBlock;
         }
     }
 }

@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Guesthouse.Core.Domain;
+using Guesthouse.Services.Rooms.Dto;
 using Guesthouse.Services.DTO;
 
 namespace Guesthouse.Services.Reservations.Dto
