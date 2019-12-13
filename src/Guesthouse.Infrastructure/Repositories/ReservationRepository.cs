@@ -36,11 +36,26 @@ namespace Guesthouse.Infrastructure.Repositories
         
 
         public async Task UpdateAsync(Reservation reservation)
+<<<<<<< Updated upstream
             => _databaseContext.Reservations.Update(reservation);
         
 
         public async Task DeleteAsync(Reservation reservation)
             => _databaseContext.Reservations.Remove(reservation);
         
+=======
+        {
+            _databaseContext.Reservations.Update(reservation);
+            await Task.CompletedTask;
+        }
+
+
+        public async Task DeleteAsync(Reservation reservation)
+        {
+            _databaseContext.Reservations.Remove(reservation);
+            _databaseContext.ReservationRooms.RemoveRange(reservation.Rooms);
+            await Task.CompletedTask;
+        }
+>>>>>>> Stashed changes
     }
 }

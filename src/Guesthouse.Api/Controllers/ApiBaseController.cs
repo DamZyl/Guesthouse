@@ -1,4 +1,5 @@
 using System;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Guesthouse.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -26,7 +27,7 @@ namespace Guesthouse.Api.Controllers
         }
 
         protected Guid UserId => User?.Identity?.IsAuthenticated == true ?
-            Guid.Parse(User.Identity.Name) : Guid.Empty;
+            Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value) : Guid.Empty;
         
         protected async Task SendAsync<T>(T command) where T : ICommand
             => await _dispatcher.SendAsync(command);

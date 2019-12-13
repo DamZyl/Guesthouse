@@ -4,8 +4,11 @@ using Guesthouse.Services.Reservations.Dto;
 using Guesthouse.Services.Reservations.Queries;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Guesthouse.Services.DTO;
+using Guesthouse.Services.Mappers;
 
 namespace Guesthouse.Services.Reservations.Handlers
 {
@@ -24,7 +27,8 @@ namespace Guesthouse.Services.Reservations.Handlers
         {
             var reservation = await _unitOfWork.ReservationRepository.GetAsync(query.Id);
 
-            return _mapper.Map<ReservationDetailsDto>(reservation);
+           // return _mapper.Map<ReservationDetailsDto>(reservation);
+           return  await MyMapper.MapReservationToDetails(reservation, _unitOfWork.RoomRepository, _mapper);
         }
     }
 }

@@ -17,8 +17,8 @@ namespace Guesthouse.Infrastructure.Repositories
         {
             _databaseContext = databaseContext;
         }
-        
-        public async Task <Employee> GetAsync(Guid id)
+
+        public async Task<Employee> GetAsync(Guid id)
             => await _databaseContext.Employees.SingleOrDefaultAsync(x => x.Id == id);
 
         public async Task<Employee> GetAsync(string email)
@@ -31,9 +31,16 @@ namespace Guesthouse.Infrastructure.Repositories
             => await _databaseContext.Employees.AddAsync(employee);
 
         public async Task UpdateAsync(Employee employee)
-            => _databaseContext.Employees.Update(employee);
+        {
+            _databaseContext.Employees.Update(employee);
+            await Task.CompletedTask;
+        }
+
 
         public async Task DeleteAsync(Employee employee)
-            => _databaseContext.Employees.Remove(employee);
+        {
+            _databaseContext.Employees.Remove(employee);
+            await Task.CompletedTask;
+        }
     }
 }

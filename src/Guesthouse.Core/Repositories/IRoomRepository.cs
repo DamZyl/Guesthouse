@@ -12,5 +12,6 @@ namespace Guesthouse.Core.Repositories
         Task<IEnumerable<Room>> GetAvailableAsync();
         Task<IEnumerable<Room>> GetForReservationAsync(Guid id);
         Task<IEnumerable<Room>> GetAllAsync();
+        IEnumerable<Room> GetAll();
     }
 }

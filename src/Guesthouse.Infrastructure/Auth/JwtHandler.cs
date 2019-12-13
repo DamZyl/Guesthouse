@@ -28,16 +28,16 @@ namespace Guesthouse.Infrastructure.Auth
             };
         }
 
-        public JwtDto CreateToken(Guid userId, string role)
+        public JwtDto CreateToken(Guid userId, string fullName, string role)
         {
-            var now = DateTime.UtcNow;
+            var now = DateTime.Now;
 
             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Sub, userId.ToString()),
-                new Claim(JwtRegisteredClaimNames.UniqueName, userId.ToString()),
+                new Claim(JwtRegisteredClaimNames.UniqueName, fullName),
                 new Claim(ClaimTypes.Role, role),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
                 //new Claim(JwtRegisteredClaimNames.Iat, now.ToTimeStamp().ToString())
             };
 

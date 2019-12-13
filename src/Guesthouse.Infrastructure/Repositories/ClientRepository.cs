@@ -30,9 +30,15 @@ namespace Guesthouse.Infrastructure.Repositories
             => await _databaseContext.Clients.AddAsync(client);
 
         public async Task UpdateAsync(Client client)
-            => _databaseContext.Clients.Update(client);
+        {
+            _databaseContext.Clients.Update(client);
+            await Task.CompletedTask;
+        }
 
         public async Task DeleteAsync(Client client)
-            => _databaseContext.Clients.Remove(client);
+        {
+            _databaseContext.Clients.Remove(client);
+            await Task.CompletedTask;
+        }
     }
 }
