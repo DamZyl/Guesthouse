@@ -8,5 +8,6 @@ namespace Guesthouse.Services.Rooms.Dto
         public int Number { get; set; }
         public int Floor { get; set; }
         public decimal Price { get; set; }
+        public bool IsBlock { get; set; }
     }
 }

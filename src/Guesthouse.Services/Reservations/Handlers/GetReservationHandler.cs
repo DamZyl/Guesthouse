@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Guesthouse.Services.DTO;
+using Guesthouse.Services.Conveniences.Dto;
 using Guesthouse.Services.Mappers;
 
 namespace Guesthouse.Services.Reservations.Handlers

@@ -26,5 +26,11 @@ namespace Guesthouse.Infrastructure.Repositories
 
         public async Task<Room> GetAsync(Guid id)
             => await _databaseContext.Rooms.SingleOrDefaultAsync(x => x.Id == id);
+
+        public async Task UpdateAsync(Room room)
+        {
+            _databaseContext.Rooms.Update(room);
+            await Task.CompletedTask;
+        }
     }
 }

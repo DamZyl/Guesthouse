@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Guesthouse.Core.Domain;
-using Guesthouse.Services.DTO;
+using Guesthouse.Services.Conveniences.Dto;
 using Newtonsoft.Json;
 
 namespace Guesthouse.Services.Reservations.Commands

@@ -12,6 +12,7 @@ namespace Guesthouse.Core.Domain
         public Guid Id { get; protected set; }
         public string Name { get; protected set; }
         public decimal? Cost { get; protected set; }
+        public bool IsBlock { get; set; }
         public IEnumerable<ReservationConvenience> Reservations => _reservation;
 
         protected Convenience() { }
@@ -21,6 +22,7 @@ namespace Guesthouse.Core.Domain
             Id = id;
             SetName(name);
             SetCost(cost);
+            SetIsBlock(false);
         }
 
         public static Convenience Create(Guid id, string name, decimal? cost)
@@ -49,6 +51,11 @@ namespace Guesthouse.Core.Domain
             }
 
             Cost = cost;
+        }
+        
+        public void SetIsBlock(bool isBlock)
+        {
+            IsBlock = isBlock;
         }
     }
 }

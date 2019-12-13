@@ -1,7 +1,7 @@
 using System.Linq;
 using AutoMapper;
 using Guesthouse.Core.Domain;
-using Guesthouse.Services.DTO;
+using Guesthouse.Services.Conveniences.Dto;
 using Guesthouse.Services.Invoices.Dto;
 using Guesthouse.Services.Reservations.Dto;
 using Guesthouse.Services.Users.Dto;
