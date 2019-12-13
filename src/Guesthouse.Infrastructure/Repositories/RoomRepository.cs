@@ -22,7 +22,7 @@ namespace Guesthouse.Infrastructure.Repositories
             => await _databaseContext.Rooms.ToListAsync();
 <<<<<<< Updated upstream
 
-        public async Task<IEnumerable<Room>> GetAvailableAsync()
+        /*public async Task<IEnumerable<Room>> GetAvailableAsync()
             => await _databaseContext.Rooms.Where(x => !x.Occupied).ToListAsync();
 
         public async Task<IEnumerable<Room>> GetOccupiedAsync()

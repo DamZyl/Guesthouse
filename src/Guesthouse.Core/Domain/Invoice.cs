@@ -23,9 +23,7 @@ namespace Guesthouse.Core.Domain
         public DateTime PayDate { get; protected set; }
         public decimal MoneyToPay { get; protected set; }
 
-        protected Invoice()
-        {
-        }
+        protected Invoice() { }
 
         protected Invoice(Guid id, Guid clientId, Guid employeeId, Guid reservationId,
                 DateTime issueDate, DateTime payDate)

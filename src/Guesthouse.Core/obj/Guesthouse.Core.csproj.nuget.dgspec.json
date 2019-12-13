@@ -1,32 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj": {}
+    "/home/damian/Dokumenty/Guesthouse/src/Guesthouse.Core/Guesthouse.Core.csproj": {}
   },
   "projects": {
-    "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj": {
+    "/home/damian/Dokumenty/Guesthouse/src/Guesthouse.Core/Guesthouse.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj",
+        "projectUniqueName": "/home/damian/Dokumenty/Guesthouse/src/Guesthouse.Core/Guesthouse.Core.csproj",
         "projectName": "Guesthouse.Core",
-        "projectPath": "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj",
-        "packagesPath": "C:\\Users\\Damian\\.nuget\\packages\\",
-        "outputPath": "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Core\\obj\\",
+        "projectPath": "/home/damian/Dokumenty/Guesthouse/src/Guesthouse.Core/Guesthouse.Core.csproj",
+        "packagesPath": "/home/damian/.nuget/packages/",
+        "outputPath": "/home/damian/Dokumenty/Guesthouse/src/Guesthouse.Core/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Damian\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/damian/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "D:\\DevExpress\\Components\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -45,23 +38,23 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[2.2.3, )"
+              "version": "[2.2.6, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "target": "Package",
-              "version": "[2.2.3, )"
+              "version": "[2.2.6, )"
             },
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
-              "version": "[2.2.3, )"
+              "version": "[2.2.6, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[2.2.3, )"
+              "version": "[2.2.6, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
-              "version": "[2.2.3, )"
+              "version": "[2.2.6, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",

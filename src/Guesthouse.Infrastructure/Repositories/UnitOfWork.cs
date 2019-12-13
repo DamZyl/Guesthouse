@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using Guesthouse.Core.Domain;
 using Guesthouse.Core.Repositories;
 using Guesthouse.Infrastructure.Database;
 
@@ -13,6 +14,8 @@ namespace Guesthouse.Infrastructure.Repositories
         public IRoomRepository RoomRepository { get; }
         public IConvenienceRepository ConvenienceRepository { get; }
         public IInvoiceRepository InvoiceRepository { get; }
+        public IReservationRoomRepository ReservationRoomRepository { get; }
+        public IReservationConvenienceRepository ReservationConvenienceRepository { get; }
 
         public UnitOfWork(DatabaseContext databaseContext)
         {
@@ -23,6 +26,8 @@ namespace Guesthouse.Infrastructure.Repositories
             RoomRepository = new RoomRepository(_databaseContext);
             ConvenienceRepository = new ConvenienceRepository(_databaseContext);
             InvoiceRepository = new InvoiceRepository(_databaseContext);
+            ReservationRoomRepository = new ReservationRoomRepository(_databaseContext);
+            ReservationConvenienceRepository = new ReservationConvenienceRepository(_databaseContext);
         }
 
         public async Task Complete()

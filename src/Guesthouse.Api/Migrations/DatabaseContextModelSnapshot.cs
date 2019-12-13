@@ -4,6 +4,7 @@ using Guesthouse.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Guesthouse.Infrastructure.Migrations
 {
@@ -14,7 +15,7 @@ namespace Guesthouse.Infrastructure.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
+                .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -42,10 +43,6 @@ namespace Guesthouse.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ReservationId")
-                        .IsUnique()
-                        .HasFilter("[ReservationId] IS NOT NULL");
-
                     b.ToTable("Clients");
                 });
 
@@ -58,11 +55,7 @@ namespace Guesthouse.Infrastructure.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<Guid?>("ReservationId");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("ReservationId");
 
                     b.ToTable("Conveniences");
                 });
@@ -131,7 +124,7 @@ namespace Guesthouse.Infrastructure.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<Guid>("ClientId");
+                    b.Property<Guid?>("ClientId");
 
                     b.Property<string>("ClientName");
 
@@ -153,7 +146,45 @@ namespace Guesthouse.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ClientId")
+                        .IsUnique()
+                        .HasFilter("[ClientId] IS NOT NULL");
+
                     b.ToTable("Reservations");
+                });
+
+            modelBuilder.Entity("Guesthouse.Core.Domain.ReservationConvenience", b =>
+                {
+                    b.Property<Guid>("ReservationId");
+
+                    b.Property<Guid>("ConvenienceId");
+
+                    b.Property<decimal?>("Cost");
+
+                    b.HasKey("ReservationId", "ConvenienceId");
+
+                    b.HasIndex("ConvenienceId");
+
+                    b.ToTable("ReservationConveniences");
+                });
+
+            modelBuilder.Entity("Guesthouse.Core.Domain.ReservationRoom", b =>
+                {
+                    b.Property<Guid>("ReservationId");
+
+                    b.Property<Guid>("RoomId");
+
+                    b.Property<DateTime>("BookedAt");
+
+                    b.Property<DateTime>("BookedTo");
+
+                    b.Property<decimal>("Price");
+
+                    b.HasKey("ReservationId", "RoomId");
+
+                    b.HasIndex("RoomId");
+
+                    b.ToTable("ReservationRooms");
                 });
 
             modelBuilder.Entity("Guesthouse.Core.Domain.Room", b =>
@@ -161,37 +192,15 @@ namespace Guesthouse.Infrastructure.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime?>("BookedAt");
-
-                    b.Property<DateTime?>("BookedTo");
-
                     b.Property<int>("Floor");
 
                     b.Property<int>("Number");
 
                     b.Property<decimal>("Price");
 
-                    b.Property<Guid?>("ReservationId");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("ReservationId");
-
                     b.ToTable("Rooms");
-                });
-
-            modelBuilder.Entity("Guesthouse.Core.Domain.Client", b =>
-                {
-                    b.HasOne("Guesthouse.Core.Domain.Reservation", "Reservation")
-                        .WithOne("Client")
-                        .HasForeignKey("Guesthouse.Core.Domain.Client", "ReservationId");
-                });
-
-            modelBuilder.Entity("Guesthouse.Core.Domain.Convenience", b =>
-                {
-                    b.HasOne("Guesthouse.Core.Domain.Reservation", "Reservation")
-                        .WithMany("Conveniences")
-                        .HasForeignKey("ReservationId");
                 });
 
             modelBuilder.Entity("Guesthouse.Core.Domain.Invoice", b =>
@@ -212,11 +221,37 @@ namespace Guesthouse.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Guesthouse.Core.Domain.Room", b =>
+            modelBuilder.Entity("Guesthouse.Core.Domain.Reservation", b =>
+                {
+                    b.HasOne("Guesthouse.Core.Domain.Client", "Client")
+                        .WithOne("Reservation")
+                        .HasForeignKey("Guesthouse.Core.Domain.Reservation", "ClientId");
+                });
+
+            modelBuilder.Entity("Guesthouse.Core.Domain.ReservationConvenience", b =>
+                {
+                    b.HasOne("Guesthouse.Core.Domain.Convenience", "Convenience")
+                        .WithMany("Reservations")
+                        .HasForeignKey("ConvenienceId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Guesthouse.Core.Domain.Reservation", "Reservation")
+                        .WithMany("Conveniences")
+                        .HasForeignKey("ReservationId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Guesthouse.Core.Domain.ReservationRoom", b =>
                 {
                     b.HasOne("Guesthouse.Core.Domain.Reservation", "Reservation")
                         .WithMany("Rooms")
-                        .HasForeignKey("ReservationId");
+                        .HasForeignKey("ReservationId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Guesthouse.Core.Domain.Room", "Room")
+                        .WithMany("Reservations")
+                        .HasForeignKey("RoomId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

@@ -29,16 +29,20 @@ namespace Guesthouse.Infrastructure.Repositories
 
         public async Task<IEnumerable<Reservation>> GetForClientAsync(Guid clientId)
             => await _databaseContext.Reservations.Where(x => x.ClientId == clientId)
-                    .Include(p => p.Rooms).Include(p => p.Conveniences).ToListAsync();
+                    .Include(p => p.Rooms)
+                    .Include(p => p.Conveniences)
+                    .ToListAsync();
 
         public async Task AddAsync(Reservation reservation)
-            => await _databaseContext.Reservations.AddAsync(reservation);
+        {
+            await _databaseContext.Reservations.AddAsync(reservation);
+            await _databaseContext.ReservationRooms.AddRangeAsync(reservation.Rooms);
+        }
         
-
         public async Task UpdateAsync(Reservation reservation)
 <<<<<<< Updated upstream
             => _databaseContext.Reservations.Update(reservation);
-        
+
 
         public async Task DeleteAsync(Reservation reservation)
             => _databaseContext.Reservations.Remove(reservation);

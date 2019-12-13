@@ -9,6 +9,11 @@ namespace Guesthouse.Infrastructure.Database.Configurations
         public void Configure(EntityTypeBuilder<Convenience> builder)
         {
             builder.HasKey(b => b.Id);
+
+            builder.HasMany(b => b.Reservations)
+                .WithOne(b => b.Convenience)
+                .HasForeignKey(b => b.ConvenienceId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

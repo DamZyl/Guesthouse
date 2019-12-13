@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Guesthouse.Core.Domain;
 using Guesthouse.Core.Repositories;
@@ -29,6 +30,7 @@ namespace Guesthouse.Services.Reservations.Handlers
                 .Build();
 
             var client = await _unitOfWork.ClientRepository.GetOrFailAsync(command.UserId);
+            var reservationRooms = await _unitOfWork.ReservationRoomRepository.GetAllAsync();
 
             var rooms = new HashSet<Room>();
             foreach (var id in command.Rooms)
@@ -42,10 +44,9 @@ namespace Guesthouse.Services.Reservations.Handlers
             {
                 conveniences.Add(await _unitOfWork.ConvenienceRepository.GetAsync(id));
             }*/
+            reservation.ReservationPlace(client, reservationRooms, rooms, null);
 
-            reservation.ReservationPlace(client, rooms, null);
-
-            await _unitOfWork.ReservationRepository.AddAsync(reservation); 
+            await _unitOfWork.ReservationRepository.AddAsync(reservation);
             await _unitOfWork.Complete();
         }
     }
