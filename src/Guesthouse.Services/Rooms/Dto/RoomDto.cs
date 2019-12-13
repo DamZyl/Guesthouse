@@ -1,6 +1,6 @@
 using System;
 
-namespace Guesthouse.Services.DTO
+namespace Guesthouse.Services.Rooms.Dto
 {
     public class RoomDto
     {
@@ -8,5 +8,6 @@ namespace Guesthouse.Services.DTO
         public int Number { get; set; }
         public int Floor { get; set; }
         public decimal Price { get; set; }
+        public bool IsBlock { get; set; }
     }
 }

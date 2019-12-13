@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Guesthouse.Core.Domain;
 using Guesthouse.Core.Repositories;
-using Guesthouse.Services.DTO;
+using Guesthouse.Services.Rooms.Dto;
 using Guesthouse.Services.Reservations.Dto;
 
 namespace Guesthouse.Services.Mappers

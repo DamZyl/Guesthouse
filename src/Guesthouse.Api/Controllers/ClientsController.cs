@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Guesthouse.Infrastructure.Auth;
 using Guesthouse.Services;
@@ -14,9 +16,13 @@ namespace Guesthouse.Api.Controllers
         public ClientsController(IDispatcher dispatcher) : base(dispatcher) { }
 
         [Authorize]
-        [HttpGet]
+        [HttpGet("account")]
         public async Task<ActionResult<AccountDto>> Get()
             => Result(await QueryAsync(new GetClient { Id = UserId })); 
+        
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<AccountDto>>> Get([FromQuery] GetClients query)
+            => Result(await QueryAsync(query));
         
         [HttpPost("register")]
         public async Task<ActionResult> Post([FromBody]RegisterClient command)
@@ -29,5 +35,13 @@ namespace Guesthouse.Api.Controllers
         [HttpPost("login")]
         public async Task<ActionResult<TokenDto>> Post([FromBody] Login command)
             => Result(await QueryAsync(new LoginClient { Command = command }));
+        
+        [HttpDelete("{clientId}")]
+        public async Task<ActionResult> Delete(Guid clientId)
+        {
+            await SendAsync(new DeleteClient { Id = clientId });
+
+            return NoContent();
+        }
     }
 }

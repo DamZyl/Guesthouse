@@ -22,5 +22,11 @@ namespace Guesthouse.Infrastructure.Repositories
 
         public async Task<Convenience> GetAsync(Guid id)
             => await _databaseContext.Conveniences.SingleOrDefaultAsync(x => x.Id == id);
+        
+        public async Task UpdateAsync(Convenience convenience)
+        {
+            _databaseContext.Update(convenience);
+            await Task.CompletedTask;
+        }
     }
 }

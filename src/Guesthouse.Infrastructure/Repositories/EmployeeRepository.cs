@@ -35,8 +35,7 @@ namespace Guesthouse.Infrastructure.Repositories
             _databaseContext.Employees.Update(employee);
             await Task.CompletedTask;
         }
-
-
+        
         public async Task DeleteAsync(Employee employee)
         {
             _databaseContext.Employees.Remove(employee);

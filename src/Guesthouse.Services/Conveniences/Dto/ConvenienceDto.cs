@@ -1,12 +1,12 @@
 using System;
 
-namespace Guesthouse.Services.DTO
+namespace Guesthouse.Services.Conveniences.Dto
 {
     public class ConvenienceDto
     {
         public Guid Id { get; set; }
-        public Guid? ReservationId { get; set;}
         public string Name { get; set; }
         public decimal? Cost { get; set; }
+        public bool IsBlock { get; set; }
     }
 }

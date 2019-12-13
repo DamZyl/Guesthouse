@@ -9,5 +9,6 @@ namespace Guesthouse.Core.Repositories
     {
         Task<Convenience> GetAsync(Guid id);
         Task<IEnumerable<Convenience>> GetAllAsync();
+        Task UpdateAsync(Convenience convenience);
     }
 }
