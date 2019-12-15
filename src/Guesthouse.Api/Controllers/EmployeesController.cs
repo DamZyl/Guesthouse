@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Guesthouse.Infrastructure.Auth;
 using Guesthouse.Services;
-using Guesthouse.Services.Reservations.Commands;
 using Guesthouse.Services.Users.Commands;
 using Guesthouse.Services.Users.Dto;
 using Guesthouse.Services.Users.Queries;
@@ -37,7 +36,18 @@ namespace Guesthouse.Api.Controllers
         [HttpPost("login")]
         public async Task<ActionResult<TokenDto>> Post([FromBody] Login command)
             => Result(await QueryAsync(new LoginEmployee {Command = command}));
-        
+
+        [Authorize]
+        [HttpPut("edit")]
+        public async Task<ActionResult> Put([FromBody] UpdateAccount command)
+        {
+            command.Id = UserId;
+
+            await SendAsync(command);
+
+            return NoContent();
+        }
+
         [HttpDelete("{employeeId}")]
         public async Task<ActionResult> Delete(Guid employeeId)
         {

@@ -28,7 +28,7 @@ namespace Guesthouse.Api.Controllers
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] CreateInvoice command)
         {
-            //command.UserId = UserId;
+            command.EmployeeId = UserId;
 
             await SendAsync(command);
 
