@@ -21,9 +21,8 @@ namespace Guesthouse.Services.Invoices.Handlers
             var invoice = await _unitOfWork.InvoiceRepository.GetOrFailAsync(command.Id);
             var client = await _unitOfWork.ClientRepository.GetOrFailAsync(invoice.ClientId);
 
-            
             //MailSender.Send("Reservation", "Hello", client.Email);
-            //MailSender.Send("Reservation", "Hello");
+            MailSender.Send("Reservation", "Hello", invoice.PdfPath);
         }
     }
 }

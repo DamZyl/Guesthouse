@@ -22,6 +22,7 @@ namespace Guesthouse.Core.Domain
         public DateTime IssueDate { get; protected set; }
         public DateTime PayDate { get; protected set; }
         public decimal MoneyToPay { get; protected set; }
+        public string PdfPath { get; protected set; }
 
         protected Invoice() { }
 
@@ -73,6 +74,11 @@ namespace Guesthouse.Core.Domain
             EmployeeName = employee.GetFullName();
             ReservationDescription = reservation.Description;
             MoneyToPay = reservation.Price;
+        }
+
+        public void SetPdfPath(string pdfPath)
+        {
+            PdfPath = pdfPath;
         }
     }
 }

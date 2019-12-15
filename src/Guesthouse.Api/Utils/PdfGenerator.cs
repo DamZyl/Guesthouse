@@ -46,9 +46,11 @@ namespace Guesthouse.Api.Utils
             var result = template(data);
             
             var renderer = new HtmlToPdf();
+            renderer.RenderHtmlAsPdf(result).SaveAs($@"Asserts\invoice{invoice.Id}.pdf");
             
-            renderer.RenderHtmlAsPdf(result).SaveAs(@"Asserts\html-string.pdf");
-            
+            invoice.SetPdfPath($@"Asserts\invoice{invoice.Id}.pdf");
+            await unitOfWork.InvoiceRepository.UpdateAsync(invoice);
+            await unitOfWork.Complete();
         }
     }
 }

@@ -5,7 +5,7 @@ namespace Guesthouse.Services.Utils
 {
     public static class MailSender
     {
-        public static void Send(string subject, string body, string email="vtec16000@gmail.com")
+        public static void Send(string subject, string body, string attachFilepath, string email="vtec16000@gmail.com")
         {
             var message = new MimeMessage();
             message.From.Add(new MailboxAddress("kinopz.wat@gmail.com", "projekt428"));
@@ -17,6 +17,8 @@ namespace Guesthouse.Services.Utils
                 HtmlBody = $"<h1>{body}</h1>",
                 TextBody = "Hello World!"
             };
+
+            bodyBuilder.Attachments.Add(attachFilepath);
             
             message.Body = bodyBuilder.ToMessageBody();
             var client = new SmtpClient();

@@ -11,6 +11,7 @@ namespace Guesthouse.Core.Repositories
         Task<IEnumerable<Invoice>> GetInvoicesForClientAsync(Guid clientId);
         Task<Invoice> GetAsync(Guid id);
         Task AddAsync(Invoice invoice);
+        Task UpdateAsync(Invoice invoice);
         Task DeleteAsync(Invoice invoice);
     }
 }
