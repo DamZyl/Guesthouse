@@ -1,17 +1,17 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "/home/damian/Dokumenty/Guesthouse/src/Guesthouse.Core/Guesthouse.Core.csproj",
+    "projectUniqueName": "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj",
     "projectName": "Guesthouse.Core",
-    "projectPath": "/home/damian/Dokumenty/Guesthouse/src/Guesthouse.Core/Guesthouse.Core.csproj",
-    "outputPath": "/home/damian/Dokumenty/Guesthouse/src/Guesthouse.Core/obj/",
+    "projectPath": "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Core\\Guesthouse.Core.csproj",
+    "outputPath": "D:\\Kody\\Praca\\Guesthouse\\src\\Guesthouse.Core\\obj\\",
     "projectStyle": "PackageReference",
+    "fallbackFolders": [
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+    ],
     "originalTargetFrameworks": [
       "netstandard2.0"
     ],
-    "sources": {
-      "https://api.nuget.org/v3/index.json": {}
-    },
     "frameworks": {
       "netstandard2.0": {
         "projectReferences": {}

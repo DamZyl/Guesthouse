@@ -9,6 +9,8 @@
     <PackageReference Include="Autofac" Version="4.9.3" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.4.0" />
     <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="Handlebars.Net" Version="1.10.1" />
+    <PackageReference Include="IronPdf" Version="2019.8.9" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
@@ -21,6 +23,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Guesthouse.Services\Guesthouse.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Asserts" />
   </ItemGroup>
 
 </Project>

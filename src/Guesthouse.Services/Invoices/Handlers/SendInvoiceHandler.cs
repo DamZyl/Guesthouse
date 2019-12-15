@@ -4,6 +4,7 @@ using Guesthouse.Infrastructure.Extensions;
 using Guesthouse.Services.Invoices.Commands;
 using Guesthouse.Services.Utils;
 
+
 namespace Guesthouse.Services.Invoices.Handlers
 {
     public class SendInvoiceHandler : ICommandHandler<SendInvoice>
@@ -19,9 +20,10 @@ namespace Guesthouse.Services.Invoices.Handlers
         {
             var invoice = await _unitOfWork.InvoiceRepository.GetOrFailAsync(command.Id);
             var client = await _unitOfWork.ClientRepository.GetOrFailAsync(invoice.ClientId);
+
             
             //MailSender.Send("Reservation", "Hello", client.Email);
-            MailSender.Send("Reservation", "Hello");
+            //MailSender.Send("Reservation", "Hello");
         }
     }
 }

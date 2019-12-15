@@ -6,12 +6,19 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Guesthouse.Api.Utils;
+using Guesthouse.Core.Repositories;
 
 namespace Guesthouse.Api.Controllers
 {
     public class InvoicesController : ApiBaseController
     {
-        public InvoicesController(IDispatcher dispatcher) : base(dispatcher) { }
+        private readonly IUnitOfWork _unitOfWork;
+
+        public InvoicesController(IDispatcher dispatcher, IUnitOfWork unitOfWork) : base(dispatcher)
+        {
+            _unitOfWork = unitOfWork;
+        }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<InvoiceDto>>> Get([FromQuery] GetInvoices query)
@@ -38,6 +45,7 @@ namespace Guesthouse.Api.Controllers
         [HttpPost("send")]
         public async Task<ActionResult> Post([FromBody] SendInvoice command)
         {
+            await PdfGenerator.Generate(command.Id, _unitOfWork);
             await SendAsync(command);
 
             return NoContent();
