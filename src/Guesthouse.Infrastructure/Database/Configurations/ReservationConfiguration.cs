@@ -10,10 +10,6 @@ namespace Guesthouse.Infrastructure.Database.Configurations
         {
             builder.HasKey(b => b.Id);
             
-            builder.HasOne(b => b.Client)
-                .WithOne(b => b.Reservation)
-                .HasForeignKey<Reservation>(b => b.ClientId);
-
             builder.HasMany(b => b.Rooms)
                 .WithOne(b => b.Reservation)
                 .HasForeignKey(b => b.ReservationId)

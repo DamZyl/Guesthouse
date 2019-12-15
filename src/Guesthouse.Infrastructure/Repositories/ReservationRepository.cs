@@ -36,7 +36,6 @@ namespace Guesthouse.Infrastructure.Repositories
         public async Task AddAsync(Reservation reservation)
         {
             await _databaseContext.Reservations.AddAsync(reservation);
-            await _databaseContext.ReservationRooms.AddRangeAsync(reservation.Rooms);
         }
         
         public async Task UpdateAsync(Reservation reservation)

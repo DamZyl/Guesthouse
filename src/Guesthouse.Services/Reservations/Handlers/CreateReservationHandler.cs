@@ -38,13 +38,12 @@ namespace Guesthouse.Services.Reservations.Handlers
                 rooms.Add(await _unitOfWork.RoomRepository.GetAsync(id));
             }
             
-            // Problem with this part!!! -> Fix this problem later!!! 
-            /*var conveniences = new HashSet<Convenience>();
+            var conveniences = new HashSet<Convenience>();
             foreach (var id in command.Conveniences)
             {
                 conveniences.Add(await _unitOfWork.ConvenienceRepository.GetAsync(id));
-            }*/
-            reservation.ReservationPlace(client, reservationRooms, rooms, null);
+            }
+            reservation.ReservationPlace(client, reservationRooms, rooms, conveniences);
 
             await _unitOfWork.ReservationRepository.AddAsync(reservation);
             await _unitOfWork.Complete();

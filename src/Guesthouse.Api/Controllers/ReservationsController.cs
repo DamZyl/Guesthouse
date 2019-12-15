@@ -51,7 +51,7 @@ namespace Guesthouse.Api.Controllers
         [HttpDelete("{reservationId}")]
         public async Task<ActionResult> Delete(Guid reservationId)
         {
-            await SendAsync(new DeleteReservation { Id = reservationId, UserId = UserId });
+            await SendAsync(new DeleteReservation { Id = reservationId });
 
             return NoContent();
         }

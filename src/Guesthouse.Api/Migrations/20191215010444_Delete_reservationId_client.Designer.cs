@@ -4,14 +4,16 @@ using Guesthouse.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Guesthouse.Infrastructure.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20191215010444_Delete_reservationId_client")]
+    partial class Delete_reservationId_client
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -146,6 +148,10 @@ namespace Guesthouse.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ClientId")
+                        .IsUnique()
+                        .HasFilter("[ClientId] IS NOT NULL");
+
                     b.ToTable("Reservations");
                 });
 
@@ -217,6 +223,13 @@ namespace Guesthouse.Infrastructure.Migrations
                         .WithOne("Invoice")
                         .HasForeignKey("Guesthouse.Core.Domain.Invoice", "ReservationId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Guesthouse.Core.Domain.Reservation", b =>
+                {
+                    b.HasOne("Guesthouse.Core.Domain.Client", "Client")
+                        .WithOne("Reservation")
+                        .HasForeignKey("Guesthouse.Core.Domain.Reservation", "ClientId");
                 });
 
             modelBuilder.Entity("Guesthouse.Core.Domain.ReservationConvenience", b =>

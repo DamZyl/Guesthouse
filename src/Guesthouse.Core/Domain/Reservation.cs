@@ -9,7 +9,6 @@ namespace Guesthouse.Core.Domain
     public class Reservation
     {
         public virtual Invoice Invoice { get; protected set; }
-        public virtual Client Client { get; protected set; }
         private ISet<ReservationRoom> _rooms = new HashSet<ReservationRoom>();
         private ISet<ReservationConvenience> _conveniences = new HashSet<ReservationConvenience>();
 
@@ -72,9 +71,6 @@ namespace Guesthouse.Core.Domain
                 {
                     AddRooms(reservationRooms, room);
                 }
-
-                ClientId = client.Id;
-                ClientName = client.GetFullName();
             }
 
             else
@@ -88,23 +84,19 @@ namespace Guesthouse.Core.Domain
                 {
                     AddConveniences(convenience);
                 }
-
-                ClientId = client.Id;
-                ClientName = client.GetFullName();
             }
 
+            ClientId = client.Id;
+            ClientName = client.GetFullName();
             Price = CalulatePrice();
-            client.SetReservationId(Id);
         }
 
-        public void CancelReservationPlace(Client client, IEnumerable<ReservationRoom> rooms)
+        public void CancelReservationPlace(IEnumerable<ReservationRoom> rooms)
         {
             for (var i = 0; i < rooms.Count() - 1; i++)
             {
                 _rooms.Remove(rooms.ElementAt(i));
             }
-            
-            client.SetReservationId(null);
         }
 
         public void SendMessage(string message) => Message = message;

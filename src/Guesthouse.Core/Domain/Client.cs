@@ -10,12 +10,10 @@ namespace Guesthouse.Core.Domain
     public class Client : User
     {
         public virtual Invoice Invoice { get; protected set; } 
-        public virtual Reservation Reservation { get; protected set;}
         
         public string PhoneNumber { get; protected set; }
         public string ClientRole { get; protected set; }
         public PayWay PayType { get; protected set; } 
-        public Guid? ReservationId { get; protected set;}
 
         protected Client() { }
 
@@ -40,11 +38,6 @@ namespace Guesthouse.Core.Domain
             }
 
             PhoneNumber = phoneNumber;
-        }
-
-        public void SetReservationId(Guid? reservationId)
-        {
-            ReservationId = reservationId;
         }
 
         private bool IsPhoneNumberValid(string phoneNumber)

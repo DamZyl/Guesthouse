@@ -20,10 +20,9 @@ namespace Guesthouse.Services.Reservations.Handlers
         public async Task HandleAsync(DeleteReservation command)
         {
             var reservation = await _unitOfWork.ReservationRepository.GetOrFailAsync(command.Id);
-            var client = await _unitOfWork.ClientRepository.GetOrFailAsync(command.UserId);
             var reservationRooms = await _unitOfWork.ReservationRoomRepository.GetByReservationAsync(command.Id);
 
-            reservation.CancelReservationPlace(client, reservationRooms);
+            reservation.CancelReservationPlace(reservationRooms);
             await _unitOfWork.ReservationRepository.DeleteAsync(reservation);
             await _unitOfWork.Complete();
         }
