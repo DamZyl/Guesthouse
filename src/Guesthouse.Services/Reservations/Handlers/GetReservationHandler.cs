@@ -28,7 +28,7 @@ namespace Guesthouse.Services.Reservations.Handlers
             var reservation = await _unitOfWork.ReservationRepository.GetAsync(query.Id);
 
            // return _mapper.Map<ReservationDetailsDto>(reservation);
-           return  await MyMapper.MapReservationToDetails(reservation, _unitOfWork.RoomRepository, _mapper);
+           return  await MyMapper.MapReservationToDetails(reservation, _unitOfWork, _mapper);
         }
     }
 }
