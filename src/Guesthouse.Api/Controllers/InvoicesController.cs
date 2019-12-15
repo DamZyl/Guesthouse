@@ -35,6 +35,14 @@ namespace Guesthouse.Api.Controllers
             return CreatedAtAction(nameof(Get), new { id = command.Id }, null);
         }
 
+        [HttpPost("send")]
+        public async Task<ActionResult> Post([FromBody] SendInvoice command)
+        {
+            await SendAsync(command);
+
+            return NoContent();
+        }
+
         [HttpDelete("{invoiceId}")]
         public async Task<ActionResult> Delete(Guid invoiceId)
         {
