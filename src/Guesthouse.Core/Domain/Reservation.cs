@@ -143,7 +143,7 @@ namespace Guesthouse.Core.Domain
                 }
             }
 
-            return reservationCost;
+            return reservationCost * (decimal)(EndReservation - StartReservation).TotalDays;
         }
 
         private bool IsRoomAvailable(ReservationRoom reservationRoom)

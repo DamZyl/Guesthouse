@@ -7,20 +7,20 @@ using Guesthouse.Services.Conveniences.Queries;
 
 namespace Guesthouse.Services.Conveniences.Handlers
 {
-    public class GetConveniencesHandler : IQueryHandler<GetConveniences, IEnumerable<ConvenienceDto>>
+    public class GetAvailableConveniencesHandler : IQueryHandler<GetAvailableConveniences, IEnumerable<ConvenienceDto>>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-
-        public GetConveniencesHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        
+        public GetAvailableConveniencesHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
         
-        public async Task<IEnumerable<ConvenienceDto>> HandleAsync(GetConveniences query)
+        public async Task<IEnumerable<ConvenienceDto>> HandleAsync(GetAvailableConveniences query)
         {
-            var conveniences = await _unitOfWork.ConvenienceRepository.GetAllAsync();
+            var conveniences = await _unitOfWork.ConvenienceRepository.GetAvailableAsync();
 
             return _mapper.Map<IEnumerable<ConvenienceDto>>(conveniences);
         }

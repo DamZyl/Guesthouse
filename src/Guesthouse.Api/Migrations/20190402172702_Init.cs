@@ -144,14 +144,12 @@ namespace Guesthouse.Infrastructure.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Invoices_ClientId",
                 table: "Invoices",
-                column: "ClientId",
-                unique: true);
+                column: "ClientId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Invoices_EmployeeId",
                 table: "Invoices",
-                column: "EmployeeId",
-                unique: true);
+                column: "EmployeeId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

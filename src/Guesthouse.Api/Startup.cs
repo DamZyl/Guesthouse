@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Linq;
+using System.Security.Claims;
 using System.Text;
+using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Guesthouse.Api.Framework;
@@ -7,6 +10,8 @@ using Guesthouse.Infrastructure.Auth;
 using Guesthouse.Infrastructure.Database;
 using Guesthouse.Infrastructure.IoC;
 using Guesthouse.Services.IoC;
+using Guesthouse.Services.Utils;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -54,10 +59,10 @@ namespace Guesthouse.Api
                     };
                 });
             
-            services.AddAuthorization(x => x.AddPolicy("Admin", p => p.RequireRole("Admin")));
+            /*services.AddAuthorization(x => x.AddPolicy("Admin", p => p.RequireRole("Admin")));
             services.AddAuthorization(x => x.AddPolicy("Employee", p => p.RequireRole("Employee")));
-            services.AddAuthorization(x => x.AddPolicy("User", p => p.RequireRole("User")));
-
+            services.AddAuthorization(x => x.AddPolicy("User", p => p.RequireRole("User")));*/
+            
             services.AddTransient<DbInitializer>();
             
             var builder =  new ContainerBuilder();
@@ -79,12 +84,12 @@ namespace Guesthouse.Api
             {
                 app.UseHsts();
             }
-
+            
             app.UseCors(x => x.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader());
             app.UseHttpsRedirection();
             initDb.SeedData().Wait();
             app.UseAuthentication();
-            //app.UseErrorHandler();
+            app.UseErrorHandler();
             app.UseMvc();
         }
     }

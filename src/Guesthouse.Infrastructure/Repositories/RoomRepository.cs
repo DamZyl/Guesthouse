@@ -20,9 +20,9 @@ namespace Guesthouse.Infrastructure.Repositories
 
         public async Task<IEnumerable<Room>> GetAllAsync()
             => await _databaseContext.Rooms.ToListAsync();
-        
-        public IEnumerable<Room> GetAll()
-            => _databaseContext.Rooms.ToList();
+
+        public async Task<IEnumerable<Room>> GetAvailableAsync()
+            => await _databaseContext.Rooms.Where(x => !x.IsBlock).ToListAsync();
 
         public async Task<Room> GetAsync(Guid id)
             => await _databaseContext.Rooms.SingleOrDefaultAsync(x => x.Id == id);

@@ -8,9 +8,11 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Guesthouse.Api.Utils;
 using Guesthouse.Core.Repositories;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Guesthouse.Api.Controllers
 {
+    [Authorize]
     public class InvoicesController : ApiBaseController
     {
         private readonly IUnitOfWork _unitOfWork;

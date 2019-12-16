@@ -21,7 +21,7 @@ namespace Guesthouse.Infrastructure.Migrations
                 name: "IX_Reservations_ClientId",
                 table: "Reservations",
                 column: "ClientId",
-                unique: true,
+                unique: false,
                 filter: "[ClientId] IS NOT NULL");
 
             migrationBuilder.AddForeignKey(

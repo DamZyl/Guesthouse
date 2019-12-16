@@ -14,7 +14,7 @@ namespace Guesthouse.Infrastructure.Migrations
                 name: "IX_Invoices_ReservationId",
                 table: "Invoices",
                 column: "ReservationId",
-                unique: true);
+                unique: false);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Invoices_Reservations_ReservationId",

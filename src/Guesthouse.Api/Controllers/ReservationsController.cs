@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Guesthouse.Api.Controllers
 {
+    [Authorize]
     public class ReservationsController : ApiBaseController
     {
         public ReservationsController(IDispatcher dispatcher) : base(dispatcher) { }
@@ -26,7 +27,6 @@ namespace Guesthouse.Api.Controllers
         public async Task<ActionResult<ReservationDetailsDto>> Get(Guid reservationId)
             => Result(await QueryAsync(new GetReservation { Id = reservationId }));
 
-        [Authorize]
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] CreateReservation command)
         {
@@ -47,7 +47,6 @@ namespace Guesthouse.Api.Controllers
             return NoContent();
         }
 
-        [Authorize]
         [HttpDelete("{reservationId}")]
         public async Task<ActionResult> Delete(Guid reservationId)
         {

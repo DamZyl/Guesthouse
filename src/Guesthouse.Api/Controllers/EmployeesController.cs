@@ -11,11 +11,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Guesthouse.Api.Controllers
 {
+    [Authorize]
     public class EmployeesController : ApiBaseController
     {
         public EmployeesController(IDispatcher dispatcher) : base(dispatcher) { }
 
-        [Authorize]
         [HttpGet("account")]
         public async Task<ActionResult<AccountDto>> Get()
             => Result(await QueryAsync(new GetEmployee { Id = UserId }));
@@ -24,6 +24,7 @@ namespace Guesthouse.Api.Controllers
         public async Task<ActionResult<IEnumerable<AccountDto>>> Get([FromQuery] GetEmployees query)
             => Result(await QueryAsync(query));
         
+        [AllowAnonymous]
         [HttpPost("register")]
         public async Task<ActionResult> Post([FromBody]RegisterEmployee command)
         {
@@ -33,11 +34,11 @@ namespace Guesthouse.Api.Controllers
             return CreatedAtAction(nameof(Get), new { id = command.Id }, null);
         }
 
+        [AllowAnonymous]
         [HttpPost("login")]
         public async Task<ActionResult<TokenDto>> Post([FromBody] Login command)
             => Result(await QueryAsync(new LoginEmployee {Command = command}));
 
-        [Authorize]
         [HttpPut("edit")]
         public async Task<ActionResult> Put([FromBody] UpdateAccount command)
         {

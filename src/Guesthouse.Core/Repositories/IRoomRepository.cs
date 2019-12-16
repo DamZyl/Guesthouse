@@ -9,7 +9,7 @@ namespace Guesthouse.Core.Repositories
     {
         Task<Room> GetAsync(Guid id);
         Task<IEnumerable<Room>> GetAllAsync();
-        IEnumerable<Room> GetAll();
+        Task<IEnumerable<Room>> GetAvailableAsync();
         Task UpdateAsync(Room room);
     }
 }
