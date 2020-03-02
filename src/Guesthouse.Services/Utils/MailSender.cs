@@ -8,22 +8,22 @@ namespace Guesthouse.Services.Utils
         public static void Send(string subject, string body, string attachFilepath, string email="vtec16000@gmail.com")
         {
             var message = new MimeMessage();
-            message.From.Add(new MailboxAddress("kinopz.wat@gmail.com", "projekt428"));
+            message.From.Add(new MailboxAddress(ConstValues.Email, ConstValues.Password));
             message.To.Add(new MailboxAddress("Test", email));
             message.Subject = subject;
             
             var bodyBuilder = new BodyBuilder
             {
                 HtmlBody = $"<h1>{body}</h1>",
-                TextBody = "Hello World!"
+                TextBody = "Hello!"
             };
 
             bodyBuilder.Attachments.Add(attachFilepath);
             
             message.Body = bodyBuilder.ToMessageBody();
             var client = new SmtpClient();
-            client.Connect("smtp.gmail.com", 465, true);
-            client.Authenticate("kinopz.wat@gmail.com", "projekt428");
+            client.Connect(ConstValues.Host, ConstValues.Port, ConstValues.Ssl);
+            client.Authenticate(ConstValues.Email, ConstValues.Password);
             client.Send(message);
             client.Disconnect(true);
             client.Dispose();

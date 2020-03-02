@@ -58,11 +58,7 @@ namespace Guesthouse.Api
                         ValidateLifetime = jwtOptions.ValidateLifetime
                     };
                 });
-            
-            /*services.AddAuthorization(x => x.AddPolicy("Admin", p => p.RequireRole("Admin")));
-            services.AddAuthorization(x => x.AddPolicy("Employee", p => p.RequireRole("Employee")));
-            services.AddAuthorization(x => x.AddPolicy("User", p => p.RequireRole("User")));*/
-            
+           
             services.AddTransient<DbInitializer>();
             
             var builder =  new ContainerBuilder();
